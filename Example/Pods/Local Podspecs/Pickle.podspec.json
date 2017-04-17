@@ -20,5 +20,6 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "Pickle/Classes/**/*"
+  "source_files": "Pickle/Classes/**/*",
+  "resources": "Pickle/Assets/**/*"
 }
