@@ -1,0 +1,6 @@
+framework module Pickle {
+  umbrella header "Pickle-umbrella.h"
+
+  export *
+  module * { export * }
+}

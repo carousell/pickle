@@ -1,0 +1,16 @@
+PODS:
+  - Pickle (0.1.0)
+
+DEPENDENCIES:
+  - Pickle (from `../`)
+
+EXTERNAL SOURCES:
+  Pickle:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Pickle: 4f66c15ecc91130f6c514e326b11e1d4428946c3
+
+PODFILE CHECKSUM: 35a29c467f34c9776db9416bdbc3583336211f18
+
+COCOAPODS: 1.2.1

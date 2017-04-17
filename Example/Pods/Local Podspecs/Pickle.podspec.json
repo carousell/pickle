@@ -1,0 +1,24 @@
+{
+  "name": "Pickle",
+  "version": "0.1.0",
+  "summary": "A short description of Pickle.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/carousell/pickle",
+  "license": {
+    "type": "Apache License 2.0",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "bcylin": "bcylin@gmail.com",
+    "Suganth": "suganth@live.in"
+  },
+  "source": {
+    "git": "https://github.com/carousell/pickle.git",
+    "tag": "0.1.0"
+  },
+  "social_media_url": "https://twitter.com/thecarousell",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Pickle/Classes/**/*"
+}

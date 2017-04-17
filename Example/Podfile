@@ -1,0 +1,10 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'Pickle_Example' do
+  pod 'Pickle', :path => '../'
+
+  target 'Pickle_Tests' do
+    inherit! :search_paths
+  end
+end
