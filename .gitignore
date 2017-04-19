@@ -27,6 +27,11 @@ xcuserdata/
 *.dSYM.zip
 *.dSYM
 
+## OS generated files
+*/.DS_Store
+.DS_Store
+.DS_Store?
+
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
