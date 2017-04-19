@@ -1,0 +1,5 @@
+language: objective-c
+
+xcode_project: Pickle.xcworkspace
+xcode_scheme: Tests.swift
+osx_image: xcode8.3
