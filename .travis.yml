@@ -1,5 +1,6 @@
 language: objective-c
 
-xcode_project: Pickle.xcworkspace
-xcode_scheme: Pickle
 osx_image: xcode8.3
+
+script:
+  - set -o pipefail && xcodebuild -workspace Example/Pickle.xcworkspace -scheme Pickle build | bundle exec xcpretty
