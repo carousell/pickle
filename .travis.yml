@@ -1,6 +1,7 @@
 language: objective-c
-
 osx_image: xcode8.3
-
 script:
-  - set -o pipefail && xcodebuild -workspace Example/Pickle.xcworkspace -scheme Pickle build | bundle exec xcpretty
+- set -o pipefail && xcodebuild -workspace Example/Pickle.xcworkspace -scheme Pickle clean build | bundle exec xcpretty
+notifications:
+  slack:
+    secure: XOSLv6bKx785kgGSNPMyIErZ1jNVfjDFNIOK0xF/ZszCRCRuB7LkfoorApjariTzZGC+EpdLeXgDZRKE/inVXwJVJ18WiSfHmT98198obq/GOlo8rsyzaPt6HU4wPP/utIBUufJVwGkKUPPxeM2PXUfmp0plAjbv6i0w/WhZ/qavIQSV7Gg9xIC8z6dwCcTDFNFZ5cfMBgV/8Q5ifCsC13WjohwiiBLXQHh4nQDgGGHJzSc2r4U6/C0wrMRLS5jqS0xT4Rr/umOQ7R2Cq1ASj/H84e+lsfyxfoC28XVj+zqjJL5AqWDuLrfELwhW3+ZViy99hIBD53MdvQEI7kj4qICqmKYuHZ9AJz1pAIKOqOVXtTrbnyyqdnpBOmn6ZNHGqX7rIz6FxIVasDADU20IeGKIrQDgQVxWI8QQroOr0FNY5fhz/MTelLyhatAQFL+Ht0I6laIZIsH+sl+071sEy63/evLflNkj+2pGYRoEw0dmB1l/Qs1SfmqyrouXhXz1PytK7Arm7sZ06ZTgifeKSw8brl7pl25q5fHSoPRAOtxfynMpmwa/dpc4CDxQRiPz0O4BJW8zsAz5VYLNTWsp0ywvLhh6jVp1x/6+BOl+TZW/9WVTPRrYZg+0OJlajUssxhkx4S9zBxz9bm1kgfyw4ltqy/+FVWWJSwWi6I4q174=
