@@ -4,7 +4,7 @@
 
 import UIKit
 
-internal class SlideUpPresentationController: UIPresentationController {
+internal final class SlideUpPresentationController: UIPresentationController {
 
     override func presentationTransitionWillBegin() {
         // Calculate the presented frame that doesn't cover the navigation bar.

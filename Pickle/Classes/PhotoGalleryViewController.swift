@@ -19,7 +19,7 @@ internal protocol PhotoGalleryViewControllerDelegate: class {
 }
 
 
-internal class PhotoGalleryViewController: UIViewController,
+internal final class PhotoGalleryViewController: UIViewController,
     UICollectionViewDataSource,
     UICollectionViewDelegate,
     PHPhotoLibraryChangeObserver {

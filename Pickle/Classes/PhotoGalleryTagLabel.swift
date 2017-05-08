@@ -10,7 +10,7 @@
 
 import UIKit
 
-internal class PhotoGalleryTagLabel: UILabel {
+internal final class PhotoGalleryTagLabel: UILabel {
 
     private struct Configuration {
         let font: UIFont

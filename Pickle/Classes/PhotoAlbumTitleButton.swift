@@ -10,7 +10,7 @@
 
 import UIKit
 
-internal class PhotoAlbumTitleButton: UIControl {
+internal final class PhotoAlbumTitleButton: UIControl {
 
     private struct Configuration {
         let font: UIFont?

@@ -10,7 +10,7 @@
 
 import UIKit
 
-internal class SlideUpPresentation: NSObject, UIViewControllerTransitioningDelegate {
+internal final class SlideUpPresentation: NSObject, UIViewControllerTransitioningDelegate {
 
     internal static let animationDuration = 0.3
 

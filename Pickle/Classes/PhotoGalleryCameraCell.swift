@@ -10,7 +10,7 @@
 
 import UIKit
 
-internal class PhotoGalleryCameraCell: UICollectionViewCell {
+internal final class PhotoGalleryCameraCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

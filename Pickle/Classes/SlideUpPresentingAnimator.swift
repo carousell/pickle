@@ -10,7 +10,7 @@
 
 import UIKit
 
-internal class SlideUpPresentingAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+internal final class SlideUpPresentingAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
     // MARK: - UIViewControllerAnimatedTransitioning
 

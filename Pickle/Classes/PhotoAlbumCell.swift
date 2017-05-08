@@ -11,7 +11,7 @@
 import UIKit
 import Photos
 
-internal class PhotoAlbumCell: UITableViewCell {
+internal final class PhotoAlbumCell: UITableViewCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
