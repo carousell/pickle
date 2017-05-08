@@ -1,11 +1,11 @@
 //
-//  This source file is part of the Carousell/Pickle open source project
+//  This source file is part of the carousell/pickle open source project
 //
 //  Copyright © 2017 Carousell and the project authors
 //  Licensed under Apache License v2.0
 //
-//  See https://github.com/Carousell/Pickle/blob/master/LICENSE for license information
-//  See https://github.com/Carousell/Pickle/graphs/contributors for the list of project authors
+//  See https://github.com/carousell/pickle/blob/master/LICENSE for license information
+//  See https://github.com/carousell/pickle/graphs/contributors for the list of project authors
 //
 
 import UIKit
@@ -19,6 +19,7 @@ final class ViewController: UIViewController,
 
     private enum Section: Int {
         case `default`
+        case customized
 
         static var count: Int {
             var count = 0
@@ -28,7 +29,8 @@ final class ViewController: UIViewController,
 
         var title: String {
             switch self {
-            case .default: return "Default appearance"
+            case .default:      return "Default appearance"
+            case .customized:   return "Customized appearance"
             }
         }
     }
@@ -77,14 +79,15 @@ final class ViewController: UIViewController,
     // MARK: - UITableViewDelegate
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let picker: ImagePickerController
         switch Section(rawValue: indexPath.section) {
-        case .some(.default):
-            let picker = ImagePickerController()
-            picker.delegate = self
-            present(picker, animated: true, completion: nil)
+        case .some(.customized):
+            picker = CarousellImagePickerController()
         default:
-            break
+            picker = ImagePickerController()
         }
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
     }
 
     // MARK: - ImagePickerControllerDelegate

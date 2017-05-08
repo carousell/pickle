@@ -13,7 +13,7 @@ import Photos
 
 // swiftlint:disable file_length
 @objc
-public class ImagePickerController: UINavigationController {
+open class ImagePickerController: UINavigationController {
 
     // MARK: - Initialization
 
@@ -87,14 +87,14 @@ public class ImagePickerController: UINavigationController {
     // MARK: - Properties
 
     /// The image picker's delegate object, which should conform to ImagePickerControllerDelegate.
-    public override weak var delegate: UINavigationControllerDelegate? {
+    open override weak var delegate: UINavigationControllerDelegate? {
         didSet {
             imagePickerDelegate = delegate as? ImagePickerControllerDelegate
         }
     }
 
     /// A localized string that shows on the navigation bar.
-    public override var title: String? {
+    open override var title: String? {
         didSet {
             albumButton.title = title
         }
@@ -183,14 +183,14 @@ public class ImagePickerController: UINavigationController {
 
     // MARK: - UIViewController
 
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         configure(with: configuration)
         setViewControllers([emptyViewController], animated: false)
         handle(photoLibraryPermission: PHPhotoLibrary.authorizationStatus())
     }
 
-    public override func viewWillAppear(_ animated: Bool) {
+    open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         showPermissionErrorIfNeeded?()
     }
