@@ -22,6 +22,7 @@ TODO: Add long description of the pod here.
   s.social_media_url = 'https://twitter.com/thecarousell'
 
   s.ios.deployment_target = '8.0'
+  s.ios.framework    = 'Photos'
   s.source_files     = 'Pickle/Classes/**/*'
   s.resources        = 'Pickle/Assets/**/*'
 end

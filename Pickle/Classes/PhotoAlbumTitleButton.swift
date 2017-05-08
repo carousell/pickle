@@ -83,7 +83,8 @@ internal class PhotoAlbumTitleButton: UIControl {
 
     private lazy var arrowIcon: UIImageView = {
         let icon = UIImageView()
-        icon.image = UIImage(named: "image-picker-down-arrow")?.withRenderingMode(.alwaysTemplate)
+        let image = UIImage(named: "image-picker-down-arrow", in: Bundle(for: type(of: self)), compatibleWith: nil)
+        icon.image = image?.withRenderingMode(.alwaysTemplate)
         icon.tintColor = self.configuration.tintColor
         icon.clipsToBounds = true
         icon.contentMode = .scaleAspectFill

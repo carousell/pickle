@@ -72,9 +72,9 @@ internal class PhotoGalleryViewController: UIViewController,
 
     private let album: PHAssetCollection
     private let configuration: ImagePickerConfigurable?
-    private lazy var isCameraCompatible: Bool = self.album.isCameraCompatible
+    private(set) lazy var isCameraCompatible: Bool = self.album.isCameraCompatible
 
-    private lazy var fetchResult: PHFetchResult<PHAsset> = {
+    private(set) lazy var fetchResult: PHFetchResult<PHAsset> = {
         let options = PHFetchOptions()
         options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         options.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
@@ -83,7 +83,7 @@ internal class PhotoGalleryViewController: UIViewController,
 
     private lazy var hintLabel: UILabel = PhotoGalleryHintLabel()
 
-    private lazy var collectionView: UICollectionView = {
+    private(set) lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: photoGalleryLayout)
         collectionView.dataSource = self
         collectionView.delegate = self
