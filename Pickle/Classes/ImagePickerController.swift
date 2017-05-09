@@ -264,7 +264,7 @@ extension ImagePickerController: PhotoGalleryViewControllerDelegate {
     }
 
     internal func photoGalleryViewController(_ controller: PhotoGalleryViewController, shouldTogglePhoto asset: PHAsset) -> Bool {
-        if let _ = selectedAssets.index(of: asset) {
+        if selectedAssets.index(of: asset) != nil {
             return true
         }
 
