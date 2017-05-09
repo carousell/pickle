@@ -72,9 +72,9 @@ internal final class PhotoGalleryViewController: UIViewController,
 
     private let album: PHAssetCollection
     private let configuration: ImagePickerConfigurable?
-    private(set) lazy var isCameraCompatible: Bool = self.album.isCameraCompatible
+    internal private(set) lazy var isCameraCompatible: Bool = self.album.isCameraCompatible
 
-    private(set) lazy var fetchResult: PHFetchResult<PHAsset> = {
+    internal private(set) lazy var fetchResult: PHFetchResult<PHAsset> = {
         let options = PHFetchOptions()
         options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         options.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
@@ -83,7 +83,7 @@ internal final class PhotoGalleryViewController: UIViewController,
 
     private lazy var hintLabel: UILabel = PhotoGalleryHintLabel()
 
-    private(set) lazy var collectionView: UICollectionView = {
+    internal private(set) lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: photoGalleryLayout)
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -110,6 +110,12 @@ internal final class PhotoGalleryViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSubviews()
+
+        if #available(iOS 9.0, *) {
+            if traitCollection.forceTouchCapability == .available {
+                registerForPreviewing(with: self, sourceView: collectionView)
+            }
+        }
     }
 
     // MARK: - UICollectionViewDataSource
