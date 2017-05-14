@@ -20,6 +20,7 @@ xcuserdata/
 ## Other
 *.moved-aside
 *.xcuserstate
+*.bak
 docs
 
 ## Obj-C/Swift specific
