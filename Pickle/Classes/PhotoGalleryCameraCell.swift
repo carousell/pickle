@@ -10,7 +10,7 @@
 
 import UIKit
 
-internal class PhotoGalleryCameraCell: UICollectionViewCell {
+internal final class PhotoGalleryCameraCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,11 +22,14 @@ internal class PhotoGalleryCameraCell: UICollectionViewCell {
         setUpSubviews()
     }
 
-    private let imageView = UIImageView(image: #imageLiteral(resourceName: "image-picker-camera"))
+    private lazy var imageView: UIImageView = {
+        let camera = UIImage(named: "image-picker-camera", in: Bundle(for: type(of: self)), compatibleWith: nil)
+        return UIImageView(image: camera)
+    }()
 
     private lazy var textLabel: UILabel = {
         let label = UILabel()
-        label.text = NSLocalizedString("imagePicker.button.camera", comment: "").uppercased()
+        label.text = Bundle(for: type(of: self)).localizedString(forKey: "imagePicker.button.camera", value: "", table: nil).uppercased()
         label.font = UIFont.forCameraButton
         label.textColor = UIColor.Palette.gray
         return label

@@ -11,7 +11,7 @@
 import UIKit
 import Photos
 
-internal class PhotoGalleryCell: UICollectionViewCell {
+internal final class PhotoGalleryCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

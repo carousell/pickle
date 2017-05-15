@@ -16,7 +16,7 @@ internal protocol PhotoAlbumsViewControllerDelegate: class {
 }
 
 
-internal class PhotoAlbumsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+internal final class PhotoAlbumsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     internal init(source: [PHFetchResult<PHAssetCollection>], configuration: ImagePickerConfigurable? = nil) {
         self.source = source

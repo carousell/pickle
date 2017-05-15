@@ -10,7 +10,7 @@
 
 import UIKit
 
-internal class PhotoGalleryHintLabel: UILabel {
+internal final class PhotoGalleryHintLabel: UILabel {
 
     // MARK: - Initialization
 

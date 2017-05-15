@@ -10,7 +10,7 @@
 
 import UIKit
 
-internal class SlideDownDismissingAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+internal final class SlideDownDismissingAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
     // MARK: - UIViewControllerAnimatedTransitioning
 

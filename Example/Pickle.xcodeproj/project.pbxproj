@@ -14,6 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		B55833221EC08E180061E182 /* CarousellImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55833211EC08E180061E182 /* CarousellImagePickerController.swift */; };
 		D1AB73403C154FF00584F289 /* Pods_Pickle_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A060C06F49AB0DADD1014552 /* Pods_Pickle_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		91CD6D6AD88D7F63F628A643 /* Pods-Pickle_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pickle_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pickle_Example/Pods-Pickle_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A060C06F49AB0DADD1014552 /* Pods_Pickle_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pickle_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B55833211EC08E180061E182 /* CarousellImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarousellImagePickerController.swift; sourceTree = "<group>"; };
 		DEB3558E8B280FD2A975E279 /* Pods_Pickle_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pickle_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB369367A28DB37094A6C48D /* Pods-Pickle_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pickle_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pickle_Tests/Pods-Pickle_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +110,7 @@
 			children = (
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				B55833211EC08E180061E182 /* CarousellImagePickerController.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -168,8 +171,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Pickle_Example" */;
 			buildPhases = (
-				B55833231EC1903B0061E182 /* SwiftLint */,
 				5E72E32C4849BB7F3638C996 /* [CP] Check Pods Manifest.lock */,
+				B55833231EC1903B0061E182 /* SwiftLint */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
@@ -379,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				B55833221EC08E180061E182 /* CarousellImagePickerController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +517,7 @@
 			baseConfigurationReference = 34B7C04ABFBC311E91833655 /* Pods-Pickle_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Pickle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -528,6 +533,7 @@
 			baseConfigurationReference = 91CD6D6AD88D7F63F628A643 /* Pods-Pickle_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Pickle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -542,6 +548,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 546CE9A86CC24E7F69BFB22B /* Pods-Pickle_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -559,6 +566,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EB369367A28DB37094A6C48D /* Pods-Pickle_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
