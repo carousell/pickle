@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ImagePickerControllerDelegate Protocol Reference</title>
+<link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+<link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+<meta charset="utf-8">
+<script src="../js/jquery.min.js" defer></script>
+<script src="../js/jazzy.js" defer></script>
+
+<script src="../js/lunr.min.js" defer></script>
+<script src="../js/typeahead.jquery.js" defer></script>
+<script src="../js/jazzy.search.js" defer></script>
+</head>
+<body>
+
+<a name="//apple_ref/swift/Protocol/ImagePickerControllerDelegate" class="dashAnchor"></a>
+
+<a title="ImagePickerControllerDelegate Protocol Reference"></a>
+
+<header class="header">
+<p class="header-col header-col--primary">
+<a class="header-link" href="../index.html">
+Pickle Docs
+</a>
+(80% documented)
+</p>
+
+<p class="header-col--secondary">
+<form role="search" action="../search.json">
+<input type="text" placeholder="Search documentation" data-typeahead>
+</form>
+</p>
+
+<p class="header-col header-col--secondary">
+<a class="header-link" href="https://github.com/carousell/pickle">
+<img class="header-icon" src="../img/gh.png"/>
+View on GitHub
+</a>
+</p>
+
+</header>
+
+<p class="breadcrumbs">
+<a class="breadcrumb" href="../index.html">Pickle Reference</a>
+<img class="carat" src="../img/carat.png" />
+ImagePickerControllerDelegate Protocol Reference
+</p>
+
+<div class="content-wrapper">
+<nav class="navigation">
+<ul class="nav-groups">
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="../Classes.html">Classes</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Classes/ImagePickerController.html">ImagePickerController</a>
+</li>
+</ul>
+</li>
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="../Enums.html">Enums</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Enums/ImagePickerSelection.html">ImagePickerSelection</a>
+</li>
+</ul>
+</li>
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Protocols/CameraCompatible.html">CameraCompatible</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Protocols/ImagePickerConfigurable.html">ImagePickerConfigurable</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="../Protocols/ImagePickerControllerDelegate.html">ImagePickerControllerDelegate</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<article class="main-content">
+
+<section class="section">
+<div class="section-content">
+<h1>ImagePickerControllerDelegate</h1>
+<div class="declaration">
+<div class="language">
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ImagePickerControllerDelegate</span><span class="p">:</span> <span class="kt">UINavigationControllerDelegate</span></code></pre>
+
+</div>
+</div>
+<p>The ImagePickerControllerDelegate protocol defines methods that interact with the image picker interface.
+The delegate is responsible for dismissing the picker when the operation completes.</p>
+
+</div>
+</section>
+
+<section class="section">
+<div class="section-content">
+<div class="task-group">
+<ul class="item-container">
+<li class="item">
+<div>
+<code>
+<a name="/s:FP6Pickle29ImagePickerControllerDelegate21imagePickerControllerFTCS_21ImagePickerController35shouldLaunchCameraWithAuthorizationOSC21AVAuthorizationStatus_Sb"></a>
+<a name="//apple_ref/swift/Method/imagePickerController(_:shouldLaunchCameraWithAuthorization:)" class="dashAnchor"></a>
+<a class="token" href="#/s:FP6Pickle29ImagePickerControllerDelegate21imagePickerControllerFTCS_21ImagePickerController35shouldLaunchCameraWithAuthorizationOSC21AVAuthorizationStatus_Sb">imagePickerController(_:shouldLaunchCameraWithAuthorization:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Asks the delegate if the image picker should launch camera with certain permission status.</p>
+
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt"><a href="../Classes/ImagePickerController.html">ImagePickerController</a></span><span class="p">,</span> <span class="n">shouldLaunchCameraWithAuthorization</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">AVAuthorizationStatus</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+</div>
+</div>
+<div class="slightly-smaller">
+<a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerControllerDelegate.swift#L20">Show on GitHub</a>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FP6Pickle29ImagePickerControllerDelegate21imagePickerControllerFTCS_21ImagePickerController27didFinishPickingImageAssetsGSaCSo7PHAsset__T_"></a>
+<a name="//apple_ref/swift/Method/imagePickerController(_:didFinishPickingImageAssets:)" class="dashAnchor"></a>
+<a class="token" href="#/s:FP6Pickle29ImagePickerControllerDelegate21imagePickerControllerFTCS_21ImagePickerController27didFinishPickingImageAssetsGSaCSo7PHAsset__T_">imagePickerController(_:didFinishPickingImageAssets:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Tells the delegate that the user picked image assets.</p>
+
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt"><a href="../Classes/ImagePickerController.html">ImagePickerController</a></span><span class="p">,</span> <span class="n">didFinishPickingImageAssets</span> <span class="nv">assets</span><span class="p">:</span> <span class="p">[</span><span class="kt">PHAsset</span><span class="p">])</span></code></pre>
+
+</div>
+</div>
+<div class="slightly-smaller">
+<a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerControllerDelegate.swift#L23">Show on GitHub</a>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FP6Pickle29ImagePickerControllerDelegate30imagePickerControllerDidCancelFCS_21ImagePickerControllerT_"></a>
+<a name="//apple_ref/swift/Method/imagePickerControllerDidCancel(_:)" class="dashAnchor"></a>
+<a class="token" href="#/s:FP6Pickle29ImagePickerControllerDelegate30imagePickerControllerDidCancelFCS_21ImagePickerControllerT_">imagePickerControllerDidCancel(_:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Tells the delegate that the user cancelled the pick operation.</p>
+
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">func</span> <span class="nf">imagePickerControllerDidCancel</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt"><a href="../Classes/ImagePickerController.html">ImagePickerController</a></span><span class="p">)</span></code></pre>
+
+</div>
+</div>
+<div class="slightly-smaller">
+<a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerControllerDelegate.swift#L26">Show on GitHub</a>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FP6Pickle29ImagePickerControllerDelegate35photoAlbumsForImagePickerControllerFCS_21ImagePickerControllerGSaGCSo13PHFetchResultCSo17PHAssetCollection__"></a>
+<a name="//apple_ref/swift/Method/photoAlbumsForImagePickerController(_:)" class="dashAnchor"></a>
+<a class="token" href="#/s:FP6Pickle29ImagePickerControllerDelegate35photoAlbumsForImagePickerControllerFCS_21ImagePickerControllerGSaGCSo13PHFetchResultCSo17PHAssetCollection__">photoAlbumsForImagePickerController(_:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Optional. Asks the delegate for the photo album list to display. The image picker shows the camera roll and non-smart albums if not implemented.</p>
+
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">photoAlbumsForImagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt"><a href="../Classes/ImagePickerController.html">ImagePickerController</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">PHFetchResult</span><span class="o">&lt;</span><span class="kt">PHAssetCollection</span><span class="o">&gt;</span><span class="p">]</span></code></pre>
+
+</div>
+</div>
+<div class="slightly-smaller">
+<a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerControllerDelegate.swift#L29">Show on GitHub</a>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FP6Pickle29ImagePickerControllerDelegate21imagePickerControllerFTCS_21ImagePickerController54transitioningDelegateForPresentingAlbumsViewControllerCSo16UIViewController_PSo37UIViewControllerTransitioningDelegate_"></a>
+<a name="//apple_ref/swift/Method/imagePickerController(_:transitioningDelegateForPresentingAlbumsViewController:)" class="dashAnchor"></a>
+<a class="token" href="#/s:FP6Pickle29ImagePickerControllerDelegate21imagePickerControllerFTCS_21ImagePickerController54transitioningDelegateForPresentingAlbumsViewControllerCSo16UIViewController_PSo37UIViewControllerTransitioningDelegate_">imagePickerController(_:transitioningDelegateForPresentingAlbumsViewController:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Optional. Asks the delegate for the transitioning delegate for presenting the album list. The default transition is used if not implemented.</p>
+
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt"><a href="../Classes/ImagePickerController.html">ImagePickerController</a></span><span class="p">,</span> <span class="n">transitioningDelegateForPresentingAlbumsViewController</span> <span class="nv">controller</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIViewControllerTransitioningDelegate</span></code></pre>
+
+</div>
+</div>
+<div class="slightly-smaller">
+<a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerControllerDelegate.swift#L32">Show on GitHub</a>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FP6Pickle29ImagePickerControllerDelegate21imagePickerControllerFTCS_21ImagePickerController19didSelectImageAssetCSo7PHAsset_T_"></a>
+<a name="//apple_ref/swift/Method/imagePickerController(_:didSelectImageAsset:)" class="dashAnchor"></a>
+<a class="token" href="#/s:FP6Pickle29ImagePickerControllerDelegate21imagePickerControllerFTCS_21ImagePickerController19didSelectImageAssetCSo7PHAsset_T_">imagePickerController(_:didSelectImageAsset:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Optional. Tells the delegate that the user seleced an image asset.</p>
+
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt"><a href="../Classes/ImagePickerController.html">ImagePickerController</a></span><span class="p">,</span> <span class="n">didSelectImageAsset</span> <span class="nv">asset</span><span class="p">:</span> <span class="kt">PHAsset</span><span class="p">)</span></code></pre>
+
+</div>
+</div>
+<div class="slightly-smaller">
+<a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerControllerDelegate.swift#L35">Show on GitHub</a>
+</div>
+</section>
+</div>
+</li>
+<li class="item">
+<div>
+<code>
+<a name="/s:FP6Pickle29ImagePickerControllerDelegate21imagePickerControllerFTCS_21ImagePickerController21didUnselectImageAssetCSo7PHAsset_T_"></a>
+<a name="//apple_ref/swift/Method/imagePickerController(_:didUnselectImageAsset:)" class="dashAnchor"></a>
+<a class="token" href="#/s:FP6Pickle29ImagePickerControllerDelegate21imagePickerControllerFTCS_21ImagePickerController21didUnselectImageAssetCSo7PHAsset_T_">imagePickerController(_:didUnselectImageAsset:)</a>
+</code>
+</div>
+<div class="height-container">
+<div class="pointer-container"></div>
+<section class="section">
+<div class="pointer"></div>
+<div class="abstract">
+<p>Optional. Tells the delegate that the user unseleced an image asset.</p>
+
+</div>
+<div class="declaration">
+<h4>Declaration</h4>
+<div class="language">
+<p class="aside-title">Swift</p>
+<pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt"><a href="../Classes/ImagePickerController.html">ImagePickerController</a></span><span class="p">,</span> <span class="n">didUnselectImageAsset</span> <span class="nv">asset</span><span class="p">:</span> <span class="kt">PHAsset</span><span class="p">)</span></code></pre>
+
+</div>
+</div>
+<div class="slightly-smaller">
+<a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerControllerDelegate.swift#L38">Show on GitHub</a>
+</div>
+</section>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+
+</article>
+</div>
+<section class="footer">
+<p>&copy; 2017 <a class="link" href="https://github.com/carousell" target="_blank" rel="external">carousell</a>. All rights reserved. (Last updated: 2017-05-15)</p>
+<p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+</section>
+</body>
+</div>
+</html>

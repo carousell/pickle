@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Pickle  Reference</title>
+<link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+<link rel="stylesheet" type="text/css" href="css/highlight.css" />
+<meta charset="utf-8">
+<script src="js/jquery.min.js" defer></script>
+<script src="js/jazzy.js" defer></script>
+
+<script src="js/lunr.min.js" defer></script>
+<script src="js/typeahead.jquery.js" defer></script>
+<script src="js/jazzy.search.js" defer></script>
+</head>
+<body>
+
+
+<a title="Pickle  Reference"></a>
+
+<header class="header">
+<p class="header-col header-col--primary">
+<a class="header-link" href="index.html">
+Pickle Docs
+</a>
+(80% documented)
+</p>
+
+<p class="header-col--secondary">
+<form role="search" action="search.json">
+<input type="text" placeholder="Search documentation" data-typeahead>
+</form>
+</p>
+
+<p class="header-col header-col--secondary">
+<a class="header-link" href="https://github.com/carousell/pickle">
+<img class="header-icon" src="img/gh.png"/>
+View on GitHub
+</a>
+</p>
+
+</header>
+
+<p class="breadcrumbs">
+<a class="breadcrumb" href="index.html">Pickle Reference</a>
+<img class="carat" src="img/carat.png" />
+Pickle  Reference
+</p>
+
+<div class="content-wrapper">
+<nav class="navigation">
+<ul class="nav-groups">
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="Classes.html">Classes</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="Classes/ImagePickerController.html">ImagePickerController</a>
+</li>
+</ul>
+</li>
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="Enums.html">Enums</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="Enums/ImagePickerSelection.html">ImagePickerSelection</a>
+</li>
+</ul>
+</li>
+<li class="nav-group-name">
+<a class="nav-group-name-link" href="Protocols.html">Protocols</a>
+<ul class="nav-group-tasks">
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="Protocols/CameraCompatible.html">CameraCompatible</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="Protocols/ImagePickerConfigurable.html">ImagePickerConfigurable</a>
+</li>
+<li class="nav-group-task">
+<a class="nav-group-task-link" href="Protocols/ImagePickerControllerDelegate.html">ImagePickerControllerDelegate</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<article class="main-content">
+
+<section class="section">
+<div class="section-content">
+
+<h1 id='pickle' class='heading'>Pickle</h1>
+
+<p><a href="https://travis-ci.org/carousell/pickle"><img src="https://travis-ci.org/carousell/pickle.svg" alt="Build Status"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a>
+<a href="https://cocoapods.org/pods/Pickle"><img src="https://img.shields.io/cocoapods/v/Pickle.svg" alt="CocoaPods Compatible"></a>
+<img src="https://img.shields.io/cocoapods/p/Pickle.svg" alt="Platform">
+<a href="https://carousell.github.io/pickle"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/Pickle.svg" alt="CocoaDocs"></a>
+<img src="https://img.shields.io/badge/Swift-3.1-orange.svg" alt="Swift 3.1"></p>
+
+<p>Carousell image picker.</p>
+
+<ul>
+<li>Multiple image selections</li>
+<li>Customizable theme</li>
+</ul>
+
+<p><img src="https://carousell.github.io/pickle/img/screenshot.png" width="50%"></img></p>
+<h2 id='usage' class='heading'>Usage</h2>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Pickle</span>
+</code></pre>
+
+<p>The usage is similiar to <code>UIImagePickerController</code>:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">picker</span> <span class="o">=</span> <span class="kt">ImagePickerController</span><span class="p">()</span>
+<span class="n">picker</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span> <span class="k">as?</span> <span class="kt">ImagePickerControllerDelegate</span>
+<span class="nf">present</span><span class="p">(</span><span class="n">picker</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+</code></pre>
+
+<p>Display preselected images:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">assets</span><span class="p">:</span> <span class="p">[</span><span class="kt">PHAsset</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">let</span> <span class="nv">picker</span> <span class="o">=</span> <span class="kt">ImagePickerController</span><span class="p">(</span><span class="nv">selectedAssets</span><span class="p">:</span> <span class="n">assets</span><span class="p">)</span>
+</code></pre>
+
+<p><code>ImagePickerController</code> will request permission to access <strong>Photos</strong> if needed when it&rsquo;s presented.</p>
+<h3 id='delegate' class='heading'>Delegate</h3>
+
+<p><code>ImagePickerControllerDelegate</code> is responsible for dismissing the image picker. Required delegate methods:</p>
+<pre class="highlight swift"><code><span class="c1">/// Asks the delegate if the image picker should launch camera with certain permission status.</span>
+<span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt">ImagePickerController</span><span class="p">,</span> <span class="n">shouldLaunchCameraWithAuthorization</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">AVAuthorizationStatus</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
+
+<span class="c1">/// Tells the delegate that the user picked image assets. The delegate is responsible for dismissing the image picker.</span>
+<span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt">ImagePickerController</span><span class="p">,</span> <span class="n">didFinishPickingImageAssets</span> <span class="nv">assets</span><span class="p">:</span> <span class="p">[</span><span class="kt">PHAsset</span><span class="p">])</span>
+
+<span class="c1">/// Tells the delegate that the user cancelled the pick operation. The delegate is responsible for dismissing the image picker.</span>
+<span class="kd">func</span> <span class="nf">imagePickerControllerDidCancel</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt">ImagePickerController</span><span class="p">)</span>
+</code></pre>
+<h2 id='customization' class='heading'>Customization</h2>
+<h3 id='appearance' class='heading'>Appearance</h3>
+
+<p>Customize the appearance with a type that conforms to <code>ImagePickerConfigurable</code>.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">configuration</span><span class="p">:</span> <span class="kt">ImagePickerConfigurable</span> <span class="o">=</span> <span class="kt">CustomizedType</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">picker</span> <span class="o">=</span> <span class="kt">ImagePickerController</span><span class="p">(</span><span class="nv">configuration</span><span class="p">:</span> <span class="n">configuration</span><span class="p">)</span>
+</code></pre>
+
+<p>See <a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerConfigurable.swift">ImagePickerConfigurable.swift</a> for a full list of configurable properties.</p>
+<h3 id='camera' class='heading'>Camera</h3>
+
+<p><code>UIImagePickerController</code> with <code>sourceType = .camera</code> is used as the default camera on devices. Launch a customized camera from the image gallery by providing a <a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/CameraCompatible.swift"><code>CameraCompatible</code></a> type or a closure that returns a configured camera controller instance.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">picker</span> <span class="o">=</span> <span class="kt">ImagePickerController</span><span class="p">(</span>
+<span class="nv">selectedAssets</span><span class="p">:</span> <span class="p">[],</span>
+<span class="nv">configuration</span><span class="p">:</span> <span class="kt">CustomizedType</span><span class="p">(),</span>
+<span class="nv">cameraType</span><span class="p">:</span> <span class="kt">UIImagePickerController</span><span class="o">.</span><span class="k">self</span>
+<span class="p">)</span>
+</code></pre>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">initializer</span> <span class="o">=</span> <span class="p">{</span>
+<span class="k">return</span> <span class="kt">UIImagePickerController</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">picker</span> <span class="o">=</span> <span class="kt">ImagePickerController</span><span class="p">(</span>
+<span class="nv">selectedAssets</span><span class="p">:</span> <span class="p">[],</span>
+<span class="nv">configuration</span><span class="p">:</span> <span class="kt">CustomizedType</span><span class="p">(),</span>
+<span class="nv">camera</span><span class="p">:</span> <span class="n">initializer</span>
+<span class="p">)</span>
+</code></pre>
+<h2 id='requirements' class='heading'>Requirements</h2>
+
+<table><thead>
+<tr>
+<th>Pickle</th>
+<th style="text-align: center">iOS</th>
+<th style="text-align: center">Xcode</th>
+<th style="text-align: center">Swift</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>~&gt; 1.0.0</code></td>
+<td style="text-align: center">8.0+</td>
+<td style="text-align: center">8.3.2</td>
+<td style="text-align: center"><img src="https://img.shields.io/badge/Swift-3.1-orange.svg" alt="Swift 3.1"></td>
+</tr>
+</tbody></table>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='use-a-href-http-guides-cocoapods-org-cocoapods-a' class='heading'>Use <a href="http://guides.cocoapods.org/">CocoaPods</a></h3>
+
+<p>Create a <code>Podfile</code> with the following specification and run <code>pod install</code>.</p>
+<pre class="highlight ruby"><code><span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'8.0'</span>
+<span class="n">use_frameworks!</span>
+
+<span class="n">pod</span> <span class="s1">'Pickle'</span><span class="p">,</span> <span class="s1">'~&gt; 1.0.0'</span>
+</code></pre>
+<h3 id='use-a-href-https-github-com-carthage-carthage-carthage-a' class='heading'>Use <a href="https://github.com/Carthage/Carthage">Carthage</a></h3>
+
+<p>Create a <code>Cartfile</code> with the following specification and run <code>carthage bootstrap</code>.
+Follow the <a href="https://github.com/Carthage/Carthage#adding-frameworks-to-an-application">instructions</a> to add the framework to your project.</p>
+<pre class="highlight plaintext"><code>github "carousell/pickle" ~&gt; 1.0.0
+</code></pre>
+<h2 id='development' class='heading'>Development</h2>
+
+<p>Install <a href="https://guides.cocoapods.org/using/getting-started.html#installation">CocoaPods</a>:</p>
+<pre class="highlight plaintext"><code>gem install cocoapods
+</code></pre>
+
+<p>Set up the development pods:</p>
+<pre class="highlight shell"><code>pod install --project-directory<span class="o">=</span>Example <span class="o">&amp;&amp;</span> open Example/Pickle.xcworkspace
+</code></pre>
+<h2 id='contact' class='heading'>Contact</h2>
+
+<p><a href="http://contact.carousell.com/">http://contact.carousell.com/</a></p>
+<h2 id='license' class='heading'>License</h2>
+
+<p><strong>Pickle</strong> is released under Apache License 2.0.
+See <a href="https://github.com/carousell/pickle/blob/master/LICENSE">LICENSE</a> for more details.</p>
+
+</div>
+</section>
+
+
+</article>
+</div>
+<section class="footer">
+<p>&copy; 2017 <a class="link" href="https://github.com/carousell" target="_blank" rel="external">carousell</a>. All rights reserved. (Last updated: 2017-05-15)</p>
+<p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+</section>
+</body>
+</div>
+</html>
