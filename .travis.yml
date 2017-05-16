@@ -1,5 +1,15 @@
 language: objective-c
 osx_image: xcode8.3
+podfile: Example/Podfile
+cache:
+  bundler: true
+  cocoapods: true
+  directories:
+    - vendor/bundle
+    - Example/Pods/SwiftLint
+install:
+  - bundle install --jobs=3 --retry=3 --deployment
+  - bundle exec pod install --project-directory=Example
 script:
   - make -B build
   - make -B carthage
