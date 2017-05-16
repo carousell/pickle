@@ -52,10 +52,8 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        if let id = imageRequestID {
-            PHCachingImageManager.default().cancelImageRequest(id)
-            imageRequestID = nil
-        }
+        imageRequestID.map(PHCachingImageManager.default().cancelImageRequest)
+        imageRequestID = nil
         taggedText = nil
         imageView.image = nil
     }
