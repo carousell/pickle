@@ -1,19 +1,7 @@
-#
-# Be sure to run `pod lib lint Pickle.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'Pickle'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of Pickle.'
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
+  s.version          = '1.0.0'
+  s.summary          = 'Carousell flavoured image picker with multiple photo selections.'
   s.homepage         = 'https://github.com/carousell/pickle'
   s.license          = { :type => 'Apache License 2.0', :file => 'LICENSE' }
   s.authors          = { 'bcylin' => 'bcylin@gmail.com',

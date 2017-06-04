@@ -1,0 +1,10 @@
+clean: true
+author: Carousell
+author_url: https://github.com/carousell
+github_url: https://github.com/carousell/pickle
+github_file_prefix: https://github.com/carousell/pickle/blob/master
+xcodebuild_arguments: [-project, Example/Pods/Pods.xcodeproj, -scheme, Pickle]
+module: Pickle
+module_version: 1.0.0
+output: docs/output
+theme: fullwidth
