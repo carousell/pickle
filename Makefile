@@ -1,3 +1,6 @@
+build:
+	set -o pipefail && xcodebuild -workspace Example/Pickle.xcworkspace -scheme Pickle clean build | bundle exec xcpretty -c
+
 bump:
 ifeq (,$(strip $(version)))
 	# Usage: make bump version=<number>
