@@ -52,6 +52,9 @@ internal final class PhotoGalleryViewController: UIViewController,
         }
         set {
             hintLabel.attributedText = newValue
+            if let margin = configuration?.hintTextMargin {
+                hintLabel.textMargin = margin
+            }
             if let color = newValue?.attributes?[NSBackgroundColorAttributeName] as? UIColor {
                 hintLabel.backgroundColor = color
             }
@@ -81,7 +84,7 @@ internal final class PhotoGalleryViewController: UIViewController,
         return PHAsset.fetchAssets(in: self.album, options: options)
     }()
 
-    private lazy var hintLabel: UILabel = PhotoGalleryHintLabel()
+    private lazy var hintLabel: PhotoGalleryHintLabel = PhotoGalleryHintLabel()
 
     private var _emptyView: UIView?
 
