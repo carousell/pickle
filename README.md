@@ -9,10 +9,11 @@
 
 Carousell image picker.
 
-* Multiple image selections
+* Multiple image selections across albums
+* Picking photos in the desired order
 * Customizable theme
 
-<img src="https://carousell.github.io/pickle/img/screenshot.png" width="50%"></img>
+<img src="https://carousell.github.io/pickle/img/screenshot.png" width="50%" />
 
 ## Usage
 
@@ -131,9 +132,13 @@ Set up the development pods:
 pod install --project-directory=Example && open Example/Pickle.xcworkspace
 ```
 
-## Contact
+## About
 
-<http://contact.carousell.com/>
+<a href="https://github.com/carousell/" target="_blank"><img src="https://avatars2.githubusercontent.com/u/3833591" width="100px" alt="Carousell" align="right"/></a>
+
+**Pickle** is created and maintained by [Carousell](https://carousell.com/). Help us improve this project! We'd love to hear your [feedback](https://github.com/carousell/pickle/issues).
+
+We're hiring! Find out more at <http://careers.carousell.com/>
 
 ## License
 
