@@ -83,6 +83,20 @@ internal final class PhotoGalleryViewController: UIViewController,
 
     private lazy var hintLabel: UILabel = PhotoGalleryHintLabel()
 
+    private var _emptyView: UIView?
+
+    private var emptyView: UIView {
+        if let instantiated = _emptyView {
+            return instantiated
+        }
+
+        let emptyView = PhotoGalleryCameraIconView()
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(launchCamera(withTapGesture:)))
+        emptyView.addGestureRecognizer(tapRecognizer)
+        _emptyView = emptyView
+        return emptyView
+    }
+
     internal private(set) lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: photoGalleryLayout)
         collectionView.dataSource = self
@@ -110,6 +124,7 @@ internal final class PhotoGalleryViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpSubviews()
+        showEmptyViewIfNeeded()
 
         if #available(iOS 9.0, *) {
             if traitCollection.forceTouchCapability == .available {
@@ -198,6 +213,7 @@ internal final class PhotoGalleryViewController: UIViewController,
             }
             self.fetchResult = changeDetails.fetchResultAfterChanges
             self.collectionView.reloadData()
+            self.showEmptyViewIfNeeded()
         }
     }
 
@@ -233,6 +249,32 @@ internal final class PhotoGalleryViewController: UIViewController,
                 metrics: nil,
                 views: ["top": topLayoutGuide, "hint": hintLabel, "gallery": collectionView]
             ))
+        }
+    }
+
+    private func showEmptyViewIfNeeded() {
+        if collectionView.frame == .zero {
+            view.layoutIfNeeded()
+        }
+        if isCameraCompatible && fetchResult.count == 0 {
+            view.addSubview(emptyView)
+            emptyView.frame = collectionView.frame
+            emptyView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        } else {
+            _emptyView?.removeFromSuperview()
+        }
+    }
+
+    @objc private func launchCamera(withTapGesture recognizer: UITapGestureRecognizer) {
+        let location = recognizer.location(in: emptyView)
+        let centerRect = CGRect(
+            x: emptyView.bounds.midX - 75,
+            y: emptyView.bounds.midY - 75,
+            width: 150,
+            height: 150
+        )
+        if centerRect.contains(location) {
+            delegate?.photoGalleryViewControllerDidSelectCameraButton(self)
         }
     }
 
