@@ -253,10 +253,10 @@ internal final class PhotoGalleryViewController: UIViewController,
     }
 
     private func showEmptyViewIfNeeded() {
-        if collectionView.frame == .zero {
-            view.layoutIfNeeded()
-        }
         if isCameraCompatible && fetchResult.count == 0 {
+            if collectionView.frame == .zero {
+                view.layoutIfNeeded()
+            }
             view.addSubview(emptyView)
             emptyView.frame = collectionView.frame
             emptyView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
