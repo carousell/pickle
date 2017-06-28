@@ -22,57 +22,31 @@ internal final class PhotoGalleryCameraCell: UICollectionViewCell {
         setUpSubviews()
     }
 
-    private lazy var imageView: UIImageView = {
-        let camera = UIImage(named: "image-picker-camera", in: Bundle(for: type(of: self)), compatibleWith: nil)
-        return UIImageView(image: camera)
-    }()
-
-    private lazy var textLabel: UILabel = {
-        let label = UILabel()
-        label.text = Bundle(for: type(of: self)).localizedString(forKey: "imagePicker.button.camera", value: "", table: nil).uppercased()
-        label.font = UIFont.forCameraButton
-        label.textColor = UIColor.Palette.gray
-        return label
-    }()
+    private lazy var cameraIconView: UIView = PhotoGalleryCameraIconView()
 
     private func setUpSubviews() {
         contentView.backgroundColor = UIColor.white
-        contentView.addSubview(imageView)
-        contentView.addSubview(textLabel)
+        contentView.addSubview(cameraIconView)
 
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        cameraIconView.translatesAutoresizingMaskIntoConstraints = false
 
         if #available(iOS 9.0, *) {
-            imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-            imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -10).isActive = true
-
-            textLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-            textLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
+            cameraIconView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+            cameraIconView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+            cameraIconView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+            cameraIconView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         } else {
-            contentView.addConstraint(NSLayoutConstraint(
-                item: imageView,
-                attribute: .centerX,
-                relatedBy: .equal,
-                toItem: contentView,
-                attribute: .centerX,
-                multiplier: 1,
-                constant: 0
-            ))
-            contentView.addConstraint(NSLayoutConstraint(
-                item: imageView,
-                attribute: .centerY,
-                relatedBy: .equal,
-                toItem: contentView,
-                attribute: .centerY,
-                multiplier: 1,
-                constant: -10
+            contentView.addConstraints(NSLayoutConstraint.constraints(
+                withVisualFormat: "H:|[icon]|",
+                options: [],
+                metrics: nil,
+                views: ["icon": cameraIconView]
             ))
             contentView.addConstraints(NSLayoutConstraint.constraints(
-                withVisualFormat: "V:[image]-10-[text]",
-                options: [.alignAllCenterX],
+                withVisualFormat: "V:|[icon]|",
+                options: [],
                 metrics: nil,
-                views: ["image": imageView, "text": textLabel]
+                views: ["icon": cameraIconView]
             ))
         }
     }
