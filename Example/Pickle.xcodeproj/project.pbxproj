@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		237D0B6855627D74BC6FDAFC /* Pods_PickleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13BC727F2F60439037F4BA8F /* Pods_PickleUITests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		8FD2EEC48F6A5BB6EDDAED79 /* Pods_PickleExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D132C17E500800C6AFE5724 /* Pods_PickleExample.framework */; };
 		B55833221EC08E180061E182 /* CarousellImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55833211EC08E180061E182 /* CarousellImagePickerController.swift */; };
 		B563515E1F06278E00B5A46D /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B563515D1F06278E00B5A46D /* UITests.swift */; };
 		D1AB73403C154FF00584F289 /* Pods_Pickle_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A060C06F49AB0DADD1014552 /* Pods_Pickle_Example.framework */; };
@@ -27,10 +29,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C36B734B176F85A2CF4B8DA /* Pods-PickleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickleUITests/Pods-PickleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		13BC727F2F60439037F4BA8F /* Pods_PickleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D132C17E500800C6AFE5724 /* Pods_PickleExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickleExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2435781F76FD8B70261A205D /* Pickle.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Pickle.podspec; path = ../Pickle.podspec; sourceTree = "<group>"; };
 		28D5C2EBC98E8B494EC0F880 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		34B7C04ABFBC311E91833655 /* Pods-Pickle_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pickle_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pickle_Example/Pods-Pickle_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3A31AA09285B9EE90A8313A2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		3D2ED8722EB9E95C8C564511 /* Pods-PickleExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickleExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickleExample/Pods-PickleExample.release.xcconfig"; sourceTree = "<group>"; };
+		43CE0D44ECF2E7874B1A0DD9 /* Pods-PickleExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickleExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickleExample/Pods-PickleExample.debug.xcconfig"; sourceTree = "<group>"; };
 		546CE9A86CC24E7F69BFB22B /* Pods-Pickle_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pickle_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pickle_Tests/Pods-Pickle_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* PickleExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickleExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +51,7 @@
 		B563515B1F06278E00B5A46D /* PickleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B563515D1F06278E00B5A46D /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
 		B563515F1F06278E00B5A46D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D726662EC0F5B8C708399461 /* Pods-PickleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickleUITests/Pods-PickleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DEB3558E8B280FD2A975E279 /* Pods_Pickle_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pickle_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB369367A28DB37094A6C48D /* Pods-Pickle_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pickle_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pickle_Tests/Pods-Pickle_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1AB73403C154FF00584F289 /* Pods_Pickle_Example.framework in Frameworks */,
+				8FD2EEC48F6A5BB6EDDAED79 /* Pods_PickleExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				237D0B6855627D74BC6FDAFC /* Pods_PickleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +84,10 @@
 				91CD6D6AD88D7F63F628A643 /* Pods-Pickle_Example.release.xcconfig */,
 				546CE9A86CC24E7F69BFB22B /* Pods-Pickle_Tests.debug.xcconfig */,
 				EB369367A28DB37094A6C48D /* Pods-Pickle_Tests.release.xcconfig */,
+				43CE0D44ECF2E7874B1A0DD9 /* Pods-PickleExample.debug.xcconfig */,
+				3D2ED8722EB9E95C8C564511 /* Pods-PickleExample.release.xcconfig */,
+				0C36B734B176F85A2CF4B8DA /* Pods-PickleUITests.debug.xcconfig */,
+				D726662EC0F5B8C708399461 /* Pods-PickleUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -138,6 +152,8 @@
 			children = (
 				A060C06F49AB0DADD1014552 /* Pods_Pickle_Example.framework */,
 				DEB3558E8B280FD2A975E279 /* Pods_Pickle_Tests.framework */,
+				1D132C17E500800C6AFE5724 /* Pods_PickleExample.framework */,
+				13BC727F2F60439037F4BA8F /* Pods_PickleUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -179,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B56351641F06278E00B5A46D /* Build configuration list for PBXNativeTarget "PickleUITests" */;
 			buildPhases = (
+				A27D8487E7B02B4F1BBB4CFB /* [CP] Check Pods Manifest.lock */,
 				B56351571F06278E00B5A46D /* Sources */,
 				B56351581F06278E00B5A46D /* Frameworks */,
 				B56351591F06278E00B5A46D /* Resources */,
+				D58BD5D34861E4557F794100 /* [CP] Embed Pods Frameworks */,
+				6602408F2886C3A7E9355419 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,6 +287,36 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		6602408F2886C3A7E9355419 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PickleUITests/Pods-PickleUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A27D8487E7B02B4F1BBB4CFB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		AF94885251D96D308FF9F657 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,7 +329,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pickle_Example/Pods-Pickle_Example-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PickleExample/Pods-PickleExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B55833231EC1903B0061E182 /* SwiftLint */ = {
@@ -297,6 +346,21 @@
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint";
 		};
+		D58BD5D34861E4557F794100 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PickleUITests/Pods-PickleUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FACEF3710E5D4AC190E14F3C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -309,7 +373,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pickle_Example/Pods-Pickle_Example-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PickleExample/Pods-PickleExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -444,7 +508,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34B7C04ABFBC311E91833655 /* Pods-Pickle_Example.debug.xcconfig */;
+			baseConfigurationReference = 43CE0D44ECF2E7874B1A0DD9 /* Pods-PickleExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -460,7 +524,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91CD6D6AD88D7F63F628A643 /* Pods-Pickle_Example.release.xcconfig */;
+			baseConfigurationReference = 3D2ED8722EB9E95C8C564511 /* Pods-PickleExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -476,6 +540,7 @@
 		};
 		B56351621F06278E00B5A46D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C36B734B176F85A2CF4B8DA /* Pods-PickleUITests.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -495,6 +560,7 @@
 		};
 		B56351631F06278E00B5A46D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D726662EC0F5B8C708399461 /* Pods-PickleUITests.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
