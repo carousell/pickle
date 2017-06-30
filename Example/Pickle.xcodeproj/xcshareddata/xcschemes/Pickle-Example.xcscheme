@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "Pickle_Example.app"
-               BlueprintName = "Pickle_Example"
+               BuildableName = "PickleExample.app"
+               BlueprintName = "PickleExample"
                ReferencedContainer = "container:Pickle.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "Pickle_Tests.xctest"
-               BlueprintName = "Pickle_Tests"
+               BlueprintIdentifier = "B563515A1F06278E00B5A46D"
+               BuildableName = "PickleUITests.xctest"
+               BlueprintName = "PickleUITests"
                ReferencedContainer = "container:Pickle.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Pickle_Example.app"
-            BlueprintName = "Pickle_Example"
+            BuildableName = "PickleExample.app"
+            BlueprintName = "PickleExample"
             ReferencedContainer = "container:Pickle.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Pickle_Example.app"
-            BlueprintName = "Pickle_Example"
+            BuildableName = "PickleExample.app"
+            BlueprintName = "PickleExample"
             ReferencedContainer = "container:Pickle.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -99,8 +99,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Pickle_Example.app"
-            BlueprintName = "Pickle_Example"
+            BuildableName = "PickleExample.app"
+            BlueprintName = "PickleExample"
             ReferencedContainer = "container:Pickle.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

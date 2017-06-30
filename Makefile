@@ -4,6 +4,9 @@ bootstrap:
 build:
 	set -o pipefail && xcodebuild -workspace Example/Pickle.xcworkspace -scheme Pickle clean build | bundle exec xcpretty -c
 
+test:
+	set -o pipefail && xcodebuild -workspace Example/Pickle.xcworkspace -scheme Pickle-Example -sdk iphonesimulator -destination 'name=iPhone SE,OS=10.3.1' clean test | bundle exec xcpretty -c
+
 bump:
 ifeq (,$(strip $(version)))
 	# Usage: make bump version=<number>
