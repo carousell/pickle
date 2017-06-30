@@ -24,6 +24,10 @@ internal final class PhotoGalleryHintLabel: UILabel {
         setUpAppearance()
     }
 
+    // MARK: - Properties
+
+    internal var textMargin = UIEdgeInsets(top: 6, left: 0, bottom: 6, right: 0)
+
     // MARK: - UIView
 
     override var bounds: CGRect {
@@ -54,8 +58,7 @@ internal final class PhotoGalleryHintLabel: UILabel {
     // MARK: - Private
 
     private var contentEdgeInsets: UIEdgeInsets {
-        let padding: CGFloat = (text?.isEmpty ?? true) ? 0 : 6
-        return UIEdgeInsets(top: padding, left: 0, bottom: padding, right: 0)
+        return (text?.isEmpty ?? true) ? .zero : textMargin
     }
 
     private lazy var borderLayer: CALayer = {

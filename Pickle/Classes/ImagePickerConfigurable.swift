@@ -59,6 +59,11 @@ public protocol ImagePickerConfigurable {
 
     /// Specifies the number of photo selections is allowed in ImagePickerController.
     var allowedSelections: ImagePickerSelection? { get }
+
+    // MARK: -
+
+    /// The margin for the text of the hint label.
+    var hintTextMargin: UIEdgeInsets? { get }
 }
 
 

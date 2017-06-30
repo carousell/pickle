@@ -52,6 +52,9 @@ internal final class PhotoGalleryViewController: UIViewController,
         }
         set {
             hintLabel.attributedText = newValue
+            if let margin = configuration?.hintTextMargin {
+                hintLabel.textMargin = margin
+            }
             if let color = newValue?.attributes?[NSBackgroundColorAttributeName] as? UIColor {
                 hintLabel.backgroundColor = color
             }
@@ -81,7 +84,7 @@ internal final class PhotoGalleryViewController: UIViewController,
         return PHAsset.fetchAssets(in: self.album, options: options)
     }()
 
-    private lazy var hintLabel: UILabel = PhotoGalleryHintLabel()
+    private lazy var hintLabel: PhotoGalleryHintLabel = PhotoGalleryHintLabel()
 
     private var _emptyView: UIView?
 
@@ -98,7 +101,8 @@ internal final class PhotoGalleryViewController: UIViewController,
     }
 
     internal private(set) lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: photoGalleryLayout)
+        let layout = self.photoGalleryLayout(for: UIScreen.main.bounds.size)
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = UIColor.white
@@ -107,17 +111,6 @@ internal final class PhotoGalleryViewController: UIViewController,
         collectionView.allowsMultipleSelection = true
         return collectionView
     }()
-
-    private class var photoGalleryLayout: UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets.zero
-        layout.minimumInteritemSpacing = 1
-        layout.minimumLineSpacing = 1
-        let itemWidth = (UIScreen.main.bounds.width - layout.minimumInteritemSpacing * 2) / 3
-        layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
-        return layout
-    }
 
     // MARK: - UIViewController
 
@@ -131,6 +124,10 @@ internal final class PhotoGalleryViewController: UIViewController,
                 registerForPreviewing(with: self, sourceView: collectionView)
             }
         }
+    }
+
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView.collectionViewLayout = photoGalleryLayout(for: size)
     }
 
     // MARK: - UICollectionViewDataSource
@@ -218,6 +215,19 @@ internal final class PhotoGalleryViewController: UIViewController,
     }
 
     // MARK: - Private
+
+    private func photoGalleryLayout(for size: CGSize) -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.sectionInset = UIEdgeInsets.zero
+        layout.minimumInteritemSpacing = 1
+        layout.minimumLineSpacing = 1
+        let estimatedWidth: CGFloat = 105
+        let numberOfColumns = max(1, floor(size.width / estimatedWidth))
+        let itemWidth = (size.width - layout.minimumInteritemSpacing * numberOfColumns - 1) / numberOfColumns
+        layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
+        return layout
+    }
 
     private func setUpSubviews() {
         view.backgroundColor = UIColor.white

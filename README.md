@@ -118,7 +118,7 @@ Follow the [instructions](https://github.com/Carthage/Carthage#adding-frameworks
 github "carousell/pickle" ~> 1.0.0
 ```
 
-## Development
+## Example
 
 Install [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#installation):
 
@@ -128,15 +128,19 @@ gem install cocoapods
 
 Set up the development pods:
 
-```shell
+```sh
 pod install --project-directory=Example && open Example/Pickle.xcworkspace
 ```
+
+## Contributing
+
+Thank you for being interested in contributing to this project. Check out the [CONTRIBUTING](https://github.com/carousell/pickle/blob/master/CONTRIBUTING.md) document for more info.
 
 ## About
 
 <a href="https://github.com/carousell/" target="_blank"><img src="https://avatars2.githubusercontent.com/u/3833591" width="100px" alt="Carousell" align="right"/></a>
 
-**Pickle** is created and maintained by [Carousell](https://carousell.com/). Help us improve this project! We'd love to hear your [feedback](https://github.com/carousell/pickle/issues).
+**Pickle** is created and maintained by [Carousell](https://carousell.com/). Help us improve this project! We'd love the [feedback](https://github.com/carousell/pickle/issues) from you.
 
 We're hiring! Find out more at <http://careers.carousell.com/>
 

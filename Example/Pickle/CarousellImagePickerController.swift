@@ -20,6 +20,45 @@ internal class CarousellImagePickerController: ImagePickerController {
             configuration: CarousellTheme(),
             camera: UIImagePickerController.init
         )
+
+        hint = {
+            let titleStyle = NSMutableParagraphStyle()
+            titleStyle.maximumLineHeight = 42
+            titleStyle.minimumLineHeight = 42
+            titleStyle.paragraphSpacing = 4
+            titleStyle.firstLineHeadIndent = 12
+            titleStyle.alignment = .left
+
+            let subtitleStyle = NSMutableParagraphStyle()
+            subtitleStyle.maximumLineHeight = 12
+            subtitleStyle.minimumLineHeight = 12
+            subtitleStyle.paragraphSpacing = 10
+            subtitleStyle.firstLineHeadIndent = 12
+            subtitleStyle.alignment = .left
+
+            let title = NSMutableAttributedString(
+                string: "What are you listing?\n",
+                attributes: [
+                    NSFontAttributeName: UIFont.boldSystemFont(ofSize: 22),
+                    NSForegroundColorAttributeName: UIColor.black,
+                    NSBackgroundColorAttributeName: UIColor.white,
+                    NSParagraphStyleAttributeName: titleStyle
+                ]
+            )
+
+            let subtitle = NSAttributedString(
+                string: "You can choose up to 4 photos for your listing.\n",
+                attributes: [
+                    NSFontAttributeName: UIFont.systemFont(ofSize: 12),
+                    NSForegroundColorAttributeName: UIColor.darkGray,
+                    NSBackgroundColorAttributeName: UIColor.white,
+                    NSParagraphStyleAttributeName: subtitleStyle
+                ]
+            )
+
+            title.append(subtitle)
+            return title
+        }()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -55,5 +94,9 @@ private struct CarousellTheme: ImagePickerConfigurable {
     var imageTagTextAttributes: [String: Any]? = nil
     var selectedImageOverlayColor: UIColor? = nil
     let allowedSelections: ImagePickerSelection? = .limit(to: 4)
+
+    // MARK: -
+
+    let hintTextMargin: UIEdgeInsets? = .zero
 
 }
