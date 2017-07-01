@@ -13,6 +13,7 @@ install:
 script:
   - make -B test
   - make -B carthage
+  - make -B docs
   - bundle exec danger
 notifications:
   email: false
