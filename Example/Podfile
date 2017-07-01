@@ -1,11 +1,11 @@
 platform :ios, '8.0'
 use_frameworks!
 
-target 'Pickle_Example' do
+target 'PickleExample' do
   pod 'Pickle', :path => '../'
   pod 'SwiftLint'
 
-  target 'Pickle_Tests' do
+  target 'PickleUITests' do
     inherit! :search_paths
   end
 end
