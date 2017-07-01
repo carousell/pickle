@@ -94,7 +94,7 @@ let picker = ImagePickerController(
 
 Pickle     | iOS  | Xcode | Swift
 ---------- | :--: | :---: | :---:
-`~> 1.0.0` | 8.0+ | 8.3.2 | ![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg)
+`~> 1.0.0` | 8.0+ | 8.3.3 | ![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg)
 
 ## Installation
 
