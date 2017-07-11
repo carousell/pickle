@@ -1,5 +1,9 @@
 # Change Log
 
+## Next Release
+
+* Fix the photo albums layout after device rotation [#9](https://github.com/carousell/pickle/pull/9)
+
 ## v1.0.0
 
 * Initial release written in Swift 3.1
