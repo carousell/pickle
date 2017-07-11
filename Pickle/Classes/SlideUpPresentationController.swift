@@ -7,6 +7,21 @@ import UIKit
 internal final class SlideUpPresentationController: UIPresentationController {
 
     override func presentationTransitionWillBegin() {
+        adjustContainerFrame()
+    }
+
+    // MARK: - UITraitEnvironment
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if previousTraitCollection != nil {
+            // Update the frame for the container view after device rotation.
+            adjustContainerFrame()
+        }
+    }
+
+    // MARK: - Private
+
+    private func adjustContainerFrame() {
         // Calculate the presented frame that doesn't cover the navigation bar.
         let targetFrame: CGRect
 
