@@ -17,6 +17,7 @@ internal extension UIColor {
         static let lightGray = UIColor(hex: 0x8F939C)
         static let gray = UIColor(hex: 0x8F939C)
         static let darkGray = UIColor(hex: 0x8F939C)
+        static let magnesium = UIColor(hex: 0xB2B2B2)
     }
 
     internal convenience init(hex: Int) {
