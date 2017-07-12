@@ -14,14 +14,24 @@ class UITests: XCTestCase {
 
     private lazy var app: XCUIApplication = XCUIApplication()
 
+    private var cancelButton: XCUIElement {
+        return app.navigationBars["Camera Roll"].buttons["Cancel"]
+    }
+
+    private var doneButton: XCUIElement {
+        return app.navigationBars["Camera Roll"].buttons["Done"]
+    }
+
+    // MARK: -
+
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
         app.launch()
     }
 
-    func testLaunch() {
-        app.tables.cells.staticTexts["Default appearance"].tap()
+    private func showImagePicker(named name: String) {
+        app.tables.cells.staticTexts[name].tap()
 
         addUIInterruptionMonitor(withDescription: "Pickle Example") { alert -> Bool in
             let button = alert.buttons["OK"]
@@ -34,7 +44,13 @@ class UITests: XCTestCase {
 
         // need to interact with the app for the handler to fire
         app.tap()
-        app.navigationBars["Camera Roll"].buttons["Cancel"].tap()
+    }
+
+    func testDefaultStates() {
+        showImagePicker(named: "Default appearance")
+        XCTAssertTrue(cancelButton.isEnabled)
+        XCTAssertFalse(doneButton.isEnabled)
+        cancelButton.tap()
     }
 
 }
