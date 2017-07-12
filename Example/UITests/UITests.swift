@@ -96,4 +96,18 @@ class UITests: XCTestCase {
         doneButton.tap()
     }
 
+    func testSwitchingAlbums() {
+        showImagePicker(named: "Default appearance")
+
+        app.navigationBars["Camera Roll"].staticTexts["Camera Roll"].tap()
+        app.tables.cells.staticTexts["Favorites"].tap()
+        XCTAssert(app.collectionViews.cells.count == 0)
+
+        app.navigationBars["Favorites"].staticTexts["Favorites"].tap()
+        app.tables.cells.staticTexts["Camera Roll"].tap()
+        XCTAssert(app.collectionViews.cells.count == 5)
+
+        cancelButton.tap()
+    }
+
 }
