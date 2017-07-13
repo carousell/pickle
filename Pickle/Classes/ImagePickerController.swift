@@ -370,14 +370,14 @@ fileprivate extension ImagePickerController {
     }
 
     fileprivate func launchCamera() {
-        let status = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        let status = AVCaptureDevice.authorizationStatus(for: .video)
         guard imagePickerDelegate?.imagePickerController(self, shouldLaunchCameraWithAuthorization: status) ?? true else {
             return
         }
 
         switch status {
         case .notDetermined:
-            AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { _ in
+            AVCaptureDevice.requestAccess(for: .video) { _ in
                 DispatchQueue.main.async {
                     self.launchCamera()
                 }

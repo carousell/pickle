@@ -70,9 +70,14 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
         options.resizeMode = .exact
         options.isNetworkAccessAllowed = true
 
-        imageRequestID = PHCachingImageManager.default().requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: options) {
-            if let image = $0.0 {
-                self.imageView.image = image
+        imageRequestID = PHCachingImageManager.default().requestImage(
+            for: asset,
+            targetSize: size,
+            contentMode: .aspectFill,
+            options: options
+        ) { [weak self] image, _ in
+            if let image = image {
+                self?.imageView.image = image
             }
         }
 
