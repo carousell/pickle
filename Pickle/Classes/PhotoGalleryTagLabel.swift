@@ -38,12 +38,12 @@ internal final class PhotoGalleryTagLabel: UILabel {
 
     // MARK: - Properties
 
-    internal var textAttributes: [String: Any] = [:] {
+    internal var textAttributes: [NSAttributedStringKey: Any] = [:] {
         didSet {
             configuration = Configuration(
-                font: textAttributes[NSFontAttributeName] as? UIFont,
-                textColor: textAttributes[NSForegroundColorAttributeName] as? UIColor,
-                backgroundColor: textAttributes[NSBackgroundColorAttributeName] as? UIColor
+                font: textAttributes[.font] as? UIFont,
+                textColor: textAttributes[.foregroundColor] as? UIColor,
+                backgroundColor: textAttributes[.backgroundColor] as? UIColor
             )
             font = configuration.font
             textColor = configuration.textColor

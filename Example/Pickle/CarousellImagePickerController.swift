@@ -39,20 +39,20 @@ internal class CarousellImagePickerController: ImagePickerController {
             let title = NSMutableAttributedString(
                 string: "What are you listing?\n",
                 attributes: [
-                    NSFontAttributeName: UIFont.boldSystemFont(ofSize: 22),
-                    NSForegroundColorAttributeName: UIColor.black,
-                    NSBackgroundColorAttributeName: UIColor.white,
-                    NSParagraphStyleAttributeName: titleStyle
+                    .font: UIFont.boldSystemFont(ofSize: 22),
+                    .foregroundColor: UIColor.black,
+                    .backgroundColor: UIColor.white,
+                    .paragraphStyle: titleStyle
                 ]
             )
 
             let subtitle = NSAttributedString(
                 string: "You can choose up to 4 photos for your listing.\n",
                 attributes: [
-                    NSFontAttributeName: UIFont.systemFont(ofSize: 12),
-                    NSForegroundColorAttributeName: UIColor.darkGray,
-                    NSBackgroundColorAttributeName: UIColor.white,
-                    NSParagraphStyleAttributeName: subtitleStyle
+                    .font: UIFont.systemFont(ofSize: 12),
+                    .foregroundColor: UIColor.darkGray,
+                    .backgroundColor: UIColor.white,
+                    .paragraphStyle: subtitleStyle
                 ]
             )
 
@@ -91,7 +91,7 @@ private struct CarousellTheme: ImagePickerConfigurable {
 
     // MARK: - Image Selections
 
-    var imageTagTextAttributes: [String: Any]? = nil
+    var imageTagTextAttributes: [NSAttributedStringKey: Any]? = nil
     var selectedImageOverlayColor: UIColor? = nil
     let allowedSelections: ImagePickerSelection? = .limit(to: 4)
 
