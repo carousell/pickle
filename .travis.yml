@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode8.3
+osx_image: xcode9
 podfile: Example/Podfile
 cache:
   bundler: true
@@ -10,11 +10,12 @@ cache:
 install:
   - bundle install --jobs=3 --retry=3 --deployment
   - bundle exec pod install --project-directory=Example
+before_script:
+  - bundle exec danger
 script:
   - make -B test
   - make -B carthage
   - make -B docs
-  - bundle exec danger
 notifications:
   email: false
   slack:
