@@ -9,7 +9,7 @@ cache:
     - Example/Pods/SwiftLint
 before_install:
   - xcrun instruments -s devices
-  - xcrun instruments -w "iPhone SE (10.3.1) [" || true
+  - xcrun instruments -w "iPhone 7 (10.3.1) [" || true
 install:
   - bundle install --jobs=3 --retry=3 --deployment
   - bundle exec pod install --project-directory=Example
