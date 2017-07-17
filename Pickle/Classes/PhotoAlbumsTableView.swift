@@ -14,32 +14,41 @@ internal final class PhotoAlbumsTableView: UITableView {
 
     // MARK: - Initialization
 
-    override init(frame: CGRect, style: UITableViewStyle) {
-        super.init(frame: frame, style: style)
-        layer.addSublayer(shadawLayer)
-    }
+    convenience init(configuration: ImagePickerConfigurable? = nil) {
+        self.init(frame: .zero, style: .plain)
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        let color = configuration?.photoAlbumsNavigationBarShadowColor
+        guard color != .clear else {
+            return
+        }
+
         layer.addSublayer(shadawLayer)
+        shadawLayer.borderColor = color?.cgColor ?? UIColor.Palette.magnesium.cgColor
     }
 
     // MARK: - Properties
 
-    private lazy var shadawLayer: CALayer = {
+    private var _shadawLayer: CALayer?
+
+    private var shadawLayer: CALayer {
+        if let instantiated = _shadawLayer {
+            return instantiated
+        }
+
         let layer = CALayer()
-        layer.borderColor = UIColor.Palette.magnesium.cgColor
         layer.borderWidth = 1 / UIScreen.main.scale
         layer.rasterizationScale = UIScreen.main.scale
         layer.shouldRasterize = true
+
+        _shadawLayer = layer
         return layer
-    }()
+    }
 
     // MARK: - UIView
 
     override var frame: CGRect {
         didSet {
-            shadawLayer.frame = bounds.insetBy(dx: -1, dy: -1).offsetBy(dx: 0, dy: 1)
+            _shadawLayer?.frame = bounds.insetBy(dx: -1, dy: -1).offsetBy(dx: 0, dy: 1)
         }
     }
 

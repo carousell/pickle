@@ -76,6 +76,7 @@ private struct CarousellTheme: ImagePickerConfigurable {
     let navigationBarTranslucent: Bool? = false
     let navigationBarTintColor: UIColor? = .white
     let navigationBarBackgroundColor: UIColor? = UIColor(red: 0xD2 / 255.0, green: 0x23 / 255.0, blue: 0x2A / 255.0, alpha: 1)
+    let photoAlbumsNavigationBarShadowColor: UIColor? = .clear
 
     // MARK: - Navigation Bar Title View
 
