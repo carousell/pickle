@@ -27,6 +27,9 @@ public protocol ImagePickerConfigurable {
     /// The navigation bar background color (barTintColor).
     var navigationBarBackgroundColor: UIColor? { get }
 
+    /// The color of navigation bar 1px shadow when the album list is presented.
+    var photoAlbumsNavigationBarShadowColor: UIColor? { get }
+
     // MARK: - Navigation Bar Title View
 
     /// The font for the navigation title view.

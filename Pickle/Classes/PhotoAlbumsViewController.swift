@@ -49,7 +49,7 @@ internal final class PhotoAlbumsViewController: UIViewController, UITableViewDat
     private let configuration: ImagePickerConfigurable?
 
     private(set) lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: CGRect.zero, style: .plain)
+        let tableView = PhotoAlbumsTableView(configuration: self.configuration)
         tableView.dataSource = self
         tableView.delegate = self
         return tableView

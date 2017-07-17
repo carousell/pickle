@@ -22,8 +22,7 @@ end
 
 # Review duty
 members = ENV["IOS_TEAM"] ? github.api.team_members(ENV["IOS_TEAM"]).map(&:login) : []
-contributors = github.api.contributors(repo).map(&:login)
-reviewer = (contributors & members - [github.pr_author]).sample
+reviewer = (members - [github.pr_author]).sample
 assigned = github.api.issue_comments(repo, pr_number).map(&:body).any? { |m| m.end_with? "can you review this pull request?" }
 
 if reviewer && !assigned
