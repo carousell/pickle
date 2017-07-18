@@ -70,6 +70,10 @@ internal class CarousellImagePickerController: ImagePickerController {
 
 private struct CarousellTheme: ImagePickerConfigurable {
 
+    let cancelBarButtonItem: UIBarButtonItem? = UIBarButtonItem(barButtonSystemItem: .stop, target: nil, action: nil)
+
+    let doneBarButtonItem: UIBarButtonItem? = UIBarButtonItem(title: "Next", style: .plain, target: nil, action: nil)
+
     // MARK: - Navigation Bar
 
     let navigationBarStyle: UIBarStyle? = .blackTranslucent

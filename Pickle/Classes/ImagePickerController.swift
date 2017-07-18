@@ -65,6 +65,18 @@ open class ImagePickerController: UINavigationController {
 
         super.init(nibName: nil, bundle: nil)
 
+        if let cancelBarButtonItem = configuration?.cancelBarButtonItem {
+            cancelBarButtonItem.target = self
+            cancelBarButtonItem.action = #selector(cancel(_:))
+            self.cancelBarButton = cancelBarButtonItem
+        }
+
+        if let doneBarButtonItem = configuration?.doneBarButtonItem {
+            doneBarButtonItem.target = self
+            doneBarButtonItem.action = #selector(done(_:))
+            self.doneBarButton = doneBarButtonItem
+        }
+
         camera = { [weak self] in
             let camera = initializer()
             camera.sourceType = .camera
