@@ -1,6 +1,6 @@
 # Change Log
 
-## Next Release
+## v1.1.0
 
 * Add a configuration for the photo albums navigation bar shadow color [#9](https://github.com/carousell/pickle/pull/9)
 * Fix the photo albums layout after device rotation [#9](https://github.com/carousell/pickle/pull/9)
