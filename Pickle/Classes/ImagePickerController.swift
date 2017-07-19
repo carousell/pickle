@@ -291,7 +291,7 @@ extension ImagePickerController: PhotoGalleryViewControllerDelegate {
     internal func photoGalleryViewController(_ controller: PhotoGalleryViewController, didTogglePhoto asset: PHAsset) {
         if let selectedIndex = selectedAssets.index(of: asset) {
             selectedAssets.remove(at: selectedIndex)
-            imagePickerDelegate?.imagePickerController?(self, didUnselectImageAsset: asset)
+            imagePickerDelegate?.imagePickerController?(self, didDeselectImageAsset: asset)
         } else {
             switch allowedSelections {
             case .limit(to: let number) where 1 < number && selectedAssets.count < number:

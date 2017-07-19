@@ -31,9 +31,9 @@ public protocol ImagePickerControllerDelegate: UINavigationControllerDelegate {
     /// Optional. Asks the delegate for the transitioning delegate for presenting the album list. The default transition is used if not implemented.
     @objc optional func imagePickerController(_ picker: ImagePickerController, transitioningDelegateForPresentingAlbumsViewController controller: UIViewController) -> UIViewControllerTransitioningDelegate
 
-    /// Optional. Tells the delegate that the user seleced an image asset.
+    /// Optional. Tells the delegate that the user selected an image asset.
     @objc optional func imagePickerController(_ picker: ImagePickerController, didSelectImageAsset asset: PHAsset)
 
-    /// Optional. Tells the delegate that the user unseleced an image asset.
-    @objc optional func imagePickerController(_ picker: ImagePickerController, didUnselectImageAsset asset: PHAsset)
+    /// Optional. Tells the delegate that the user deselected an image asset.
+    @objc optional func imagePickerController(_ picker: ImagePickerController, didDeselectImageAsset asset: PHAsset)
 }
