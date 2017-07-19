@@ -14,7 +14,7 @@ internal final class PhotoAlbumsTableView: UITableView {
 
     // MARK: - Initialization
 
-    convenience init(configuration: ImagePickerConfigurable? = nil) {
+    internal convenience init(configuration: ImagePickerConfigurable? = nil) {
         self.init(frame: .zero, style: .plain)
 
         let color = configuration?.photoAlbumsNavigationBarShadowColor
