@@ -15,6 +15,7 @@ else
 	ruby -pi -e "gsub(/:\s\d+\.\d+\.\d+/i, \": "$(version)"\")" .jazzy.yml
 	cd Example && xcrun agvtool new-marketing-version $(version)
 	xcrun agvtool new-marketing-version $(version)
+	bundle exec pod install --project-directory=Example
 endif
 
 carthage:
@@ -34,6 +35,7 @@ docs:
 	cp -rfv docs/output/* docs
 	cd docs && \
 	git add . && \
+	git diff-index --quiet HEAD || \
 	git commit -m "[Docs] Update documentation at $(shell date -u +'%Y-%m-%d %H:%M:%S %z')"
 
 update-docs:

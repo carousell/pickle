@@ -13,7 +13,7 @@ import UIKit
 /// The ImagePickerConfigurable protocol defines the customizable properties of ImagePickerController.
 public protocol ImagePickerConfigurable {
 
-    // MARK: - UINavigationItem
+    // MARK: - Navigation Item
 
     /// A custom bar button item displayed on the left (or leading) edge of the navigation bar when the receiver is the top navigation item.
     var cancelBarButtonItem: UIBarButtonItem? { get }
@@ -71,7 +71,7 @@ public protocol ImagePickerConfigurable {
     /// Specifies the number of photo selections is allowed in ImagePickerController.
     var allowedSelections: ImagePickerSelection? { get }
 
-    // MARK: -
+    // MARK: - Hint Label
 
     /// The margin for the text of the hint label.
     var hintTextMargin: UIEdgeInsets? { get }
@@ -81,9 +81,9 @@ public protocol ImagePickerConfigurable {
 /// An enum that represents photo selections allowed in ImagePickerController.
 public enum ImagePickerSelection {
 
-    // Unlimited number of selections.
+    /// Unlimited number of selections.
     case unlimited
 
-    // Limited selections with an associated number.
+    /// Limited selections with an associated number.
     case limit(to: Int)
 }
