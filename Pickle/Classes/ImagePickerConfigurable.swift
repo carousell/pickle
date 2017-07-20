@@ -13,7 +13,7 @@ import UIKit
 /// The ImagePickerConfigurable protocol defines the customizable properties of ImagePickerController.
 public protocol ImagePickerConfigurable {
 
-    // MARK: - UINavigationItem
+    // MARK: - Navigation Item
 
     /// A custom bar button item displayed on the left (or leading) edge of the navigation bar when the receiver is the top navigation item.
     var cancelBarButtonItem: UIBarButtonItem? { get }

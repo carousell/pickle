@@ -8,10 +8,12 @@
 //  See https://github.com/carousell/pickle/graphs/contributors for the list of project authors
 //
 
+// swiftlint:disable file_length
+
 import UIKit
 import Photos
 
-// swiftlint:disable file_length
+/// Carousell flavoured image picker with multiple photo selections.
 @objc
 open class ImagePickerController: UINavigationController {
 
@@ -210,10 +212,9 @@ open class ImagePickerController: UINavigationController {
 }
 
 
-// MARK: - UIImagePickerControllerDelegate
-
-
 extension ImagePickerController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    // MARK: - UIImagePickerControllerDelegate
 
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         defer {
