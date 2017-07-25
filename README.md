@@ -95,6 +95,7 @@ let picker = ImagePickerController(
 Pickle     | iOS  | Xcode | Swift
 ---------- | :--: | :---: | :---:
 `~> 1.0.0` | 8.0+ | 8.3.3 | ![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg)
+`~> 1.2.0` | 9.0+ | 8.3.3 | ![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg)
 
 ## Installation
 
@@ -103,10 +104,10 @@ Pickle     | iOS  | Xcode | Swift
 Create a `Podfile` with the following specification and run `pod install`.
 
 ```rb
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
-pod 'Pickle', '~> 1.0.0'
+pod 'Pickle', '~> 1.2.0'
 ```
 
 ### Use [Carthage](https://github.com/Carthage/Carthage)
