@@ -29,26 +29,10 @@ internal final class PhotoGalleryCameraCell: UICollectionViewCell {
         contentView.addSubview(cameraIconView)
 
         cameraIconView.translatesAutoresizingMaskIntoConstraints = false
-
-        if #available(iOS 9.0, *) {
-            cameraIconView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-            cameraIconView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-            cameraIconView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-            cameraIconView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        } else {
-            contentView.addConstraints(NSLayoutConstraint.constraints(
-                withVisualFormat: "H:|[icon]|",
-                options: [],
-                metrics: nil,
-                views: ["icon": cameraIconView]
-            ))
-            contentView.addConstraints(NSLayoutConstraint.constraints(
-                withVisualFormat: "V:|[icon]|",
-                options: [],
-                metrics: nil,
-                views: ["icon": cameraIconView]
-            ))
-        }
+        cameraIconView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        cameraIconView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        cameraIconView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        cameraIconView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
 
 }

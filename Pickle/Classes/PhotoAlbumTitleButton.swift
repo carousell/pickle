@@ -100,30 +100,14 @@ internal final class PhotoAlbumTitleButton: UIControl {
         addSubview(arrowIcon)
 
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
+        arrowIcon.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 5).isActive = true
+        arrowIcon.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
+
         arrowIcon.translatesAutoresizingMaskIntoConstraints = false
-
-        if #available(iOS 9.0, *) {
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
-            arrowIcon.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 5).isActive = true
-            arrowIcon.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 3).isActive = true
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3).isActive = true
-            titleLabel.centerYAnchor.constraint(equalTo: arrowIcon.centerYAnchor).isActive = true
-        } else {
-            addConstraints(NSLayoutConstraint.constraints(
-                withVisualFormat: "H:|-15-[title]-5-[arrow]-10-|",
-                options: [.alignAllCenterY],
-                metrics: nil,
-                views: ["title": titleLabel, "arrow": arrowIcon]
-            ))
-            addConstraints(NSLayoutConstraint.constraints(
-                withVisualFormat: "V:|-3-[title]-3-|",
-                options: [],
-                metrics: nil,
-                views: ["title": titleLabel]
-            ))
-        }
+        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 3).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -3).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: arrowIcon.centerYAnchor).isActive = true
     }
 
 }

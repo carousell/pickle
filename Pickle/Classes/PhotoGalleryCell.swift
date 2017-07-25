@@ -100,34 +100,9 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
         overlayView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
         tagLabel.translatesAutoresizingMaskIntoConstraints = false
-
-        if #available(iOS 9.0, *) {
-            tagLabel.widthAnchor.constraint(equalTo: tagLabel.heightAnchor).isActive = true
-            tagLabel.topAnchor.constraint(equalTo: overlayView.topAnchor, constant: 10).isActive = true
-            tagLabel.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -10).isActive = true
-        } else {
-            tagLabel.addConstraint(NSLayoutConstraint(
-                item: tagLabel,
-                attribute: .width,
-                relatedBy: .equal,
-                toItem: tagLabel,
-                attribute: .height,
-                multiplier: 1,
-                constant: 0
-            ))
-            overlayView.addConstraints(NSLayoutConstraint.constraints(
-                withVisualFormat: "H:[tag]-10-|",
-                options: [],
-                metrics: nil,
-                views: ["tag": tagLabel]
-            ))
-            overlayView.addConstraints(NSLayoutConstraint.constraints(
-                withVisualFormat: "V:|-10-[tag]",
-                options: [],
-                metrics: nil,
-                views: ["tag": tagLabel]
-            ))
-        }
+        tagLabel.widthAnchor.constraint(equalTo: tagLabel.heightAnchor).isActive = true
+        tagLabel.topAnchor.constraint(equalTo: overlayView.topAnchor, constant: 10).isActive = true
+        tagLabel.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -10).isActive = true
     }
 
 }
