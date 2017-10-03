@@ -1,5 +1,10 @@
 # Change Log
 
+## Next Release
+
+* Drop iOS 8 support [#13](https://github.com/carousell/pickle/pull/13)
+* Rename `imagePickerController(_:didDeselectImageAsset:)` [#12](https://github.com/carousell/pickle/pull/12)
+
 ## v1.1.0
 
 * Add a configuration for the photo albums navigation bar shadow color [#9](https://github.com/carousell/pickle/pull/9)

@@ -29,11 +29,7 @@ internal extension UIFont {
     }
 
     private static func systemSemiBoldFont(ofSize fontSize: CGFloat) -> UIFont {
-        if #available(iOS 8.2, *) {
-            return UIFont.systemFont(ofSize: fontSize, weight: UIFontWeightSemibold)
-        } else {
-            return UIFont.systemFont(ofSize: fontSize)
-        }
+        return UIFont.systemFont(ofSize: fontSize, weight: UIFontWeightSemibold)
     }
 
 }

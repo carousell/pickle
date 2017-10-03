@@ -119,10 +119,8 @@ internal final class PhotoGalleryViewController: UIViewController,
         setUpSubviews()
         showEmptyViewIfNeeded()
 
-        if #available(iOS 9.0, *) {
-            if traitCollection.forceTouchCapability == .available {
-                registerForPreviewing(with: self, sourceView: collectionView)
-            }
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: collectionView)
         }
     }
 
@@ -235,31 +233,15 @@ internal final class PhotoGalleryViewController: UIViewController,
         view.addSubview(collectionView)
 
         hintLabel.translatesAutoresizingMaskIntoConstraints = false
+        hintLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        hintLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        hintLabel.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-
-        if #available(iOS 9.0, *) {
-            hintLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-            hintLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-            hintLabel.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
-
-            collectionView.topAnchor.constraint(equalTo: hintLabel.bottomAnchor).isActive = true
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        } else {
-            view.addConstraints(NSLayoutConstraint.constraints(
-                withVisualFormat: "H:|[hint]|",
-                options: [],
-                metrics: nil,
-                views: ["hint": hintLabel]
-            ))
-            view.addConstraints(NSLayoutConstraint.constraints(
-                withVisualFormat: "V:[top][hint][gallery]|",
-                options: [.alignAllLeading, .alignAllTrailing],
-                metrics: nil,
-                views: ["top": topLayoutGuide, "hint": hintLabel, "gallery": collectionView]
-            ))
-        }
+        collectionView.topAnchor.constraint(equalTo: hintLabel.bottomAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
 
     private func showEmptyViewIfNeeded() {

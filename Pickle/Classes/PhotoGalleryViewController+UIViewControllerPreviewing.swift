@@ -28,12 +28,10 @@ extension PhotoGalleryViewController: UIViewControllerPreviewingDelegate {
         let asset = fetchResult[index]
         let detailViewController = PhotoDetailViewController(asset: asset)
 
-        if #available(iOS 9.0, *) {
-            let width = previewingContext.sourceRect.width
-            let ratio = CGFloat(asset.pixelHeight) / CGFloat(asset.pixelWidth)
-            detailViewController.preferredContentSize = CGSize(width: width, height: width * ratio)
-            previewingContext.sourceRect = cell.frame
-        }
+        let width = previewingContext.sourceRect.width
+        let ratio = CGFloat(asset.pixelHeight) / CGFloat(asset.pixelWidth)
+        detailViewController.preferredContentSize = CGSize(width: width, height: width * ratio)
+        previewingContext.sourceRect = cell.frame
 
         return detailViewController
     }

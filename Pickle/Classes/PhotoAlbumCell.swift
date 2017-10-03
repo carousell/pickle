@@ -91,7 +91,6 @@ internal final class PhotoAlbumCell: UITableViewCell {
         })
     }
 
-    // swiftlint:disable function_body_length
     private func setUpSubviews() {
         accessoryType = .disclosureIndicator
         textLabel?.removeFromSuperview()
@@ -105,134 +104,30 @@ internal final class PhotoAlbumCell: UITableViewCell {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
 
-        if #available(iOS 9.0, *) {
-            imageViews[0].leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15).isActive = true
-            imageViews[0].topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
-            imageViews[0].bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
-            imageViews[0].widthAnchor.constraint(equalTo: imageViews[0].heightAnchor).isActive = true
+        imageViews[0].leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15).isActive = true
+        imageViews[0].topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
+        imageViews[0].bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
+        imageViews[0].widthAnchor.constraint(equalTo: imageViews[0].heightAnchor).isActive = true
 
-            for (index, imageView) in imageViews.enumerated() {
-                guard index != 0 else {
-                    continue
-                }
-
-                imageView.widthAnchor.constraint(equalTo: imageViews[0].widthAnchor, constant: -2 * CGFloat(index)).isActive = true
-                imageView.heightAnchor.constraint(equalTo: imageViews[0].heightAnchor, constant: -2 * CGFloat(index)).isActive = true
-                imageView.centerXAnchor.constraint(equalTo: imageViews[0].centerXAnchor).isActive = true
-                imageView.centerYAnchor.constraint(equalTo: imageViews[0].centerYAnchor, constant: -4 * CGFloat(index)).isActive = true
+        for (index, imageView) in imageViews.enumerated() {
+            guard index != 0 else {
+                continue
             }
-        } else {
-            contentView.addConstraints(NSLayoutConstraint.constraints(
-                withVisualFormat: "H:|-15-[image]",
-                options: [],
-                metrics: nil,
-                views: ["image": imageViews[0]]
-            ))
-            contentView.addConstraints(NSLayoutConstraint.constraints(
-                withVisualFormat: "V:|-10-[image]-10-|",
-                options: [],
-                metrics: nil,
-                views: ["image": imageViews[0]]
-            ))
-            imageViews[0].addConstraint(NSLayoutConstraint(
-                item: imageViews[0],
-                attribute: .width,
-                relatedBy: .equal,
-                toItem: imageViews[0],
-                attribute: .height,
-                multiplier: 1,
-                constant: 0
-            ))
-
-            for (index, imageView) in imageViews.enumerated() {
-                guard index != 0 else {
-                    continue
-                }
-
-                contentView.addConstraint(NSLayoutConstraint(
-                    item: imageView,
-                    attribute: .width,
-                    relatedBy: .equal,
-                    toItem: imageViews[0],
-                    attribute: .width,
-                    multiplier: 1,
-                    constant: -2 * CGFloat(index)
-                ))
-                contentView.addConstraint(NSLayoutConstraint(
-                    item: imageView,
-                    attribute: .height,
-                    relatedBy: .equal,
-                    toItem: imageViews[0],
-                    attribute: .height,
-                    multiplier: 1,
-                    constant: -2 * CGFloat(index)
-                ))
-                contentView.addConstraint(NSLayoutConstraint(
-                    item: imageView,
-                    attribute: .centerX,
-                    relatedBy: .equal,
-                    toItem: imageViews[0],
-                    attribute: .centerX,
-                    multiplier: 1,
-                    constant: 0
-                ))
-                contentView.addConstraint(NSLayoutConstraint(
-                    item: imageView,
-                    attribute: .centerY,
-                    relatedBy: .equal,
-                    toItem: imageViews[0],
-                    attribute: .centerY,
-                    multiplier: 1,
-                    constant: -4 * CGFloat(index)
-                ))
-            }
+            imageView.widthAnchor.constraint(equalTo: imageViews[0].widthAnchor, constant: -2 * CGFloat(index)).isActive = true
+            imageView.heightAnchor.constraint(equalTo: imageViews[0].heightAnchor, constant: -2 * CGFloat(index)).isActive = true
+            imageView.centerXAnchor.constraint(equalTo: imageViews[0].centerXAnchor).isActive = true
+            imageView.centerYAnchor.constraint(equalTo: imageViews[0].centerYAnchor, constant: -4 * CGFloat(index)).isActive = true
         }
 
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.leadingAnchor.constraint(equalTo: imageViews[0].trailingAnchor, constant: 15).isActive = true
+        titleLabel.trailingAnchor.constraint(greaterThanOrEqualTo: contentView.trailingAnchor, constant: 15).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -10).isActive = true
+
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-
-        if #available(iOS 9.0, *) {
-            titleLabel.leadingAnchor.constraint(equalTo: imageViews[0].trailingAnchor, constant: 15).isActive = true
-            titleLabel.trailingAnchor.constraint(greaterThanOrEqualTo: contentView.trailingAnchor, constant: 15).isActive = true
-            titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -10).isActive = true
-
-            subtitleLabel.leadingAnchor.constraint(equalTo: imageViews[0].trailingAnchor, constant: 15).isActive = true
-            subtitleLabel.trailingAnchor.constraint(greaterThanOrEqualTo: contentView.trailingAnchor, constant: 15).isActive = true
-            subtitleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 10).isActive = true
-        } else {
-            contentView.addConstraints(NSLayoutConstraint.constraints(
-                withVisualFormat: "H:[image]-15-[title]-(>=15)-|",
-                options: [],
-                metrics: nil,
-                views: ["image": imageViews[0], "title": titleLabel]
-            ))
-            contentView.addConstraint(NSLayoutConstraint(
-                item: titleLabel,
-                attribute: .centerY,
-                relatedBy: .equal,
-                toItem: contentView,
-                attribute: .centerY,
-                multiplier: 1,
-                constant: -10
-            ))
-
-            contentView.addConstraints(NSLayoutConstraint.constraints(
-                withVisualFormat: "H:[image]-15-[subtitle]-(>=15)-|",
-                options: [],
-                metrics: nil,
-                views: ["image": imageViews[0], "subtitle": subtitleLabel]
-            ))
-            contentView.addConstraint(NSLayoutConstraint(
-                item: subtitleLabel,
-                attribute: .centerY,
-                relatedBy: .equal,
-                toItem: contentView,
-                attribute: .centerY,
-                multiplier: 1,
-                constant: 10
-            ))
-        }
+        subtitleLabel.leadingAnchor.constraint(equalTo: imageViews[0].trailingAnchor, constant: 15).isActive = true
+        subtitleLabel.trailingAnchor.constraint(greaterThanOrEqualTo: contentView.trailingAnchor, constant: 15).isActive = true
+        subtitleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 10).isActive = true
     }
-    // swiftlint:enable
 
 }

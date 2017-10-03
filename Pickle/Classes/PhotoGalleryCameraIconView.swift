@@ -41,40 +41,12 @@ internal final class PhotoGalleryCameraIconView: UIView {
         addSubview(textLabel)
 
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -10).isActive = true
+
         textLabel.translatesAutoresizingMaskIntoConstraints = false
-
-        if #available(iOS 9.0, *) {
-            imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-            imageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -10).isActive = true
-
-            textLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-            textLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
-        } else {
-            addConstraint(NSLayoutConstraint(
-                item: imageView,
-                attribute: .centerX,
-                relatedBy: .equal,
-                toItem: self,
-                attribute: .centerX,
-                multiplier: 1,
-                constant: 0
-            ))
-            addConstraint(NSLayoutConstraint(
-                item: imageView,
-                attribute: .centerY,
-                relatedBy: .equal,
-                toItem: self,
-                attribute: .centerY,
-                multiplier: 1,
-                constant: -10
-            ))
-            addConstraints(NSLayoutConstraint.constraints(
-                withVisualFormat: "V:[image]-10-[text]",
-                options: [.alignAllCenterX],
-                metrics: nil,
-                views: ["image": imageView, "text": textLabel]
-            ))
-        }
+        textLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        textLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
     }
 
 }
