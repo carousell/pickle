@@ -25,6 +25,9 @@ public protocol ImagePickerControllerDelegate: UINavigationControllerDelegate {
     /// Tells the delegate that the user cancelled the pick operation.
     func imagePickerControllerDidCancel(_ picker: ImagePickerController)
 
+	/// Tells the delegate that the picker has not been granted permission to access photo library
+	func imagePickerControllerRequiresPhotoLibraryPermission(_ picker: ImagePickerController)
+
     /// Optional. Asks the delegate for the photo album list to display. The image picker shows the camera roll and non-smart albums if not implemented.
     @objc optional func photoAlbumsForImagePickerController(_ picker: ImagePickerController) -> [PHFetchResult<PHAssetCollection>]
 

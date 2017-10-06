@@ -160,14 +160,6 @@ open class ImagePickerController: UINavigationController {
         return controller
     }()
 
-    fileprivate lazy var systemPhotoLibraryController: UIViewController = {
-        let photoLibrary = UIImagePickerController()
-        photoLibrary.sourceType = .photoLibrary
-        photoLibrary.configure(with: self.configuration)
-        photoLibrary.delegate = self
-        return photoLibrary
-    }()
-
     fileprivate lazy var albumButton: PhotoAlbumTitleButton = {
         let button = self.configuration.map(PhotoAlbumTitleButton.init) ?? PhotoAlbumTitleButton()
         button.addTarget(self, action: #selector(togglePhotoAlbums(_:)), for: .touchUpInside)
@@ -239,8 +231,8 @@ extension ImagePickerController: UIImagePickerControllerDelegate, UINavigationCo
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         switch PHPhotoLibrary.authorizationStatus() {
         case .denied, .restricted:
-            picker.dismiss(animated: false) {
-                self.cancel(nil)
+            picker.dismiss(animated: false) { [weak self] in
+                self?.cancel(nil)
             }
         default:
             picker.dismiss(animated: true, completion: nil)
@@ -351,12 +343,11 @@ fileprivate extension ImagePickerController {
             galleryViewController = PhotoGalleryViewController(album: cameraRoll.firstObject, configuration: configuration)
 
         case .denied, .restricted:
-            let controller = systemPhotoLibraryController
-            showPermissionErrorIfNeeded = { [weak self] in
-                self?.present(controller, animated: false, completion: {
-                    self?.showPermissionErrorIfNeeded = nil
-                })
-            }
+			showPermissionErrorIfNeeded = { [weak self] in
+				guard let sself = self else { return }
+				sself.imagePickerDelegate?.imagePickerControllerRequiresPhotoLibraryPermission(sself)
+				sself.showPermissionErrorIfNeeded = nil
+			}
         }
     }
 

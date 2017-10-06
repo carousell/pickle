@@ -1,7 +1,8 @@
 # Change Log
 
 ## Next Release
-
+ 
+* Delegate callback when no permission is granted [#16](https://github.com/carousell/pickle/issues/16)
 * Drop iOS 8 support [#13](https://github.com/carousell/pickle/pull/13)
 * Rename `imagePickerController(_:didDeselectImageAsset:)` [#12](https://github.com/carousell/pickle/pull/12)
 
