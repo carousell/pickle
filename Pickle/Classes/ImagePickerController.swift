@@ -160,14 +160,6 @@ open class ImagePickerController: UINavigationController {
         return controller
     }()
 
-    fileprivate lazy var systemPhotoLibraryController: UIViewController = {
-        let photoLibrary = UIImagePickerController()
-        photoLibrary.sourceType = .photoLibrary
-        photoLibrary.configure(with: self.configuration)
-        photoLibrary.delegate = self
-        return photoLibrary
-    }()
-
     fileprivate lazy var albumButton: PhotoAlbumTitleButton = {
         let button = self.configuration.map(PhotoAlbumTitleButton.init) ?? PhotoAlbumTitleButton()
         button.addTarget(self, action: #selector(togglePhotoAlbums(_:)), for: .touchUpInside)
