@@ -231,8 +231,8 @@ extension ImagePickerController: UIImagePickerControllerDelegate, UINavigationCo
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         switch PHPhotoLibrary.authorizationStatus() {
         case .denied, .restricted:
-            picker.dismiss(animated: false) {
-                self.cancel(nil)
+            picker.dismiss(animated: false) { [weak self] in
+                self?.cancel(nil)
             }
         default:
             picker.dismiss(animated: true, completion: nil)
