@@ -105,4 +105,8 @@ final class ViewController: UIViewController,
         picker.dismiss(animated: true, completion: nil)
     }
 
+    func imagePickerControllerRequiresPhotoLibraryPermission(_ picker: ImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+
 }

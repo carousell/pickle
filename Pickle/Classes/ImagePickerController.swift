@@ -351,12 +351,11 @@ fileprivate extension ImagePickerController {
             galleryViewController = PhotoGalleryViewController(album: cameraRoll.firstObject, configuration: configuration)
 
         case .denied, .restricted:
-            let controller = systemPhotoLibraryController
-            showPermissionErrorIfNeeded = { [weak self] in
-                self?.present(controller, animated: false, completion: {
-                    self?.showPermissionErrorIfNeeded = nil
-                })
-            }
+			showPermissionErrorIfNeeded = { [weak self] in
+				guard let sself = self else { return }
+				sself.imagePickerDelegate?.imagePickerControllerRequiresPhotoLibraryPermission(sself)
+				sself.showPermissionErrorIfNeeded = nil
+			}
         }
     }
 
