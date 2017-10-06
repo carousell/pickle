@@ -4,6 +4,7 @@
 
 * Drop iOS 8 support [#13](https://github.com/carousell/pickle/pull/13)
 * Rename `imagePickerController(_:didDeselectImageAsset:)` [#12](https://github.com/carousell/pickle/pull/12)
+* Workaround the navigation issue in iOS 11 when the Photos permission is denied [#18](https://github.com/carousell/pickle/pull/18)
 
 ## v1.1.0
 

@@ -111,6 +111,7 @@ open class ImagePickerController: UINavigationController {
     open override var title: String? {
         didSet {
             albumButton.title = title
+            albumButton.isHidden = title?.isEmpty ?? true
         }
     }
 
@@ -239,8 +240,8 @@ extension ImagePickerController: UIImagePickerControllerDelegate, UINavigationCo
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         switch PHPhotoLibrary.authorizationStatus() {
         case .denied, .restricted:
-            picker.dismiss(animated: false) {
-                self.cancel(nil)
+            picker.dismiss(animated: false) { [weak self] in
+                self?.cancel(nil)
             }
         default:
             picker.dismiss(animated: true, completion: nil)
@@ -351,6 +352,14 @@ fileprivate extension ImagePickerController {
             galleryViewController = PhotoGalleryViewController(album: cameraRoll.firstObject, configuration: configuration)
 
         case .denied, .restricted:
+            // Workaround the issue in iOS 11 where UIImagePickerController doesn't show the permission denied message.
+            // It requires additional PHAuthorizationStatus check before presenting Pickle.ImagePickerController.
+            if #available(iOS 11.0, *) {
+                // Hide the album button and display an empty gallery with a cancel button to dismiss the image picker.
+                title = nil
+                galleryViewController = PhotoGalleryViewController()
+                return
+            }
             let controller = systemPhotoLibraryController
             showPermissionErrorIfNeeded = { [weak self] in
                 self?.present(controller, animated: false, completion: {
