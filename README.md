@@ -4,7 +4,6 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Pickle.svg)](https://cocoapods.org/pods/Pickle)
 ![Platform](https://img.shields.io/cocoapods/p/Pickle.svg)
-[![CocoaDocs](https://img.shields.io/cocoapods/metrics/doc-percent/Pickle.svg)](https://carousell.github.io/pickle)
 ![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg)
 
 Carousell image picker.
@@ -53,8 +52,6 @@ func imagePickerController(_ picker: ImagePickerController, didFinishPickingImag
 func imagePickerControllerDidCancel(_ picker: ImagePickerController)
 ```
 
-## Customization
-
 ### Appearance
 
 Customize the appearance with a type that conforms to `ImagePickerConfigurable`.
@@ -90,12 +87,30 @@ let picker = ImagePickerController(
 )
 ```
 
+### Example Setup
+
+Install [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#installation):
+
+```
+gem install cocoapods
+```
+
+Set up the development pods:
+
+```sh
+make bootstrap
+```
+
+### Documentation
+
+<https://carousell.github.io/pickle>
+
 ## Requirements
 
 Pickle     | iOS  | Xcode | Swift
 ---------- | :--: | :---: | :---:
-`~> 1.0.0` | 8.0+ | 8.3.3 | ![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg)
-`~> 1.2.0` | 9.0+ | 8.3.3 | ![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg)
+`>= 1.0.0` | 8.0+ | 8.3.3 | ![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg)
+`>= 1.2.0` | 9.0+ | 8.3.3 | ![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg)
 
 ## Installation
 
@@ -116,21 +131,7 @@ Create a `Cartfile` with the following specification and run `carthage bootstrap
 Follow the [instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) to add the framework to your project.
 
 ```
-github "carousell/pickle" ~> 1.0.0
-```
-
-## Example
-
-Install [CocoaPods](https://guides.cocoapods.org/using/getting-started.html#installation):
-
-```
-gem install cocoapods
-```
-
-Set up the development pods:
-
-```sh
-pod install --project-directory=Example && open Example/Pickle.xcworkspace
+github "carousell/pickle" ~> 1.2.0
 ```
 
 ## Contributing

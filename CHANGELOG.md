@@ -1,6 +1,6 @@
 # Change Log
 
-## Next Release
+## v1.2.0
 
 * Drop iOS 8 support [#13](https://github.com/carousell/pickle/pull/13)
 * Rename `imagePickerController(_:didDeselectImageAsset:)` [#12](https://github.com/carousell/pickle/pull/12)
