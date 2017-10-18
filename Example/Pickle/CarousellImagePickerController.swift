@@ -12,6 +12,8 @@ import UIKit
 import Pickle
 import Photos
 
+private let selectionsLimit: Int = 4
+
 internal class CarousellImagePickerController: ImagePickerController {
 
     internal init() {
@@ -47,7 +49,7 @@ internal class CarousellImagePickerController: ImagePickerController {
             )
 
             let subtitle = NSAttributedString(
-                string: "You can choose up to 4 photos for your listing.\n",
+                string: "You can choose up to \(selectionsLimit) photos for your listing.\n",
                 attributes: [
                     NSFontAttributeName: UIFont.systemFont(ofSize: 12),
                     NSForegroundColorAttributeName: UIColor.darkGray,
@@ -98,7 +100,7 @@ private struct CarousellTheme: ImagePickerConfigurable {
 
     var imageTagTextAttributes: [String: Any]? = nil
     var selectedImageOverlayColor: UIColor? = nil
-    let allowedSelections: ImagePickerSelection? = .limit(to: 4)
+    let allowedSelections: ImagePickerSelection? = .limit(to: selectionsLimit)
 
     // MARK: -
 
