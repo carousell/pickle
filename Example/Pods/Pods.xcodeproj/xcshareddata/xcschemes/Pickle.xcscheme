@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9E8E2A8BEFDF44241E5B7E01BFFA9DB7"
+               BlueprintIdentifier = "2B4BFFAA86288A982D0B3A3EC84FAEAF"
                BuildableName = "Pickle.framework"
                BlueprintName = "Pickle"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9E8E2A8BEFDF44241E5B7E01BFFA9DB7"
+            BlueprintIdentifier = "2B4BFFAA86288A982D0B3A3EC84FAEAF"
             BuildableName = "Pickle.framework"
             BlueprintName = "Pickle"
             ReferencedContainer = "container:Pods.xcodeproj">
