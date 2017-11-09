@@ -15,11 +15,11 @@ class UITests: XCTestCase {
     private lazy var app: XCUIApplication = XCUIApplication()
 
     private var cancelButton: XCUIElement {
-        return app.navigationBars["Camera Roll"].buttons["Cancel"]
+        return app.navigationBars.buttons["Cancel"]
     }
 
     private var doneButton: XCUIElement {
-        return app.navigationBars["Camera Roll"].buttons["Done"]
+        return app.navigationBars.buttons["Done"]
     }
 
     // MARK: -
@@ -33,7 +33,7 @@ class UITests: XCTestCase {
     private func showImagePicker(named name: String) {
         app.tables.cells.staticTexts[name].tap()
 
-        addUIInterruptionMonitor(withDescription: "Pickle Example") { alert -> Bool in
+        addUIInterruptionMonitor(withDescription: "Photos Permission") { alert -> Bool in
             let button = alert.buttons["OK"]
             if button.exists {
                 button.tap()
@@ -42,13 +42,13 @@ class UITests: XCTestCase {
             return false
         }
 
-        // need to interact with the app for the handler to fire
+        // Need to interact with the app for the handler to fire
         app.tap()
     }
 
     func testDefaultStates() {
         showImagePicker(named: "Default appearance")
-        XCTAssertTrue(cancelButton.isEnabled)
+        XCTAssert(cancelButton.isEnabled)
         XCTAssertFalse(doneButton.isEnabled)
         cancelButton.tap()
     }
@@ -56,42 +56,44 @@ class UITests: XCTestCase {
     func testImageSelections() {
         showImagePicker(named: "Default appearance")
 
-        let collectionViewsQuery = app.collectionViews
-        let first = collectionViewsQuery.children(matching: .cell).element(boundBy: 0)
-        let second = collectionViewsQuery.children(matching: .cell).element(boundBy: 1)
-        let third = collectionViewsQuery.children(matching: .cell).element(boundBy: 2)
-        let forth = collectionViewsQuery.children(matching: .cell).element(boundBy: 3)
-        let fifth = collectionViewsQuery.children(matching: .cell).element(boundBy: 4)
+        let cells = app.collectionViews.children(matching: .cell)
+        let first = cells.element(boundBy: 0)
+        let second = cells.element(boundBy: 1)
+        let third = cells.element(boundBy: 2)
+        let forth = cells.element(boundBy: 3)
+        let fifth = cells.element(boundBy: 4)
 
         // Select and deselect an image
         first.tap()
-        XCTAssert(first.staticTexts["1"].exists)
-        XCTAssertTrue(doneButton.isEnabled)
+        XCTAssert(first.isSelected)
+        XCTAssert(doneButton.isEnabled)
+        XCTAssert(first.identifier == "1")
 
         first.tap()
-        XCTAssertFalse(first.staticTexts["1"].exists)
+        XCTAssertFalse(first.isSelected)
         XCTAssertFalse(doneButton.isEnabled)
+        XCTAssert(first.identifier.isEmpty)
 
         // Select images in sequence
         second.tap()
-        XCTAssert(second.staticTexts["1"].exists)
+        XCTAssert(second.identifier == "1")
 
         third.tap()
-        XCTAssert(third.staticTexts["2"].exists)
+        XCTAssert(third.identifier == "2")
 
         forth.tap()
-        XCTAssert(forth.staticTexts["3"].exists)
+        XCTAssert(forth.identifier == "3")
 
         // Reorder selections
         third.tap()
-        XCTAssert(second.staticTexts["1"].exists)
-        XCTAssert(forth.staticTexts["2"].exists)
+        XCTAssert(second.identifier == "1")
+        XCTAssert(forth.identifier == "2")
 
         third.tap()
-        XCTAssert(third.staticTexts["3"].exists)
+        XCTAssert(third.identifier == "3")
 
         fifth.tap()
-        XCTAssert(fifth.staticTexts["4"].exists)
+        XCTAssert(fifth.identifier == "4")
 
         doneButton.tap()
     }
@@ -99,7 +101,7 @@ class UITests: XCTestCase {
     func testSwitchingAlbums() {
         showImagePicker(named: "Default appearance")
 
-        app.navigationBars["Camera Roll"].staticTexts["Camera Roll"].tap()
+        app.navigationBars.staticTexts["Camera Roll"].tap()
         app.tables.cells.staticTexts["Favorites"].tap()
         XCTAssert(app.collectionViews.cells.count == 0)
 

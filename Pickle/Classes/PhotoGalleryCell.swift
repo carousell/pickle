@@ -40,8 +40,10 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
             if let text = taggedText {
                 overlayView.isHidden = false
                 tagLabel.text = text
+                accessibilityIdentifier = text
             } else {
                 overlayView.isHidden = true
+                accessibilityIdentifier = nil
             }
         }
     }
@@ -91,6 +93,9 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
     }
 
     private func setUpSubviews() {
+        // Set the cell as the accessibility element for UI tests to work.
+        isAccessibilityElement = true
+
         contentView.backgroundColor = UIColor.lightGray
         overlayView.backgroundColor = UIColor.Palette.blue.withAlphaComponent(0.3)
 
