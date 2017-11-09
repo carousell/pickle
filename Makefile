@@ -1,6 +1,9 @@
 bootstrap:
 	pod install --project-directory=Example && open Example/Pickle.xcworkspace
 
+pod-install:
+	pod install --project-directory=Example
+
 build:
 	set -o pipefail && xcodebuild -workspace Example/Pickle.xcworkspace -scheme Pickle clean build | bundle exec xcpretty -c
 

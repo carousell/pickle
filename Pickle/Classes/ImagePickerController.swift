@@ -217,7 +217,7 @@ extension ImagePickerController: UIImagePickerControllerDelegate, UINavigationCo
 
     // MARK: - UIImagePickerControllerDelegate
 
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         defer {
             picker.dismiss(animated: true, completion: nil)
         }
@@ -297,7 +297,7 @@ extension ImagePickerController: PhotoGalleryViewControllerDelegate {
         } else {
             switch allowedSelections {
             case .limit(to: let number) where 1 < number && selectedAssets.count < number:
-                fallthrough
+                fallthrough // swiftlint:disable:this fallthrough
             case .unlimited:
                 selectedAssets.append(asset)
                 imagePickerDelegate?.imagePickerController?(self, didSelectImageAsset: asset)
