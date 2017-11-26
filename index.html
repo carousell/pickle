@@ -22,7 +22,7 @@
 <a class="header-link" href="index.html">
 Pickle Docs
 </a>
-(82% documented)
+(91% documented)
 </p>
 
 <p class="header-col--secondary">
@@ -92,7 +92,6 @@ Pickle  Reference
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a>
 <a href="https://cocoapods.org/pods/Pickle"><img src="https://img.shields.io/cocoapods/v/Pickle.svg" alt="CocoaPods Compatible"></a>
 <img src="https://img.shields.io/cocoapods/p/Pickle.svg" alt="Platform">
-<a href="https://carousell.github.io/pickle"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/Pickle.svg" alt="CocoaDocs"></a>
 <img src="https://img.shields.io/badge/Swift-3.1-orange.svg" alt="Swift 3.1"></p>
 
 <p>Carousell image picker.</p>
@@ -132,7 +131,6 @@ Pickle  Reference
 <span class="c1">/// Tells the delegate that the user cancelled the pick operation. The delegate is responsible for dismissing the image picker.</span>
 <span class="kd">func</span> <span class="nf">imagePickerControllerDidCancel</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt">ImagePickerController</span><span class="p">)</span>
 </code></pre>
-<h2 id='customization' class='heading'>Customization</h2>
 <h3 id='appearance' class='heading'>Appearance</h3>
 
 <p>Customize the appearance with a type that conforms to <code>ImagePickerConfigurable</code>.</p>
@@ -160,6 +158,18 @@ Pickle  Reference
 <span class="nv">camera</span><span class="p">:</span> <span class="n">initializer</span>
 <span class="p">)</span>
 </code></pre>
+<h3 id='example-setup' class='heading'>Example Setup</h3>
+
+<p>Install <a href="https://guides.cocoapods.org/using/getting-started.html#installation">CocoaPods</a>:</p>
+<pre class="highlight plaintext"><code>gem install cocoapods
+</code></pre>
+
+<p>Set up the development pods:</p>
+<pre class="highlight shell"><code>make bootstrap
+</code></pre>
+<h3 id='documentation' class='heading'>Documentation</h3>
+
+<p><a href="https://carousell.github.io/pickle">https://carousell.github.io/pickle</a></p>
 <h2 id='requirements' class='heading'>Requirements</h2>
 
 <table><thead>
@@ -171,8 +181,14 @@ Pickle  Reference
 </tr>
 </thead><tbody>
 <tr>
-<td><code>~&gt; 1.0.0</code></td>
+<td><code>&gt;= 1.0.0</code></td>
 <td style="text-align: center">8.0+</td>
+<td style="text-align: center">8.3.3</td>
+<td style="text-align: center"><img src="https://img.shields.io/badge/Swift-3.1-orange.svg" alt="Swift 3.1"></td>
+</tr>
+<tr>
+<td><code>&gt;= 1.2.0</code></td>
+<td style="text-align: center">9.0+</td>
 <td style="text-align: center">8.3.3</td>
 <td style="text-align: center"><img src="https://img.shields.io/badge/Swift-3.1-orange.svg" alt="Swift 3.1"></td>
 </tr>
@@ -181,25 +197,16 @@ Pickle  Reference
 <h3 id='use-a-href-http-guides-cocoapods-org-cocoapods-a' class='heading'>Use <a href="http://guides.cocoapods.org/">CocoaPods</a></h3>
 
 <p>Create a <code>Podfile</code> with the following specification and run <code>pod install</code>.</p>
-<pre class="highlight ruby"><code><span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'8.0'</span>
+<pre class="highlight ruby"><code><span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'9.0'</span>
 <span class="n">use_frameworks!</span>
 
-<span class="n">pod</span> <span class="s1">'Pickle'</span><span class="p">,</span> <span class="s1">'~&gt; 1.0.0'</span>
+<span class="n">pod</span> <span class="s1">'Pickle'</span><span class="p">,</span> <span class="s1">'~&gt; 1.2.0'</span>
 </code></pre>
 <h3 id='use-a-href-https-github-com-carthage-carthage-carthage-a' class='heading'>Use <a href="https://github.com/Carthage/Carthage">Carthage</a></h3>
 
 <p>Create a <code>Cartfile</code> with the following specification and run <code>carthage bootstrap</code>.
 Follow the <a href="https://github.com/Carthage/Carthage#adding-frameworks-to-an-application">instructions</a> to add the framework to your project.</p>
-<pre class="highlight plaintext"><code>github "carousell/pickle" ~&gt; 1.0.0
-</code></pre>
-<h2 id='example' class='heading'>Example</h2>
-
-<p>Install <a href="https://guides.cocoapods.org/using/getting-started.html#installation">CocoaPods</a>:</p>
-<pre class="highlight plaintext"><code>gem install cocoapods
-</code></pre>
-
-<p>Set up the development pods:</p>
-<pre class="highlight shell"><code>pod install --project-directory<span class="o">=</span>Example <span class="o">&amp;&amp;</span> open Example/Pickle.xcworkspace
+<pre class="highlight plaintext"><code>github "carousell/pickle" ~&gt; 1.2.0
 </code></pre>
 <h2 id='contributing' class='heading'>Contributing</h2>
 
@@ -223,7 +230,7 @@ See <a href="https://github.com/carousell/pickle/blob/master/LICENSE">LICENSE</a
 </article>
 </div>
 <section class="footer">
-<p>&copy; 2017 <a class="link" href="https://github.com/carousell" target="_blank" rel="external">Carousell</a>. All rights reserved. (Last updated: 2017-07-18)</p>
+<p>&copy; 2017 <a class="link" href="https://github.com/carousell" target="_blank" rel="external">Carousell</a>. All rights reserved. (Last updated: 2017-11-26)</p>
 <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
 </section>
 </body>
