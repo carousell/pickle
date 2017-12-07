@@ -8,7 +8,12 @@ build:
 	set -o pipefail && xcodebuild -workspace Example/Pickle.xcworkspace -scheme Pickle clean build | bundle exec xcpretty -c
 
 test:
-	set -o pipefail && xcodebuild -workspace Example/Pickle.xcworkspace -scheme Pickle-Example -sdk iphonesimulator -destination 'name=iPhone 7,OS=10.3.1' clean test | bundle exec xcpretty -c
+	set -o pipefail && xcodebuild \
+	-workspace Example/Pickle.xcworkspace \
+	-scheme Pickle-Example \
+	-destination 'platform=iOS Simulator,name=iPhone 7,OS=11.2' \
+	CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO \
+	clean test | bundle exec xcpretty -c
 
 bump:
 ifeq (,$(strip $(version)))

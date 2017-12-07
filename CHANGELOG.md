@@ -1,5 +1,9 @@
 # Change Log
 
+## Next Release
+
+* Update to Swift 4 with Xcode 9 [#15](https://github.com/carousell/pickle/pull/15)
+
 ## v1.2.0
 
 * Drop iOS 8 support [#13](https://github.com/carousell/pickle/pull/13)
