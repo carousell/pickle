@@ -44,6 +44,13 @@ class UITests: XCTestCase {
 
         // Need to interact with the app for the handler to fire
         app.tap()
+
+        // Workaround to tap the permission alert button found via the springboard
+        let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+        let button = springboard.buttons["OK"]
+        if button.exists {
+            button.tap()
+        }
     }
 
     func testDefaultStates() {
