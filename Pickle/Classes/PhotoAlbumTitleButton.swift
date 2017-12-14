@@ -16,6 +16,14 @@ internal final class PhotoAlbumTitleButton: UIControl {
         let font: UIFont?
         let tintColor: UIColor?
         let highlightedColor: UIColor?
+
+        init(font: UIFont?, tintColor: UIColor?, highlightedColor: UIColor?) {
+            self.font = font
+            self.tintColor = tintColor ?? Configuration.systemTintColor
+            self.highlightedColor = highlightedColor ?? Configuration.systemTintColor
+        }
+
+        private static let systemTintColor = UIButton().tintColor
     }
 
     // MARK: - Initialization
