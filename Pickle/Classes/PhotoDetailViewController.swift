@@ -43,8 +43,13 @@ internal final class PhotoDetailViewController: UIViewController {
         let options = PHImageRequestOptions()
         options.isNetworkAccessAllowed = true
 
-        imageRequestID = PHCachingImageManager.default().requestImage(for: asset, targetSize: imageSize, contentMode: .aspectFill, options: options) { [weak self] in
-            self?.imageView.image = $0.0
+        imageRequestID = PHCachingImageManager.default().requestImage(
+            for: asset,
+            targetSize: imageSize,
+            contentMode: .aspectFill,
+            options: options
+        ) { [weak self] image, _ in
+            self?.imageView.image = image
         }
     }
 

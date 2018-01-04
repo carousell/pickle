@@ -81,10 +81,15 @@ internal final class PhotoAlbumCell: UITableViewCell {
                 return
             }
 
-            let id = PHCachingImageManager.default().requestImage(for: asset, targetSize: imageSize, contentMode: .aspectFill, options: requestOptions) {
-                if let image = $0.0 {
-                    self.imageViews[index].image = image
-                    self.imageViews[index].isHidden = false
+            let id = PHCachingImageManager.default().requestImage(
+                for: asset,
+                targetSize: imageSize,
+                contentMode: .aspectFill,
+                options: requestOptions
+            ) { [weak self] image, _ in
+                if let image = image {
+                    self?.imageViews[index].image = image
+                    self?.imageViews[index].isHidden = false
                 }
             }
             self.imageRequestIDs.append(id)

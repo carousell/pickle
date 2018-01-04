@@ -3,7 +3,7 @@ use_frameworks!
 
 target 'PickleExample' do
   pod 'Pickle', :path => '../'
-  pod 'SwiftLint'
+  pod 'SwiftLint', '0.23.1'
 
   target 'PickleUITests' do
     inherit! :search_paths

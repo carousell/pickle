@@ -40,8 +40,10 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
             if let text = taggedText {
                 overlayView.isHidden = false
                 tagLabel.text = text
+                accessibilityIdentifier = text
             } else {
                 overlayView.isHidden = true
+                accessibilityIdentifier = nil
             }
         }
     }
@@ -70,9 +72,14 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
         options.resizeMode = .exact
         options.isNetworkAccessAllowed = true
 
-        imageRequestID = PHCachingImageManager.default().requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: options) {
-            if let image = $0.0 {
-                self.imageView.image = image
+        imageRequestID = PHCachingImageManager.default().requestImage(
+            for: asset,
+            targetSize: size,
+            contentMode: .aspectFill,
+            options: options
+        ) { [weak self] image, _ in
+            if let image = image {
+                self?.imageView.image = image
             }
         }
 
@@ -86,6 +93,9 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
     }
 
     private func setUpSubviews() {
+        // Set the cell as the accessibility element for UI tests to work.
+        isAccessibilityElement = true
+
         contentView.backgroundColor = UIColor.lightGray
         overlayView.backgroundColor = UIColor.Palette.blue.withAlphaComponent(0.3)
 
