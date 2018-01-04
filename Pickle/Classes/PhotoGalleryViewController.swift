@@ -55,7 +55,7 @@ internal final class PhotoGalleryViewController: UIViewController,
             if let margin = configuration?.hintTextMargin {
                 hintLabel.textMargin = margin
             }
-            if let color = newValue?.attributes?[NSBackgroundColorAttributeName] as? UIColor {
+            if let color = newValue?.attributes?[.backgroundColor] as? UIColor {
                 hintLabel.backgroundColor = color
             }
         }
@@ -287,7 +287,7 @@ private extension PHAssetCollection {
 
 private extension NSAttributedString {
 
-    var attributes: [String: Any]? {
+    var attributes: [NSAttributedStringKey: Any]? {
         if 0 < length {
             return attributes(at: 0, longestEffectiveRange: nil, in: NSRange(location: 0, length: length))
         } else {
