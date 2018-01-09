@@ -54,11 +54,12 @@ func imagePickerControllerDidCancel(_ picker: ImagePickerController)
 
 ### Appearance
 
-Customize the appearance with a type that conforms to `ImagePickerConfigurable`.
+Customize the appearance with a modified `Parameters` struct, or any type that conforms to `ImagePickerConfigurable`.
 
 ```swift
-let configuration: ImagePickerConfigurable = CustomizedType()
-let picker = ImagePickerController(configuration: configuration)
+var parameters = Pickle.Parameters()
+parameters.allowedSelections = .limit(to: 4)
+let picker = ImagePickerController(configuration: parameters)
 ```
 
 See [ImagePickerConfigurable.swift](https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerConfigurable.swift) for a full list of configurable properties.
@@ -70,7 +71,7 @@ See [ImagePickerConfigurable.swift](https://github.com/carousell/pickle/blob/mas
 ```swift
 let picker = ImagePickerController(
   selectedAssets: [],
-  configuration: CustomizedType(),
+  configuration: Pickle.Parameters(),
   cameraType: UIImagePickerController.self
 )
 ```
@@ -82,7 +83,7 @@ let initializer = {
 
 let picker = ImagePickerController(
   selectedAssets: [],
-  configuration: CustomizedType(),
+  configuration: Pickle.Parameters(),
   camera: initializer
 )
 ```
