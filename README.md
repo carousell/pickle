@@ -111,10 +111,10 @@ make bootstrap
 ## Requirements
 
 Pickle     | iOS  | Xcode | Swift
----------- | :--: | :---: | :---:
+---------- | :--: | :---- | :---:
 `>= 1.0.0` | 8.0+ | 8.3.3 | ![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg)
 `>= 1.2.0` | 9.0+ | 8.3.3 | ![Swift 3.1](https://img.shields.io/badge/Swift-3.1-orange.svg)
-`master`   | 9.0+ | 9.0   | ![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg)
+`>= 1.3.0` | 9.0+ | 9.2   | ![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg)
 
 ## Installation
 

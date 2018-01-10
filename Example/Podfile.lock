@@ -1,5 +1,5 @@
 PODS:
-  - Pickle (1.2.0)
+  - Pickle (1.3.0)
   - SwiftLint (0.23.1)
 
 DEPENDENCIES:
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Pickle: 80f99c9377a2785e48bd5c3ad061e7f614120312
+  Pickle: e845765b22fec98dc7eff51f327e7ad22834a3d2
   SwiftLint: 1b670ce79284c76520f84060e87d645078fd32fa
 
 PODFILE CHECKSUM: 47f97668e0890347a0b2faf96d7471347d1e708a

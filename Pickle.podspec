@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Pickle'
-  s.version          = '1.2.0'
+  s.version          = '1.3.0'
   s.summary          = 'Carousell flavoured image picker with multiple photo selections.'
   s.homepage         = 'https://github.com/carousell/pickle'
   s.license          = { :type => 'Apache License 2.0', :file => 'LICENSE' }

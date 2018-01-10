@@ -1,9 +1,9 @@
 # Change Log
 
-## Next Release
+## v1.3.0
 
 * Update to Swift 4 with Xcode 9 [#15](https://github.com/carousell/pickle/pull/15)
-* Add a `Parameters` struct with placeholders that `ImagePickerConfigurable` requires
+* Add a `Parameters` struct with placeholders that `ImagePickerConfigurable` requires [#23](https://github.com/carousell/pickle/pull/23)
 
 ## v1.2.0
 
