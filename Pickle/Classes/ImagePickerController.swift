@@ -129,8 +129,7 @@ open class ImagePickerController: UINavigationController {
     fileprivate weak var imagePickerDelegate: ImagePickerControllerDelegate?
     fileprivate lazy var slideUpPresentation: UIViewControllerTransitioningDelegate = SlideUpPresentation()
 
-    /// Avoid strong reference to the gallery view controller when it's removed from the navigation stack.
-    fileprivate weak var galleryViewController: PhotoGalleryViewController? {
+    fileprivate var galleryViewController: PhotoGalleryViewController? {
         didSet {
             // Remove the reference to the album button from the previous view controller.
             oldValue?.navigationItem.titleView = nil
