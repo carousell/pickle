@@ -1,19 +1,21 @@
 PODS:
   - Pickle (1.3.0)
-  - SwiftLint (0.23.1)
+  - SwiftLint (0.27.0)
 
 DEPENDENCIES:
   - Pickle (from `../`)
-  - SwiftLint (= 0.23.1)
+  - SwiftLint (from `https://raw.githubusercontent.com/CocoaPods/Specs/master/Specs/4/0/1/SwiftLint/0.27.0/SwiftLint.podspec.json`)
 
 EXTERNAL SOURCES:
   Pickle:
-    :path: ../
+    :path: "../"
+  SwiftLint:
+    :podspec: https://raw.githubusercontent.com/CocoaPods/Specs/master/Specs/4/0/1/SwiftLint/0.27.0/SwiftLint.podspec.json
 
 SPEC CHECKSUMS:
-  Pickle: e845765b22fec98dc7eff51f327e7ad22834a3d2
-  SwiftLint: 1b670ce79284c76520f84060e87d645078fd32fa
+  Pickle: ac29bdd7b53f14dec1c75b7c9f35a8c1657b6b0a
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: 47f97668e0890347a0b2faf96d7471347d1e708a
+PODFILE CHECKSUM: 876096377525bec4eeb5dc771e7fdfbcdcb46898
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3
