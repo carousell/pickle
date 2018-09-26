@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode9.2
+osx_image: xcode10
 podfile: Example/Podfile
 cache:
   bundler: true
@@ -9,7 +9,7 @@ cache:
     - Example/Pods/SwiftLint
 before_install:
   - xcrun instruments -s devices
-  - xcrun instruments -w "iPhone 7 (11.2) [" || true
+  - xcrun instruments -w "iPhone X (12.0) [" || true
 install:
   - bundle install --jobs=3 --retry=3 --deployment
   - bundle exec pod install --project-directory=Example
