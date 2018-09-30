@@ -58,7 +58,7 @@ Pickle  Reference
 </ul>
 </li>
 <li class="nav-group-name">
-<a class="nav-group-name-link" href="Enums.html">Enums</a>
+<a class="nav-group-name-link" href="Enums.html">Enumerations</a>
 <ul class="nav-group-tasks">
 <li class="nav-group-task">
 <a class="nav-group-task-link" href="Enums/ImagePickerSelection.html">ImagePickerSelection</a>
@@ -80,7 +80,7 @@ Pickle  Reference
 </ul>
 </li>
 <li class="nav-group-name">
-<a class="nav-group-name-link" href="Structs.html">Structs</a>
+<a class="nav-group-name-link" href="Structs.html">Structures</a>
 <ul class="nav-group-tasks">
 <li class="nav-group-task">
 <a class="nav-group-task-link" href="Structs/Parameters.html">Parameters</a>
@@ -126,10 +126,10 @@ Pickle  Reference
 <span class="k">let</span> <span class="nv">picker</span> <span class="o">=</span> <span class="kt">ImagePickerController</span><span class="p">(</span><span class="nv">selectedAssets</span><span class="p">:</span> <span class="n">assets</span><span class="p">)</span>
 </code></pre>
 
-<p><code>ImagePickerController</code> will request permission to access <strong>Photos</strong> if needed when it&rsquo;s presented.</p>
+<p><code><a href="Classes/ImagePickerController.html">ImagePickerController</a></code> will request permission to access <strong>Photos</strong> if needed when it&rsquo;s presented.</p>
 <h3 id='delegate' class='heading'>Delegate</h3>
 
-<p><code>ImagePickerControllerDelegate</code> is responsible for dismissing the image picker. Required delegate methods:</p>
+<p><code><a href="Protocols/ImagePickerControllerDelegate.html">ImagePickerControllerDelegate</a></code> is responsible for dismissing the image picker. Required delegate methods:</p>
 <pre class="highlight swift"><code><span class="c1">/// Asks the delegate if the image picker should launch camera with certain permission status.</span>
 <span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt">ImagePickerController</span><span class="p">,</span> <span class="n">shouldLaunchCameraWithAuthorization</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">AVAuthorizationStatus</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
 
@@ -141,7 +141,7 @@ Pickle  Reference
 </code></pre>
 <h3 id='appearance' class='heading'>Appearance</h3>
 
-<p>Customize the appearance with a modified <code>Parameters</code> struct, or any type that conforms to <code>ImagePickerConfigurable</code>.</p>
+<p>Customize the appearance with a modified <code><a href="Structs/Parameters.html">Parameters</a></code> struct, or any type that conforms to <code><a href="Protocols/ImagePickerConfigurable.html">ImagePickerConfigurable</a></code>.</p>
 <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">parameters</span> <span class="o">=</span> <span class="kt">Pickle</span><span class="o">.</span><span class="kt">Parameters</span><span class="p">()</span>
 <span class="n">parameters</span><span class="o">.</span><span class="n">allowedSelections</span> <span class="o">=</span> <span class="o">.</span><span class="nf">limit</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
 <span class="k">let</span> <span class="nv">picker</span> <span class="o">=</span> <span class="kt">ImagePickerController</span><span class="p">(</span><span class="nv">configuration</span><span class="p">:</span> <span class="n">parameters</span><span class="p">)</span>
@@ -150,7 +150,7 @@ Pickle  Reference
 <p>See <a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerConfigurable.swift">ImagePickerConfigurable.swift</a> for a full list of configurable properties.</p>
 <h3 id='camera' class='heading'>Camera</h3>
 
-<p><code>UIImagePickerController</code> with <code>sourceType = .camera</code> is used as the default camera on devices. Launch a customized camera from the image gallery by providing a <a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/CameraCompatible.swift"><code>CameraCompatible</code></a> type or a closure that returns a configured camera controller instance.</p>
+<p><code>UIImagePickerController</code> with <code>sourceType = .camera</code> is used as the default camera on devices. Launch a customized camera from the image gallery by providing a <a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/CameraCompatible.swift"><code><a href="Protocols/CameraCompatible.html">CameraCompatible</a></code></a> type or a closure that returns a configured camera controller instance.</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">picker</span> <span class="o">=</span> <span class="kt">ImagePickerController</span><span class="p">(</span>
 <span class="nv">selectedAssets</span><span class="p">:</span> <span class="p">[],</span>
 <span class="nv">configuration</span><span class="p">:</span> <span class="kt">Pickle</span><span class="o">.</span><span class="kt">Parameters</span><span class="p">(),</span>
@@ -246,8 +246,8 @@ See <a href="https://github.com/carousell/pickle/blob/master/LICENSE">LICENSE</a
 </article>
 </div>
 <section class="footer">
-<p>&copy; 2018 <a class="link" href="https://github.com/carousell" target="_blank" rel="external">Carousell</a>. All rights reserved. (Last updated: 2018-01-10)</p>
-<p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+<p>&copy; 2018 <a class="link" href="https://github.com/carousell" target="_blank" rel="external">Carousell</a>. All rights reserved. (Last updated: 2018-09-30)</p>
+<p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
 </section>
 </body>
 </div>

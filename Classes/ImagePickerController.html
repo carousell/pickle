@@ -59,7 +59,7 @@ ImagePickerController Class Reference
 </ul>
 </li>
 <li class="nav-group-name">
-<a class="nav-group-name-link" href="../Enums.html">Enums</a>
+<a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
 <ul class="nav-group-tasks">
 <li class="nav-group-task">
 <a class="nav-group-task-link" href="../Enums/ImagePickerSelection.html">ImagePickerSelection</a>
@@ -81,7 +81,7 @@ ImagePickerController Class Reference
 </ul>
 </li>
 <li class="nav-group-name">
-<a class="nav-group-name-link" href="../Structs.html">Structs</a>
+<a class="nav-group-name-link" href="../Structs.html">Structures</a>
 <ul class="nav-group-tasks">
 <li class="nav-group-task">
 <a class="nav-group-task-link" href="../Structs/Parameters.html">Parameters</a>
@@ -141,6 +141,25 @@ ImagePickerController Class Reference
 
 </div>
 </div>
+<div>
+<h4>Parameters</h4>
+<table class="graybox">
+<tbody>
+<tr>
+<td>
+<code>
+<em>selectedAssets</em>
+</code>
+</td>
+<td>
+<div>
+<p>Preselected image assets that will be highlighted.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="slightly-smaller">
 <a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerController.swift#L26-L28">Show on GitHub</a>
 </div>
@@ -150,9 +169,9 @@ ImagePickerController Class Reference
 <li class="item">
 <div>
 <code>
-<a name="/s:6Pickle21ImagePickerControllerCACSaySo7PHAssetCG14selectedAssets_AA0bC12Configurable_pSg13configurationtcfc"></a>
+<a name="/s:6Pickle21ImagePickerControllerC14selectedAssets13configurationACSaySo7PHAssetCG_AA0bC12Configurable_pSgtcfc"></a>
 <a name="//apple_ref/swift/Method/init(selectedAssets:configuration:)" class="dashAnchor"></a>
-<a class="token" href="#/s:6Pickle21ImagePickerControllerCACSaySo7PHAssetCG14selectedAssets_AA0bC12Configurable_pSg13configurationtcfc">init(selectedAssets:configuration:)</a>
+<a class="token" href="#/s:6Pickle21ImagePickerControllerC14selectedAssets13configurationACSaySo7PHAssetCG_AA0bC12Configurable_pSgtcfc">init(selectedAssets:configuration:)</a>
 </code>
 </div>
 <div class="height-container">
@@ -171,6 +190,37 @@ ImagePickerController Class Reference
 
 </div>
 </div>
+<div>
+<h4>Parameters</h4>
+<table class="graybox">
+<tbody>
+<tr>
+<td>
+<code>
+<em>selectedAssets</em>
+</code>
+</td>
+<td>
+<div>
+<p>Preselected image assets that will be highlighted. Default is an empty array.</p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<code>
+<em>configuration</em>
+</code>
+</td>
+<td>
+<div>
+<p>Optional appearance configuration. Default is nil.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="slightly-smaller">
 <a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerController.swift#L35-L37">Show on GitHub</a>
 </div>
@@ -180,9 +230,9 @@ ImagePickerController Class Reference
 <li class="item">
 <div>
 <code>
-<a name="/s:6Pickle21ImagePickerControllerCACSaySo7PHAssetCG14selectedAssets_AA0bC12Configurable_pSg13configurationxm10cameraTypetcSo06UIViewD0CRbzAA16CameraCompatibleRzlufc"></a>
+<a name="/s:6Pickle21ImagePickerControllerC14selectedAssets13configuration10cameraTypeACSaySo7PHAssetCG_AA0bC12Configurable_pSgxmtcSo06UIViewD0CRbzAA16CameraCompatibleRzlufc"></a>
 <a name="//apple_ref/swift/Method/init(selectedAssets:configuration:cameraType:)" class="dashAnchor"></a>
-<a class="token" href="#/s:6Pickle21ImagePickerControllerCACSaySo7PHAssetCG14selectedAssets_AA0bC12Configurable_pSg13configurationxm10cameraTypetcSo06UIViewD0CRbzAA16CameraCompatibleRzlufc">init(selectedAssets:configuration:cameraType:)</a>
+<a class="token" href="#/s:6Pickle21ImagePickerControllerC14selectedAssets13configuration10cameraTypeACSaySo7PHAssetCG_AA0bC12Configurable_pSgxmtcSo06UIViewD0CRbzAA16CameraCompatibleRzlufc">init(selectedAssets:configuration:cameraType:)</a>
 </code>
 </div>
 <div class="height-container">
@@ -192,6 +242,7 @@ ImagePickerController Class Reference
 <div class="abstract">
 <p>Returns a newly initialized image picker controller with a customized type of camera.</p>
 
+<a href="../Classes/ImagePickerController/init(selectedAssets:configuration:cameraType:).html" class="slightly-smaller">See more</a>
 </div>
 <div class="declaration">
 <h4>Declaration</h4>
@@ -204,6 +255,49 @@ ImagePickerController Class Reference
 
 </div>
 </div>
+<div>
+<h4>Parameters</h4>
+<table class="graybox">
+<tbody>
+<tr>
+<td>
+<code>
+<em>selectedAssets</em>
+</code>
+</td>
+<td>
+<div>
+<p>Preselected image assets that will be highlighted.</p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<code>
+<em>configuration</em>
+</code>
+</td>
+<td>
+<div>
+<p>Optional appearance configuration.</p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<code>
+<em>cameraType</em>
+</code>
+</td>
+<td>
+<div>
+<p>A UIViewController type that conforms to CameraCompatible protocol.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="slightly-smaller">
 <a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerController.swift#L45-L51">Show on GitHub</a>
 </div>
@@ -213,9 +307,9 @@ ImagePickerController Class Reference
 <li class="item">
 <div>
 <code>
-<a name="/s:6Pickle21ImagePickerControllerCACSaySo7PHAssetCG14selectedAssets_AA0bC12Configurable_pSg13configurationxyc6cameratcSo06UIViewD0CRbzAA16CameraCompatibleRzlufc"></a>
+<a name="/s:6Pickle21ImagePickerControllerC14selectedAssets13configuration6cameraACSaySo7PHAssetCG_AA0bC12Configurable_pSgxyctcSo06UIViewD0CRbzAA16CameraCompatibleRzlufc"></a>
 <a name="//apple_ref/swift/Method/init(selectedAssets:configuration:camera:)" class="dashAnchor"></a>
-<a class="token" href="#/s:6Pickle21ImagePickerControllerCACSaySo7PHAssetCG14selectedAssets_AA0bC12Configurable_pSg13configurationxyc6cameratcSo06UIViewD0CRbzAA16CameraCompatibleRzlufc">init(selectedAssets:configuration:camera:)</a>
+<a class="token" href="#/s:6Pickle21ImagePickerControllerC14selectedAssets13configuration6cameraACSaySo7PHAssetCG_AA0bC12Configurable_pSgxyctcSo06UIViewD0CRbzAA16CameraCompatibleRzlufc">init(selectedAssets:configuration:camera:)</a>
 </code>
 </div>
 <div class="height-container">
@@ -225,6 +319,7 @@ ImagePickerController Class Reference
 <div class="abstract">
 <p>Returns a newly initialized image picker controller with a closure for camera configuration.</p>
 
+<a href="../Classes/ImagePickerController/init(selectedAssets:configuration:camera:).html" class="slightly-smaller">See more</a>
 </div>
 <div class="declaration">
 <h4>Declaration</h4>
@@ -236,6 +331,49 @@ ImagePickerController Class Reference
 <span class="n">camera</span> <span class="nv">initializer</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">)</span> <span class="k">where</span> <span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/CameraCompatible.html">CameraCompatible</a></span></code></pre>
 
 </div>
+</div>
+<div>
+<h4>Parameters</h4>
+<table class="graybox">
+<tbody>
+<tr>
+<td>
+<code>
+<em>selectedAssets</em>
+</code>
+</td>
+<td>
+<div>
+<p>Preselected image assets that will be highlighted.</p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<code>
+<em>configuration</em>
+</code>
+</td>
+<td>
+<div>
+<p>Optional appearance configuration.</p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<code>
+<em>camera</em>
+</code>
+</td>
+<td>
+<div>
+<p>A closure that returns a UIViewController that conforms to CameraCompatible protocol.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="slightly-smaller">
 <a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerController.swift#L59-L88">Show on GitHub</a>
@@ -266,6 +404,25 @@ ImagePickerController Class Reference
 <pre class="highlight"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
 
 </div>
+</div>
+<div>
+<h4>Parameters</h4>
+<table class="graybox">
+<tbody>
+<tr>
+<td>
+<code>
+<em>coder</em>
+</code>
+</td>
+<td>
+<div>
+<p>An unarchiver object.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="slightly-smaller">
 <a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerController.swift#L94-L99">Show on GitHub</a>
@@ -347,9 +504,9 @@ ImagePickerController Class Reference
 <li class="item">
 <div>
 <code>
-<a name="/s:6Pickle21ImagePickerControllerC4hintSo18NSAttributedStringCSgv"></a>
+<a name="/s:6Pickle21ImagePickerControllerC4hintSo18NSAttributedStringCSgvp"></a>
 <a name="//apple_ref/swift/Property/hint" class="dashAnchor"></a>
-<a class="token" href="#/s:6Pickle21ImagePickerControllerC4hintSo18NSAttributedStringCSgv">hint</a>
+<a class="token" href="#/s:6Pickle21ImagePickerControllerC4hintSo18NSAttributedStringCSgvp">hint</a>
 </code>
 </div>
 <div class="height-container">
@@ -410,7 +567,7 @@ ImagePickerController Class Reference
 </div>
 </div>
 <div class="slightly-smaller">
-<a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerController.swift#L201-L206">Show on GitHub</a>
+<a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerController.swift#L200-L205">Show on GitHub</a>
 </div>
 </section>
 </div>
@@ -440,7 +597,7 @@ ImagePickerController Class Reference
 </div>
 </div>
 <div class="slightly-smaller">
-<a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerController.swift#L208-L211">Show on GitHub</a>
+<a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerController.swift#L207-L210">Show on GitHub</a>
 </div>
 </section>
 </div>
@@ -481,7 +638,7 @@ ImagePickerController Class Reference
 </div>
 </div>
 <div class="slightly-smaller">
-<a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerController.swift#L220-L238">Show on GitHub</a>
+<a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerController.swift#L219-L237">Show on GitHub</a>
 </div>
 </section>
 </div>
@@ -511,7 +668,7 @@ ImagePickerController Class Reference
 </div>
 </div>
 <div class="slightly-smaller">
-<a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerController.swift#L240-L249">Show on GitHub</a>
+<a href="https://github.com/carousell/pickle/blob/master/Pickle/Classes/ImagePickerController.swift#L239-L248">Show on GitHub</a>
 </div>
 </section>
 </div>
@@ -524,8 +681,8 @@ ImagePickerController Class Reference
 </article>
 </div>
 <section class="footer">
-<p>&copy; 2018 <a class="link" href="https://github.com/carousell" target="_blank" rel="external">Carousell</a>. All rights reserved. (Last updated: 2018-01-10)</p>
-<p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+<p>&copy; 2018 <a class="link" href="https://github.com/carousell" target="_blank" rel="external">Carousell</a>. All rights reserved. (Last updated: 2018-09-30)</p>
+<p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
 </section>
 </body>
 </div>
