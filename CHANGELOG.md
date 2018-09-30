@@ -1,5 +1,9 @@
 # Change Log
 
+## v1.3.1
+
+* Update the project to Xcode 10 [#26](https://github.com/carousell/pickle/pull/26)
+
 ## v1.3.0
 
 * Update to Swift 4 with Xcode 9 [#15](https://github.com/carousell/pickle/pull/15)
