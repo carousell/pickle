@@ -31,7 +31,7 @@
 		0C36B734B176F85A2CF4B8DA /* Pods-PickleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickleUITests/Pods-PickleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		13BC727F2F60439037F4BA8F /* Pods_PickleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D132C17E500800C6AFE5724 /* Pods_PickleExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickleExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2435781F76FD8B70261A205D /* Pickle.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Pickle.podspec; path = ../Pickle.podspec; sourceTree = "<group>"; };
+		2435781F76FD8B70261A205D /* Pickle.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Pickle.podspec; path = ../Pickle.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		28D5C2EBC98E8B494EC0F880 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		3A31AA09285B9EE90A8313A2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		3D2ED8722EB9E95C8C564511 /* Pods-PickleExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickleExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickleExample/Pods-PickleExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -47,7 +47,6 @@
 		B563515D1F06278E00B5A46D /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
 		B563515F1F06278E00B5A46D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D726662EC0F5B8C708399461 /* Pods-PickleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickleUITests/Pods-PickleUITests.release.xcconfig"; sourceTree = "<group>"; };
-		DEB3558E8B280FD2A975E279 /* Pods_Pickle_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pickle_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +138,6 @@
 		B0A990CF6B5EEE04418B88B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DEB3558E8B280FD2A975E279 /* Pods_Pickle_Tests.framework */,
 				1D132C17E500800C6AFE5724 /* Pods_PickleExample.framework */,
 				13BC727F2F60439037F4BA8F /* Pods_PickleUITests.framework */,
 			);
@@ -204,7 +202,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Carousell;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
@@ -306,7 +304,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint";
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 		FACEF3710E5D4AC190E14F3C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -381,12 +379,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -434,12 +434,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
