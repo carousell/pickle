@@ -227,7 +227,7 @@ extension ImagePickerController: UIImagePickerControllerDelegate, UINavigationCo
         }
 
         // Instead of using UIImagePickerControllerEditedImage, crop the original image for higher resolution if UIImagePickerControllerCropRect is specified.
-        var croppedImage: UIImage? = nil
+        var croppedImage: UIImage?
         if let cropRect = info[UIImagePickerControllerCropRect] as? CGRect, let cgImage = originalImage.cgImage?.cropping(to: cropRect) {
             croppedImage = UIImage(cgImage: cgImage, scale: originalImage.scale, orientation: originalImage.imageOrientation)
         }
@@ -258,7 +258,8 @@ extension ImagePickerController: PhotoAlbumsViewControllerDelegate {
 
     internal func photoAlbumsViewController(_ controller: PhotoAlbumsViewController, didSelectAlbum album: PHAssetCollection) {
         title = album.localizedTitle
-        galleryViewController = PhotoGalleryViewController(album: album, configuration: configuration)
+        let galleryViewController = PhotoGalleryViewController(album: album, configuration: configuration)
+        self.galleryViewController = galleryViewController
         dismiss(animated: true, completion: nil)
         UIView.animate(withDuration: SlideUpPresentation.animationDuration) {
             self.albumButton.isSelected = false
@@ -297,7 +298,7 @@ extension ImagePickerController: PhotoGalleryViewControllerDelegate {
         } else {
             switch allowedSelections {
             case .limit(to: let number) where 1 < number && selectedAssets.count < number:
-                fallthrough // swiftlint:disable:this fallthrough
+                fallthrough // swiftlint:disable:this no_fallthrough_only
             case .unlimited:
                 selectedAssets.append(asset)
                 imagePickerDelegate?.imagePickerController?(self, didSelectImageAsset: asset)
@@ -349,7 +350,8 @@ fileprivate extension ImagePickerController {
 
         case .authorized:
             title = cameraRoll.firstObject?.localizedTitle
-            galleryViewController = PhotoGalleryViewController(album: cameraRoll.firstObject, configuration: configuration)
+            let galleryViewController = PhotoGalleryViewController(album: cameraRoll.firstObject, configuration: configuration)
+            self.galleryViewController = galleryViewController
 
         case .denied, .restricted:
             // Workaround the issue in iOS 11 where UIImagePickerController doesn't show the permission denied message.
@@ -357,7 +359,8 @@ fileprivate extension ImagePickerController {
             if #available(iOS 11.0, *) {
                 // Hide the album button and display an empty gallery with a cancel button to dismiss the image picker.
                 title = nil
-                galleryViewController = PhotoGalleryViewController()
+                let galleryViewController = PhotoGalleryViewController()
+                self.galleryViewController = galleryViewController
                 return
             }
             let controller = systemPhotoLibraryController

@@ -114,7 +114,7 @@ class UITests: XCTestCase {
 
         app.navigationBars["Favorites"].staticTexts["Favorites"].tap()
         app.tables.cells.staticTexts["Camera Roll"].tap()
-        XCTAssert(app.collectionViews.cells.count == 5)
+        XCTAssert(app.collectionViews.cells.count > 0)
 
         cancelButton.tap()
     }
