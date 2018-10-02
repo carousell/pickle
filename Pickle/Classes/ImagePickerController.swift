@@ -129,8 +129,7 @@ open class ImagePickerController: UINavigationController {
     fileprivate weak var imagePickerDelegate: ImagePickerControllerDelegate?
     fileprivate lazy var slideUpPresentation: UIViewControllerTransitioningDelegate = SlideUpPresentation()
 
-    /// Avoid strong reference to the gallery view controller when it's removed from the navigation stack.
-    fileprivate weak var galleryViewController: PhotoGalleryViewController? {
+    fileprivate var galleryViewController: PhotoGalleryViewController? {
         didSet {
             // Remove the reference to the album button from the previous view controller.
             oldValue?.navigationItem.titleView = nil
@@ -227,7 +226,7 @@ extension ImagePickerController: UIImagePickerControllerDelegate, UINavigationCo
         }
 
         // Instead of using UIImagePickerControllerEditedImage, crop the original image for higher resolution if UIImagePickerControllerCropRect is specified.
-        var croppedImage: UIImage? = nil
+        var croppedImage: UIImage?
         if let cropRect = info[UIImagePickerControllerCropRect] as? CGRect, let cgImage = originalImage.cgImage?.cropping(to: cropRect) {
             croppedImage = UIImage(cgImage: cgImage, scale: originalImage.scale, orientation: originalImage.imageOrientation)
         }
@@ -297,7 +296,7 @@ extension ImagePickerController: PhotoGalleryViewControllerDelegate {
         } else {
             switch allowedSelections {
             case .limit(to: let number) where 1 < number && selectedAssets.count < number:
-                fallthrough // swiftlint:disable:this fallthrough
+                fallthrough // swiftlint:disable:this no_fallthrough_only
             case .unlimited:
                 selectedAssets.append(asset)
                 imagePickerDelegate?.imagePickerController?(self, didSelectImageAsset: asset)

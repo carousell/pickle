@@ -11,7 +11,7 @@ test:
 	set -o pipefail && xcodebuild \
 	-workspace Example/Pickle.xcworkspace \
 	-scheme Pickle-Example \
-	-destination 'platform=iOS Simulator,name=iPhone 7,OS=11.2' \
+	-destination 'platform=iOS Simulator,name=iPhone X,OS=12.0' \
 	CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO \
 	clean test | bundle exec xcpretty -c
 
