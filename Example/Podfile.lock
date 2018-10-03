@@ -1,5 +1,5 @@
 PODS:
-  - Pickle (1.3.0)
+  - Pickle (1.3.1)
   - SwiftLint (0.27.0)
 
 DEPENDENCIES:
@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :podspec: https://raw.githubusercontent.com/CocoaPods/Specs/master/Specs/4/0/1/SwiftLint/0.27.0/SwiftLint.podspec.json
 
 SPEC CHECKSUMS:
-  Pickle: ac29bdd7b53f14dec1c75b7c9f35a8c1657b6b0a
+  Pickle: 63e33e08fcb1490b9b932bcdb50c12ecdc3cecc2
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
 PODFILE CHECKSUM: 876096377525bec4eeb5dc771e7fdfbcdcb46898
