@@ -71,7 +71,7 @@ internal final class PhotoAlbumTitleButton: UIControl {
     internal var title: String? {
         didSet {
             titleLabel.text = title
-            frame = CGRect(origin: frame.origin, size: systemLayoutSizeFitting(UILayoutFittingCompressedSize))
+            frame = CGRect(origin: frame.origin, size: systemLayoutSizeFitting(UIView.layoutFittingCompressedSize))
         }
     }
 
