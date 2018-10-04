@@ -98,7 +98,7 @@ private struct CarousellTheme: ImagePickerConfigurable {
 
     // MARK: - Image Selections
 
-    let imageTagTextAttributes: [NSAttributedStringKey: Any]? = nil
+    let imageTagTextAttributes: [NSAttributedString.Key: Any]? = nil
     let selectedImageOverlayColor: UIColor? = nil
     let allowedSelections: ImagePickerSelection? = .limit(to: 4)
 
