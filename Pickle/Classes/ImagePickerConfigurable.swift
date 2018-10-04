@@ -63,7 +63,7 @@ public protocol ImagePickerConfigurable {
     // MARK: - Image Selections
 
     /// The text attributes for the tag on selected images.
-    var imageTagTextAttributes: [NSAttributedStringKey: Any]? { get }
+    var imageTagTextAttributes: [NSAttributedString.Key: Any]? { get }
 
     /// The overlay mask color on selected images.
     var selectedImageOverlayColor: UIColor? { get }

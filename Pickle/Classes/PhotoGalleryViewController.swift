@@ -288,7 +288,7 @@ private extension PHAssetCollection {
 
 private extension NSAttributedString {
 
-    var attributes: [NSAttributedStringKey: Any]? {
+    var attributes: [NSAttributedString.Key: Any]? {
         if 0 < length {
             return attributes(at: 0, longestEffectiveRange: nil, in: NSRange(location: 0, length: length))
         } else {
