@@ -17,7 +17,7 @@ public protocol CameraCompatible: class {
     var delegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)? { get set }
 
     /// The UIImagePickerController compatible source type, which is always set to .camera before presenting.
-    var sourceType: UIImagePickerControllerSourceType { get set }
+    var sourceType: UIImagePickerController.SourceType { get set }
 
 }
 

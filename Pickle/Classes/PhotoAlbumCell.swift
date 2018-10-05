@@ -13,7 +13,7 @@ import Photos
 
 internal final class PhotoAlbumCell: UITableViewCell {
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUpSubviews()
     }
@@ -105,7 +105,7 @@ internal final class PhotoAlbumCell: UITableViewCell {
         contentView.addSubview(subtitleLabel)
         imageViews.forEach {
             contentView.addSubview($0)
-            contentView.sendSubview(toBack: $0)
+            contentView.sendSubviewToBack($0)
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
 

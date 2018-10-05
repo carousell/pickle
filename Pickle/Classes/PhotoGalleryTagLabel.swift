@@ -38,7 +38,7 @@ internal final class PhotoGalleryTagLabel: UILabel {
 
     // MARK: - Properties
 
-    internal var textAttributes: [NSAttributedStringKey: Any] = [:] {
+    internal var textAttributes: [NSAttributedString.Key: Any] = [:] {
         didSet {
             configuration = Configuration(
                 font: textAttributes[.font] as? UIFont,
