@@ -65,7 +65,7 @@
 /* Begin PBXFileReference section */
 		0020CA77AB3F9A23F1127083EFB89679 /* Pods-PickleExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PickleExample-acknowledgements.plist"; sourceTree = "<group>"; };
 		08FCA05E9526BACFACEA1632441BBAE4 /* PhotoGalleryCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhotoGalleryCell.swift; path = Pickle/Classes/PhotoGalleryCell.swift; sourceTree = "<group>"; };
-		0C3EDF50979531E16B036D40C22F5BA5 /* Pickle.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Pickle.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0C3EDF50979531E16B036D40C22F5BA5 /* Pickle.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Pickle.podspec; sourceTree = "<group>"; };
 		20D36CB342AE8A092BB7E6B6E79615F3 /* ImagePickerConfigurable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePickerConfigurable.swift; path = Pickle/Classes/ImagePickerConfigurable.swift; sourceTree = "<group>"; };
 		24E16D7EDCABFAB25A34D4D37A7D2C77 /* Pickle-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pickle-umbrella.h"; sourceTree = "<group>"; };
 		26B12A401C2990DD283E5D2969F4B66D /* PhotoAlbumTitleButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PhotoAlbumTitleButton.swift; path = Pickle/Classes/PhotoAlbumTitleButton.swift; sourceTree = "<group>"; };
