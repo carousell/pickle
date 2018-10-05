@@ -66,7 +66,7 @@ public struct Parameters: ImagePickerConfigurable {
     // MARK: - Image Selections
 
     /// The text attributes for the tag on selected images.
-    public var imageTagTextAttributes: [NSAttributedStringKey: Any]?
+    public var imageTagTextAttributes: [NSAttributedString.Key: Any]?
 
     /// The overlay mask color on selected images.
     public var selectedImageOverlayColor: UIColor?
