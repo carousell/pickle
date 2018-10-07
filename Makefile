@@ -1,15 +1,12 @@
 bootstrap:
-	pod install --project-directory=Example && open Example/Pickle.xcworkspace
-
-pod-install:
-	pod install --project-directory=Example
+	pod install && open Pickle.xcworkspace
 
 build:
-	set -o pipefail && xcodebuild -workspace Example/Pickle.xcworkspace -scheme Pickle clean build | bundle exec xcpretty -c
+	set -o pipefail && xcodebuild -workspace Pickle.xcworkspace -scheme Pickle clean build | bundle exec xcpretty -c
 
 test:
 	set -o pipefail && xcodebuild \
-	-workspace Example/Pickle.xcworkspace \
+	-workspace Pickle.xcworkspace \
 	-scheme Pickle-Example \
 	-destination 'platform=iOS Simulator,name=iPhone X,OS=12.0' \
 	CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO \

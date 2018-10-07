@@ -31,13 +31,13 @@ if reviewer && !assigned
 end
 
 # Run swiftlint
-%x(echo "reporter: json" >> Example/.swiftlint.yml)
+%x(echo "reporter: json" >> .swiftlint.yml)
 
 pwd = Dir.pwd + "/"
-linter_json = %x(cd Example && #{pwd}Example/Pods/SwiftLint/swiftlint && cd --)
+linter_json = %x(#{pwd}/Pods/SwiftLint/swiftlint)
 results = JSON.parse linter_json
 
-%x(git checkout Example/.swiftlint.yml)
+%x(git checkout .swiftlint.yml)
 
 results.each do |violation|
   file = violation["file"].gsub(pwd, "")
