@@ -216,18 +216,18 @@ extension ImagePickerController: UIImagePickerControllerDelegate, UINavigationCo
 
     // MARK: - UIImagePickerControllerDelegate
 
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         defer {
             picker.dismiss(animated: true, completion: nil)
         }
 
-        guard let originalImage = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage else {
+        guard let originalImage = info[.originalImage] as? UIImage else {
             return
         }
 
         // Instead of using UIImagePickerControllerEditedImage, crop the original image for higher resolution if UIImagePickerControllerCropRect is specified.
         var croppedImage: UIImage?
-        if let cropRect = info[UIImagePickerController.InfoKey.cropRect.rawValue] as? CGRect, let cgImage = originalImage.cgImage?.cropping(to: cropRect) {
+        if let cropRect = info[.cropRect] as? CGRect, let cgImage = originalImage.cgImage?.cropping(to: cropRect) {
             croppedImage = UIImage(cgImage: cgImage, scale: originalImage.scale, orientation: originalImage.imageOrientation)
         }
 
