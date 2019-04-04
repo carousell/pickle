@@ -76,6 +76,8 @@ private struct CarousellTheme: ImagePickerConfigurable {
 
     let doneBarButtonItem: UIBarButtonItem? = UIBarButtonItem(title: "Next", style: .plain, target: nil, action: nil)
 
+    let liveCameraViewEnabled: Bool? = false
+
     // MARK: - Navigation Bar
 
     let navigationBarStyle: UIBarStyle? = .blackTranslucent

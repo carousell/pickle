@@ -141,7 +141,7 @@ internal final class PhotoGalleryViewController: UIViewController,
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PhotoGalleryLiveViewCell.self), for: indexPath)
                 return cell
             } else {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PhotoGalleryCell.self), for: indexPath)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PhotoGalleryCameraCell.self), for: indexPath)
                 return cell
             }
         }
