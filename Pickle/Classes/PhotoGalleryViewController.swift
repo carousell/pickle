@@ -137,7 +137,7 @@ internal final class PhotoGalleryViewController: UIViewController,
 
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if isCameraCompatible && indexPath.row == 0 {
-            let permission = AVCaptureDevice.authorizationStsatus(for: .video)
+            let permission = AVCaptureDevice.authorizationStatus(for: .video)
             let hasPermission = (permission == .authorized)
             if configuration?.liveCameraViewEnabled == .some(true), hasPermission {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PhotoGalleryLiveViewCell.self), for: indexPath)
