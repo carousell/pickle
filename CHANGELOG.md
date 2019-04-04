@@ -1,5 +1,10 @@
 # Change Log
 
+## v1.4.0
+
+* Swift 4.2
+* Move the framework and example targets into a single project
+
 ## v1.3.1
 
 * Update the project to Xcode 10 [#26](https://github.com/carousell/pickle/pull/26)

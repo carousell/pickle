@@ -6,13 +6,13 @@ cache:
   cocoapods: true
   directories:
     - vendor/bundle
-    - Example/Pods/SwiftLint
+    - Pods
 before_install:
   - xcrun instruments -s devices
   - xcrun instruments -w "iPhone X (12.0) [" || true
 install:
   - bundle install --jobs=3 --retry=3 --deployment
-  - bundle exec pod install --project-directory=Example
+  - bundle exec pod install
   - sh scripts/install-carthage.sh 0.27.0
 before_script:
   - if [ -n "$DANGER_GITHUB_API_TOKEN" ]; then bundle exec danger; fi
