@@ -21,6 +21,9 @@ public protocol ImagePickerConfigurable {
     /// A custom bar button item displayed on the right (or trailing) edge of the navigation bar when the receiver is the top navigation item.
     var doneBarButtonItem: UIBarButtonItem? { get }
 
+    /// Configure to enable/disable live camera view in place of the camera icon cell
+    var liveCameraViewEnabled: Bool { get }
+
     // MARK: - Navigation Bar
 
     /// The navigation bar style that specifies its appearance.
