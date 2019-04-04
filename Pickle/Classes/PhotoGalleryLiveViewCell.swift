@@ -60,12 +60,6 @@ final class PhotoGalleryLiveViewCell: UICollectionViewCell {
     }
 
     private func startSession() {
-        let permission = AVCaptureDevice.authorizationStatus(for: .video)
-        guard permission == .authorized else {
-            previewView.removeFromSuperview()
-            contentView.backgroundColor = UIColor.Palette.lightGray
-            return
-        }
         guard
             let input = AVCaptureDevice.default(for: .video),
             let deviceInput = try? AVCaptureDeviceInput(device: input) else {
