@@ -108,6 +108,7 @@ internal final class PhotoGalleryViewController: UIViewController,
         collectionView.backgroundColor = UIColor.white
         collectionView.register(PhotoGalleryCameraCell.self, forCellWithReuseIdentifier: String(describing: PhotoGalleryCameraCell.self))
         collectionView.register(PhotoGalleryCell.self, forCellWithReuseIdentifier: String(describing: PhotoGalleryCell.self))
+        collectionView.register(PhotoGalleryLiveViewCell.self, forCellWithReuseIdentifier: String(describing: PhotoGalleryLiveViewCell.self))
         collectionView.allowsMultipleSelection = true
         return collectionView
     }()
@@ -118,7 +119,6 @@ internal final class PhotoGalleryViewController: UIViewController,
         super.viewDidLoad()
         setUpSubviews()
         showEmptyViewIfNeeded()
-
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: collectionView)
         }
@@ -137,7 +137,7 @@ internal final class PhotoGalleryViewController: UIViewController,
 
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if isCameraCompatible && indexPath.row == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PhotoGalleryCameraCell.self), for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PhotoGalleryLiveViewCell.self), for: indexPath)
             return cell
         }
 
@@ -270,7 +270,6 @@ internal final class PhotoGalleryViewController: UIViewController,
             delegate?.photoGalleryViewControllerDidSelectCameraButton(self)
         }
     }
-
 }
 
 
