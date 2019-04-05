@@ -14,9 +14,7 @@ import UIKit
 
 final class PhotoGalleryLiveViewCell: UICollectionViewCell {
 
-    private let previewView = LiveView()
-    private let session = AVCaptureSession()
-    private let sessionQueue = DispatchQueue(label: "pickle.liveView.sessionQueue")
+    let previewView = LiveView()
 
     private lazy var cameraIconView: UIImageView = {
         let camera = UIImage(named: "camera-icon", in: Bundle(for: type(of: self)), compatibleWith: nil)
@@ -34,7 +32,6 @@ final class PhotoGalleryLiveViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-        startSession()
     }
 
     private func setupViews() {
@@ -57,19 +54,6 @@ final class PhotoGalleryLiveViewCell: UICollectionViewCell {
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         textLabel.topAnchor.constraint(equalTo: cameraIconView.bottomAnchor, constant: 10).isActive = true
-    }
-
-    private func startSession() {
-        guard
-            let input = AVCaptureDevice.default(for: .video),
-            let deviceInput = try? AVCaptureDeviceInput(device: input) else {
-                return
-        }
-        previewView.session = session
-        session.addInput(deviceInput)
-        sessionQueue.async { [weak self] in
-            self?.session.startRunning()
-        }
     }
 
     required init?(coder aDecoder: NSCoder) {

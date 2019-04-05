@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		20DB284F22560DB000037FEF /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB284D22560DB000037FEF /* LiveView.swift */; };
 		20DB285022560DB000037FEF /* PhotoGalleryLiveViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB284E22560DB000037FEF /* PhotoGalleryLiveViewCell.swift */; };
+		20FC48032256FAC3004CCD1D /* CameraSessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC48022256FAC3004CCD1D /* CameraSessionHandler.swift */; };
 		5D5D6367F14D7B8C139E10E9 /* Pods_PickleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D176E52E185B871CF8D97C4 /* Pods_PickleUITests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -82,6 +83,7 @@
 /* Begin PBXFileReference section */
 		20DB284D22560DB000037FEF /* LiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
 		20DB284E22560DB000037FEF /* PhotoGalleryLiveViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGalleryLiveViewCell.swift; sourceTree = "<group>"; };
+		20FC48022256FAC3004CCD1D /* CameraSessionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraSessionHandler.swift; sourceTree = "<group>"; };
 		4B31C2D2E0E432A6637C5883 /* Pods_PickleExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickleExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* PickleExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickleExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				B57BEA5E216AAFD700A2C776 /* PhotoGalleryCameraIconView.swift */,
 				B57BEA57216AAFD700A2C776 /* PhotoGalleryCell.swift */,
 				20DB284D22560DB000037FEF /* LiveView.swift */,
+				20FC48022256FAC3004CCD1D /* CameraSessionHandler.swift */,
 				20DB284E22560DB000037FEF /* PhotoGalleryLiveViewCell.swift */,
 				B57BEA4F216AAFD700A2C776 /* PhotoGalleryHintLabel.swift */,
 				B57BEA5B216AAFD700A2C776 /* PhotoGalleryTagLabel.swift */,
@@ -374,6 +377,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 8AH82AR7PW;
 						LastSwiftMigration = 0900;
 					};
 					B563515A1F06278E00B5A46D = {
@@ -536,6 +540,7 @@
 				B57BEA7A216AAFD700A2C776 /* PhotoGalleryCameraIconView.swift in Sources */,
 				B57BEA73216AAFD700A2C776 /* PhotoGalleryCell.swift in Sources */,
 				B57BEA6B216AAFD700A2C776 /* PhotoGalleryHintLabel.swift in Sources */,
+				20FC48032256FAC3004CCD1D /* CameraSessionHandler.swift in Sources */,
 				B57BEA77216AAFD700A2C776 /* PhotoGalleryTagLabel.swift in Sources */,
 				20DB285022560DB000037FEF /* PhotoGalleryLiveViewCell.swift in Sources */,
 				B57BEA7B216AAFD700A2C776 /* PhotoGalleryViewController+UIViewControllerPreviewing.swift in Sources */,
@@ -705,7 +710,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8AH82AR7PW;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -723,7 +728,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 8AH82AR7PW;
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

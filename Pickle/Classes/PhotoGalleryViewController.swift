@@ -73,6 +73,10 @@ internal final class PhotoGalleryViewController: UIViewController,
         return configuration?.preferredStatusBarUpdateAnimation ?? super.preferredStatusBarUpdateAnimation
     }
 
+    private var sessionHandler: CameraSessionHandler?
+    // We're not dequeuing this cell since there will only be one of it
+    // and we need to have the live preview ready before the collectionView setup
+    private var livePreviewCell = PhotoGalleryLiveViewCell()
     private let album: PHAssetCollection
     private let configuration: ImagePickerConfigurable?
     internal private(set) lazy var isCameraCompatible: Bool = self.album.isCameraCompatible
@@ -122,6 +126,17 @@ internal final class PhotoGalleryViewController: UIViewController,
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: collectionView)
         }
+        sessionHandler = try? CameraSessionHandler()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        sessionHandler?.stopSession()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        sessionHandler?.startSession()
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -137,10 +152,12 @@ internal final class PhotoGalleryViewController: UIViewController,
 
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if isCameraCompatible && indexPath.row == 0 {
-            let permission = AVCaptureDevice.authorizationStatus(for: .video)
-            let hasPermission = (permission == .authorized)
-            if configuration?.liveCameraViewEnabled == .some(true), hasPermission {
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PhotoGalleryLiveViewCell.self), for: indexPath)
+            if configuration?.liveCameraViewEnabled == .some(true) {
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: String(describing: PhotoGalleryLiveViewCell.self),
+                    for: indexPath
+                )
+                sessionHandler?.previewView = (cell as? PhotoGalleryLiveViewCell)?.previewView
                 return cell
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PhotoGalleryCameraCell.self), for: indexPath)
