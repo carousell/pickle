@@ -152,7 +152,7 @@ internal final class PhotoGalleryViewController: UIViewController,
 
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if isCameraCompatible && indexPath.row == 0 {
-            if configuration?.liveCameraViewEnabled == .some(true) {
+            if configuration?.isLiveCameraViewEnabled == .some(true) {
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: String(describing: PhotoGalleryLiveViewCell.self),
                     for: indexPath

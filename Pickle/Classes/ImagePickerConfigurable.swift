@@ -78,7 +78,7 @@ public protocol ImagePickerConfigurable {
 
     // MARK: -
     /// Specifies whether the photo gallery should show a live camera view cell
-    var liveCameraViewEnabled: Bool? { get }
+    var isLiveCameraViewEnabled: Bool? { get }
 }
 
 

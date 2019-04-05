@@ -83,6 +83,6 @@ public struct Parameters: ImagePickerConfigurable {
     // MARK: -
 
     /// Specifies weather photo gallery should show a live preview
-    public var liveCameraViewEnabled: Bool?
+    public var isLiveCameraViewEnabled: Bool?
 
 }
