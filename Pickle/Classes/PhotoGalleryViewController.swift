@@ -74,9 +74,6 @@ internal final class PhotoGalleryViewController: UIViewController,
     }
 
     private var sessionHandler: CameraSessionHandler?
-    // We're not dequeuing this cell since there will only be one of it
-    // and we need to have the live preview ready before the collectionView setup
-    private var livePreviewCell = PhotoGalleryLiveViewCell()
     private let album: PHAssetCollection
     private let configuration: ImagePickerConfigurable?
     internal private(set) lazy var isCameraCompatible: Bool = self.album.isCameraCompatible
