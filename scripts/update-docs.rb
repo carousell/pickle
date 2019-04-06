@@ -1,10 +1,10 @@
 #!/usr/local/env ruby
 # encoding : utf-8
 
-message = ENV["TRAVIS_COMMIT_MESSAGE"] || ""
+tag = ENV["TRAVIS_TAG"] || ""
 token = ENV["GH_PAGES_GITHUB_API_TOKEN"] || ""
 
-unless message.start_with? "Merge" and not token.empty?
+if tag.empty? or token.empty?
   puts "Skip gh-pages updates for the commit:"
   puts "\n    #{ENV['TRAVIS_COMMIT_MESSAGE']}\n"
   return
