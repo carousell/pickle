@@ -22,6 +22,7 @@ else
 endif
 
 carthage:
+	carthage version
 	test -d Example/Pods && rm -rv Example/Pods || :
 	test -d Example/Pickle.xcworkspace && rm -rv Example/Pickle.xcworkspace || :
 	set -o pipefail && carthage build --no-skip-current --verbose | bundle exec xcpretty -c
