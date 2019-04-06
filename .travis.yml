@@ -1,6 +1,5 @@
 language: objective-c
 osx_image: xcode10
-podfile: Example/Podfile
 cache:
   bundler: true
   cocoapods: true
@@ -21,7 +20,7 @@ script:
   - make -B carthage
   - make -B docs
 after_success:
-  - sh scripts/update-docs.sh
+  - ruby scripts/update-docs.rb
 notifications:
   email: false
   slack:

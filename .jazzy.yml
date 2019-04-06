@@ -2,7 +2,7 @@ clean: true
 author: Carousell
 author_url: https://github.com/carousell
 github_url: https://github.com/carousell/pickle
-github_file_prefix: https://github.com/carousell/pickle/blob/master
+github_file_prefix: https://github.com/carousell/pickle/blob/1.4.0
 xcodebuild_arguments: [-project, Pickle.xcodeproj, -scheme, Pickle]
 module: Pickle
 module_version: 1.4.0
