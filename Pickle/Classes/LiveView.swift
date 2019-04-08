@@ -17,9 +17,9 @@ final class LiveView: UIView {
         return AVCaptureVideoPreviewLayer.self
     }
 
-    var videoPreviewLayer: AVCaptureVideoPreviewLayer {
+    private var videoPreviewLayer: AVCaptureVideoPreviewLayer {
         guard let layer = self.layer as? AVCaptureVideoPreviewLayer else {
-            fatalError("Expected `AVCaptureVideoPreviewLayer` type for layer. Check PreviewView.layerClass implementation.")
+            fatalError("Expected `AVCaptureVideoPreviewLayer` type for layer. Check LiveView.layerClass implementation.")
         }
         layer.videoGravity = .resizeAspectFill
         return layer
