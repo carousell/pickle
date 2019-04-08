@@ -18,9 +18,7 @@ ifeq (,$(strip $(version)))
 else
 	ruby -pi -e "gsub(/'\d+\.\d+\.\d+'/i, \"'"$(version)"'\")" Pickle.podspec
 	ruby -pi -e "gsub(/:\s\d+\.\d+\.\d+/i, \": "$(version)"\")" .jazzy.yml
-	cd Example && xcrun agvtool new-marketing-version $(version)
 	xcrun agvtool new-marketing-version $(version)
-	bundle exec pod install --project-directory=Example
 endif
 
 carthage:
