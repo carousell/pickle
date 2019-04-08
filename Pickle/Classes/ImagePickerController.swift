@@ -209,6 +209,10 @@ open class ImagePickerController: UINavigationController {
         showPermissionErrorIfNeeded?()
     }
 
+    public func updateSelectedAssets(with assets: [PHAsset]) {
+        selectedAssets = assets
+        galleryViewController?.collectionView.reloadData()
+    }
 }
 
 
@@ -382,7 +386,11 @@ fileprivate extension ImagePickerController {
                 }
             }
         default:
-            present(camera(), animated: true, completion: nil)
+            present(camera(), animated: true) { [weak self] in
+                guard let self = self else { return }
+                self.imagePickerDelegate?.imagePickerController?(
+                    self, didFinishLaunchingCameraWith: self.selectedAssets)
+            }
         }
     }
 
