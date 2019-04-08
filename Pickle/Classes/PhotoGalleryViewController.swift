@@ -123,7 +123,9 @@ internal final class PhotoGalleryViewController: UIViewController,
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: collectionView)
         }
-        sessionHandler = try? CameraSessionHandler()
+        if configuration?.isLiveCameraViewEnabled == .some(true) {
+            sessionHandler = CameraSessionHandler()
+        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {
