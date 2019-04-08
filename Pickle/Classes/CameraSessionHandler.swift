@@ -36,10 +36,11 @@ final class CameraSessionHandler {
 
     private let sessionQueue = DispatchQueue(label: "pickle.liveView.sessionQueue")
 
+    init() throws {
+        guard hasPermssion else { throw CameraSessionError.noPermission }
+    }
+
     func startSession() throws {
-        guard hasPermssion else {
-            throw CameraSessionError.noPermission
-        }
         guard
             let input = AVCaptureDevice.default(for: .video),
             let deviceInput = try? AVCaptureDeviceInput(device: input) else {

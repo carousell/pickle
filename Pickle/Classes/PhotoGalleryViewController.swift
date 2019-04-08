@@ -124,7 +124,7 @@ internal final class PhotoGalleryViewController: UIViewController,
             registerForPreviewing(with: self, sourceView: collectionView)
         }
         if configuration?.isLiveCameraViewEnabled == .some(true) {
-            sessionHandler = CameraSessionHandler()
+            sessionHandler = try? CameraSessionHandler()
         }
     }
 
