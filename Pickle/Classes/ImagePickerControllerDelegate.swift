@@ -19,6 +19,9 @@ public protocol ImagePickerControllerDelegate: UINavigationControllerDelegate {
     /// Asks the delegate if the image picker should launch camera with certain permission status.
     func imagePickerController(_ picker: ImagePickerController, shouldLaunchCameraWithAuthorization status: AVAuthorizationStatus) -> Bool
 
+    /// Tells the delegate that picker has finished launching camera with an array of selected assets
+    @objc optional func imagePickerController(_ picker: ImagePickerController, didFinishLaunchingCameraWith assets: [PHAsset])
+
     /// Tells the delegate that the user picked image assets.
     func imagePickerController(_ picker: ImagePickerController, didFinishPickingImageAssets assets: [PHAsset])
 

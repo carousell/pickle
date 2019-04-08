@@ -122,7 +122,7 @@ open class ImagePickerController: UINavigationController {
         }
     }
 
-    public private(set) var selectedAssets: [PHAsset]
+    fileprivate var selectedAssets: [PHAsset]
     fileprivate let configuration: ImagePickerConfigurable?
     fileprivate let allowedSelections: ImagePickerSelection
 
