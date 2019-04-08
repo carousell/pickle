@@ -135,7 +135,7 @@ internal final class PhotoGalleryViewController: UIViewController,
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        sessionHandler?.startSession()
+        try? sessionHandler?.startSession()
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -151,7 +151,7 @@ internal final class PhotoGalleryViewController: UIViewController,
 
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if isCameraCompatible && indexPath.row == 0 {
-            if configuration?.isLiveCameraViewEnabled == .some(true) {
+            if sessionHandler?.hasPermssion == .some(true) {
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: String(describing: PhotoGalleryLiveViewCell.self),
                     for: indexPath

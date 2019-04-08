@@ -30,22 +30,24 @@ final class CameraSessionHandler {
         return session.isRunning
     }
 
-    init() throws {
+    var hasPermssion: Bool {
+        return AVCaptureDevice.authorizationStatus(for: .video) == .authorized
+    }
+
+    private let sessionQueue = DispatchQueue(label: "pickle.liveView.sessionQueue")
+
+    func startSession() throws {
+        guard hasPermssion else {
+            throw CameraSessionError.noPermission
+        }
         guard
             let input = AVCaptureDevice.default(for: .video),
             let deviceInput = try? AVCaptureDeviceInput(device: input) else {
                 throw CameraSessionError.noDeviceInput
         }
-
-        guard AVCaptureDevice.authorizationStatus(for: .video) == .authorized else {
-            throw CameraSessionError.noPermission
+        if session.inputs.count == 0 {
+            session.addInput(deviceInput)
         }
-        session.addInput(deviceInput)
-    }
-
-    private let sessionQueue = DispatchQueue(label: "pickle.liveView.sessionQueue")
-
-    func startSession() {
         sessionQueue.async { [weak self] in
             guard self?.session.isRunning == .some(false) else { return }
             self?.session.startRunning()
