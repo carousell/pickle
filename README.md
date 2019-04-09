@@ -45,6 +45,9 @@ let picker = ImagePickerController(selectedAssets: assets)
 /// Asks the delegate if the image picker should launch camera with certain permission status.
 func imagePickerController(_ picker: ImagePickerController, shouldLaunchCameraWithAuthorization status: AVAuthorizationStatus) -> Bool
 
+ /// Tells the delegate that picker has finished launching camera with an array of selected assets
+    @objc optional func imagePickerController(_ picker: ImagePickerController, didFinishLaunchingCameraWith assets: [PHAsset])
+
 /// Tells the delegate that the user picked image assets. The delegate is responsible for dismissing the image picker.
 func imagePickerController(_ picker: ImagePickerController, didFinishPickingImageAssets assets: [PHAsset])
 
@@ -86,6 +89,11 @@ let picker = ImagePickerController(
   configuration: Pickle.Parameters(),
   camera: initializer
 )
+```
+
+This functions will update `selectedAssets` property with new values and update the UI. It won't trigger any `delegate` callback
+```
+public func updateSelectedAssets(with assets: [PHAsset]) { }
 ```
 
 ## Documentation
