@@ -73,6 +73,7 @@ internal final class PhotoGalleryViewController: UIViewController,
         return configuration?.preferredStatusBarUpdateAnimation ?? super.preferredStatusBarUpdateAnimation
     }
 
+    private var sessionHandler: CameraSessionHandler?
     private let album: PHAssetCollection
     private let configuration: ImagePickerConfigurable?
     internal private(set) lazy var isCameraCompatible: Bool = self.album.isCameraCompatible
@@ -108,6 +109,7 @@ internal final class PhotoGalleryViewController: UIViewController,
         collectionView.backgroundColor = UIColor.white
         collectionView.register(PhotoGalleryCameraCell.self, forCellWithReuseIdentifier: String(describing: PhotoGalleryCameraCell.self))
         collectionView.register(PhotoGalleryCell.self, forCellWithReuseIdentifier: String(describing: PhotoGalleryCell.self))
+        collectionView.register(PhotoGalleryLiveViewCell.self, forCellWithReuseIdentifier: String(describing: PhotoGalleryLiveViewCell.self))
         collectionView.allowsMultipleSelection = true
         return collectionView
     }()
@@ -118,10 +120,22 @@ internal final class PhotoGalleryViewController: UIViewController,
         super.viewDidLoad()
         setUpSubviews()
         showEmptyViewIfNeeded()
-
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: collectionView)
         }
+        if configuration?.isLiveCameraViewEnabled == .some(true) {
+            sessionHandler = try? CameraSessionHandler()
+        }
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        sessionHandler?.stopSession()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        try? sessionHandler?.startSession()
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -137,8 +151,17 @@ internal final class PhotoGalleryViewController: UIViewController,
 
     internal func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if isCameraCompatible && indexPath.row == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PhotoGalleryCameraCell.self), for: indexPath)
-            return cell
+            if sessionHandler?.hasPermssion == .some(true) {
+                let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: String(describing: PhotoGalleryLiveViewCell.self),
+                    for: indexPath
+                )
+                sessionHandler?.previewView = (cell as? PhotoGalleryLiveViewCell)?.previewView
+                return cell
+            } else {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PhotoGalleryCameraCell.self), for: indexPath)
+                return cell
+            }
         }
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PhotoGalleryCell.self), for: indexPath)
@@ -270,7 +293,6 @@ internal final class PhotoGalleryViewController: UIViewController,
             delegate?.photoGalleryViewControllerDidSelectCameraButton(self)
         }
     }
-
 }
 
 

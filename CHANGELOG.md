@@ -4,6 +4,7 @@
 
 * Swift 4.2
 * Move the framework and example targets into a single project
+* Add new configurable to show live camera view cell in photo picker
 
 ## v1.3.1
 
