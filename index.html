@@ -22,7 +22,7 @@
 <a class="header-link" href="index.html">
 Pickle Docs
 </a>
-(92% documented)
+(94% documented)
 </p>
 
 <p class="header-col--secondary">
@@ -96,7 +96,7 @@ Pickle  Reference
 
 <h1 id='pickle' class='heading'>Pickle</h1>
 
-<p><a href="https://travis-ci.org/carousell/pickle"><img src="https://travis-ci.org/carousell/pickle.svg" alt="Build Status"></a>
+<p><a href="https://travis-ci.org/carousell/pickle"><img src="https://travis-ci.org/carousell/pickle.svg?branch=master" alt="Build Status"></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a>
 <a href="https://cocoapods.org/pods/Pickle"><img src="https://img.shields.io/cocoapods/v/Pickle.svg" alt="CocoaPods Compatible"></a>
 <img src="https://img.shields.io/cocoapods/p/Pickle.svg" alt="Platform">
@@ -126,15 +126,16 @@ Pickle  Reference
 <span class="k">let</span> <span class="nv">picker</span> <span class="o">=</span> <span class="kt">ImagePickerController</span><span class="p">(</span><span class="nv">selectedAssets</span><span class="p">:</span> <span class="n">assets</span><span class="p">)</span>
 </code></pre>
 
+<p>Update <code>selectedAssets</code> with new values and update the UI. It won&rsquo;t trigger any <code>delegate</code> callbacks.</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">updateSelectedAssets</span><span class="p">(</span><span class="n">with</span> <span class="nv">assets</span><span class="p">:</span> <span class="p">[</span><span class="kt">PHAsset</span><span class="p">])</span>
+</code></pre>
+
 <p><code><a href="Classes/ImagePickerController.html">ImagePickerController</a></code> will request permission to access <strong>Photos</strong> if needed when it&rsquo;s presented.</p>
 <h3 id='delegate' class='heading'>Delegate</h3>
 
 <p><code><a href="Protocols/ImagePickerControllerDelegate.html">ImagePickerControllerDelegate</a></code> is responsible for dismissing the image picker. Required delegate methods:</p>
 <pre class="highlight swift"><code><span class="c1">/// Asks the delegate if the image picker should launch camera with certain permission status.</span>
 <span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt">ImagePickerController</span><span class="p">,</span> <span class="n">shouldLaunchCameraWithAuthorization</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">AVAuthorizationStatus</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
-
-<span class="c1">/// Tells the delegate that picker has finished launching camera with an array of selected assets</span>
-<span class="kd">@objc</span> <span class="kd">optional</span> <span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt">ImagePickerController</span><span class="p">,</span> <span class="n">didFinishLaunchingCameraWith</span> <span class="nv">assets</span><span class="p">:</span> <span class="p">[</span><span class="kt">PHAsset</span><span class="p">])</span>
 
 <span class="c1">/// Tells the delegate that the user picked image assets. The delegate is responsible for dismissing the image picker.</span>
 <span class="kd">func</span> <span class="nf">imagePickerController</span><span class="p">(</span><span class="n">_</span> <span class="nv">picker</span><span class="p">:</span> <span class="kt">ImagePickerController</span><span class="p">,</span> <span class="n">didFinishPickingImageAssets</span> <span class="nv">assets</span><span class="p">:</span> <span class="p">[</span><span class="kt">PHAsset</span><span class="p">])</span>
@@ -169,10 +170,6 @@ Pickle  Reference
 <span class="nv">configuration</span><span class="p">:</span> <span class="kt">Pickle</span><span class="o">.</span><span class="kt">Parameters</span><span class="p">(),</span>
 <span class="nv">camera</span><span class="p">:</span> <span class="n">initializer</span>
 <span class="p">)</span>
-</code></pre>
-
-<p>This functions will update <code>selectedAssets</code> property with new values and update the UI. It won&rsquo;t trigger any <code>delegate</code> callback</p>
-<pre class="highlight plaintext"><code>public func updateSelectedAssets(with assets: [PHAsset]) { }
 </code></pre>
 <h2 id='documentation' class='heading'>Documentation</h2>
 <h3 id='pickle-reference' class='heading'>Pickle Reference</h3>
