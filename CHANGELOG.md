@@ -2,9 +2,9 @@
 
 ## v1.4.0
 
-* Swift 4.2
-* Move the framework and example targets into a single project
-* Add new configurable to show live camera view cell in photo picker
+* Swift 4.2 [#32](https://github.com/carousell/pickle/pull/32)
+* Move the framework and example targets into a single project [#34](https://github.com/carousell/pickle/pull/34)
+* Add configuration to show a live camera view cell in the photo picker [#39](https://github.com/carousell/pickle/pull/39)
 
 ## v1.3.1
 

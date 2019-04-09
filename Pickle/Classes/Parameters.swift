@@ -13,7 +13,6 @@ import UIKit
 /// A struct with placeholders that `ImagePickerConfigurable` requires.
 public struct Parameters: ImagePickerConfigurable {
 
-
     /// Returns a configuration instance with default parameters.
     public init() {}
 
@@ -80,9 +79,9 @@ public struct Parameters: ImagePickerConfigurable {
     /// The margin for the text of the hint label.
     public var hintTextMargin: UIEdgeInsets?
 
-    // MARK: -
+    // MARK: - Live Camera View
 
-    /// Specifies weather photo gallery should show a live preview
+    /// Specifies whether the camera button shows a live preview.
     public var isLiveCameraViewEnabled: Bool?
 
 }

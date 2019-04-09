@@ -76,8 +76,9 @@ public protocol ImagePickerConfigurable {
     /// The margin for the text of the hint label.
     var hintTextMargin: UIEdgeInsets? { get }
 
-    // MARK: -
-    /// Specifies whether the photo gallery should show a live camera view cell
+    // MARK: - Live Camera View
+
+    /// Specifies whether the camera button shows a live preview.
     var isLiveCameraViewEnabled: Bool? { get }
 }
 

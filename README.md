@@ -1,6 +1,6 @@
 # Pickle
 
-[![Build Status](https://travis-ci.org/carousell/pickle.svg)](https://travis-ci.org/carousell/pickle)
+[![Build Status](https://travis-ci.org/carousell/pickle.svg?branch=master)](https://travis-ci.org/carousell/pickle)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Pickle.svg)](https://cocoapods.org/pods/Pickle)
 ![Platform](https://img.shields.io/cocoapods/p/Pickle.svg)
@@ -35,6 +35,12 @@ let assets: [PHAsset] = []
 let picker = ImagePickerController(selectedAssets: assets)
 ```
 
+Update `selectedAssets` with new values and update the UI. It won't trigger any `delegate` callbacks.
+
+```swift
+func updateSelectedAssets(with assets: [PHAsset])
+```
+
 `ImagePickerController` will request permission to access **Photos** if needed when it's presented.
 
 ### Delegate
@@ -44,9 +50,6 @@ let picker = ImagePickerController(selectedAssets: assets)
 ```swift
 /// Asks the delegate if the image picker should launch camera with certain permission status.
 func imagePickerController(_ picker: ImagePickerController, shouldLaunchCameraWithAuthorization status: AVAuthorizationStatus) -> Bool
-
- /// Tells the delegate that picker has finished launching camera with an array of selected assets
-    @objc optional func imagePickerController(_ picker: ImagePickerController, didFinishLaunchingCameraWith assets: [PHAsset])
 
 /// Tells the delegate that the user picked image assets. The delegate is responsible for dismissing the image picker.
 func imagePickerController(_ picker: ImagePickerController, didFinishPickingImageAssets assets: [PHAsset])
@@ -89,11 +92,6 @@ let picker = ImagePickerController(
   configuration: Pickle.Parameters(),
   camera: initializer
 )
-```
-
-This functions will update `selectedAssets` property with new values and update the UI. It won't trigger any `delegate` callback
-```
-public func updateSelectedAssets(with assets: [PHAsset]) { }
 ```
 
 ## Documentation
