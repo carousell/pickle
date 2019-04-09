@@ -8,3 +8,4 @@ module: Pickle
 module_version: 1.4.0
 output: docs/output
 theme: fullwidth
+skip_undocumented: true

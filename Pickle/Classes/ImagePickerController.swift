@@ -209,6 +209,13 @@ open class ImagePickerController: UINavigationController {
         showPermissionErrorIfNeeded?()
     }
 
+    // MARK: - Methods
+
+    /// Update `selectedAssets` with new values and update the UI.
+    ///
+    /// - Note: This method won't trigger any `ImagePickerControllerDelegate` callbacks.
+    ///
+    /// - Parameter assets: Assets displayed as selected.
     public func updateSelectedAssets(with assets: [PHAsset]) {
         selectedAssets = assets
         galleryViewController?.collectionView.reloadData()
