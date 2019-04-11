@@ -219,6 +219,7 @@ open class ImagePickerController: UINavigationController {
     public func updateSelectedAssets(with assets: [PHAsset]) {
         selectedAssets = assets
         galleryViewController?.collectionView.reloadData()
+        doneBarButton.isEnabled = !selectedAssets.isEmpty
     }
 }
 
