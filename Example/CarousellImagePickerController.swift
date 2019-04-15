@@ -108,4 +108,7 @@ private struct CarousellTheme: ImagePickerConfigurable {
 
     let hintTextMargin: UIEdgeInsets? = .zero
 
+    // MARK: Media Types
+
+    var mediaType: ImagePickerMediaType? = .unknown
 }

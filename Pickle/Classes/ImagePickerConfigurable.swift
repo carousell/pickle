@@ -80,8 +80,25 @@ public protocol ImagePickerConfigurable {
 
     /// Specifies whether the camera button shows a live preview.
     var isLiveCameraViewEnabled: Bool? { get }
+
+    // MARK: - Media Types
+
+    /// Specifies the supported media types
+    var mediaType: ImagePickerMediaType? { get }
 }
 
+/// An enum that represents media type selections in ImagePickerController
+public enum ImagePickerMediaType {
+
+    /// Show images and videos in ImagePickerController
+    case unknown
+
+    /// Only show images in ImagePickerController
+    case image
+
+    /// Only show videos in ImagePickerController
+    case video
+}
 
 /// An enum that represents photo selections allowed in ImagePickerController.
 public enum ImagePickerSelection {
