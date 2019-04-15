@@ -15,6 +15,7 @@
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		94F4BF192264609C00E7A672 /* VideoPropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F4BF182264609C00E7A672 /* VideoPropertyView.swift */; };
 		B55833221EC08E180061E182 /* CarousellImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55833211EC08E180061E182 /* CarousellImagePickerController.swift */; };
 		B563515E1F06278E00B5A46D /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B563515D1F06278E00B5A46D /* UITests.swift */; };
 		B57BEA34216AAF6300A2C776 /* Pickle.h in Headers */ = {isa = PBXBuildFile; fileRef = B57BEA32216AAF6300A2C776 /* Pickle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -92,6 +93,7 @@
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7D176E52E185B871CF8D97C4 /* Pods_PickleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94F4BF182264609C00E7A672 /* VideoPropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPropertyView.swift; sourceTree = "<group>"; };
 		B55833211EC08E180061E182 /* CarousellImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarousellImagePickerController.swift; sourceTree = "<group>"; };
 		B563515B1F06278E00B5A46D /* PickleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B563515D1F06278E00B5A46D /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				B57BEA61216AAFD700A2C776 /* UIColor+Palette.swift */,
 				B57BEA4B216AAFD700A2C776 /* UIFont+Style.swift */,
 				B57BEA4A216AAFD700A2C776 /* UINavigationController+ImagePickerConfigurable.swift */,
+				94F4BF182264609C00E7A672 /* VideoPropertyView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				B57BEA6F216AAFD700A2C776 /* PhotoDetailViewController.swift in Sources */,
 				B57BEA70216AAFD700A2C776 /* PhotoGalleryCameraCell.swift in Sources */,
 				B57BEA7A216AAFD700A2C776 /* PhotoGalleryCameraIconView.swift in Sources */,
+				94F4BF192264609C00E7A672 /* VideoPropertyView.swift in Sources */,
 				B57BEA73216AAFD700A2C776 /* PhotoGalleryCell.swift in Sources */,
 				B57BEA6B216AAFD700A2C776 /* PhotoGalleryHintLabel.swift in Sources */,
 				20FC48032256FAC3004CCD1D /* CameraSessionHandler.swift in Sources */,
