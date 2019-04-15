@@ -25,9 +25,14 @@ internal final class VideoPropertyView: UIView {
 
     func configure(duration: TimeInterval) {
         let formatter = DateComponentsFormatter()
-        formatter.unitsStyle = .positional
-        formatter.allowedUnits = [.hour, .minute, .second]
-        formatter.zeroFormattingBehavior = [.pad]
+        formatter.zeroFormattingBehavior = .pad
+
+        if duration >= 3600 {
+            formatter.allowedUnits = [.hour, .minute, .second]
+        } else {
+            formatter.allowedUnits = [.minute, .second]
+        }
+
         durationLabel.text = formatter.string(from: duration)
     }
 
