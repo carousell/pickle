@@ -119,7 +119,8 @@ internal final class PhotoGalleryViewController: UIViewController,
         collectionView.delegate = self
         collectionView.backgroundColor = UIColor.white
         collectionView.register(PhotoGalleryCameraCell.self, forCellWithReuseIdentifier: String(describing: PhotoGalleryCameraCell.self))
-        collectionView.register(PhotoGalleryCell.self, forCellWithReuseIdentifier: String(describing: PhotoGalleryCell.self))
+        collectionView.register(GalleryPhotoCell.self, forCellWithReuseIdentifier: String(describing: GalleryPhotoCell.self))
+        collectionView.register(GalleryVideoCell.self, forCellWithReuseIdentifier: String(describing: GalleryVideoCell.self))
         collectionView.register(PhotoGalleryLiveViewCell.self, forCellWithReuseIdentifier: String(describing: PhotoGalleryLiveViewCell.self))
         collectionView.allowsMultipleSelection = true
         return collectionView
@@ -175,15 +176,24 @@ internal final class PhotoGalleryViewController: UIViewController,
             }
         }
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PhotoGalleryCell.self), for: indexPath)
         let index = isCameraCompatible ? indexPath.row - 1 : indexPath.row
         let asset = fetchResult[index]
 
-        if let text = delegate?.photoGalleryViewController(self, taggedTextForPhoto: asset) {
-            (cell as? PhotoGalleryCell)?.configure(with: asset, taggedText: text, configuration: configuration)
+        let text = delegate?.photoGalleryViewController(self, taggedTextForPhoto: asset)
+        var cell: UICollectionViewCell
+        if asset.mediaType == .video {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: GalleryVideoCell.self), for: indexPath)
+            (cell as? GalleryVideoCell)?.configure(with: asset, taggedText: text, configuration: configuration)
+            collectionView.deselectItem(at: indexPath, animated: false)
+        } else {
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: GalleryPhotoCell.self), for: indexPath)
+            (cell as? GalleryPhotoCell)?.configure(with: asset, taggedText: text, configuration: configuration)
+            collectionView.deselectItem(at: indexPath, animated: false)
+        }
+
+        if text != nil {
             collectionView.selectItem(at: indexPath, animated: false, scrollPosition: [])
         } else {
-            (cell as? PhotoGalleryCell)?.configure(with: asset, configuration: configuration)
             collectionView.deselectItem(at: indexPath, animated: false)
         }
 

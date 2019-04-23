@@ -11,7 +11,7 @@
 import UIKit
 import Photos
 
-internal final class PhotoGalleryCell: UICollectionViewCell {
+internal class GalleryPhotoCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,8 +32,6 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
         return imageView
     }()
 
-    private let videoPropertyView = VideoPropertyView()
-
     private let overlayView = UIView()
     private let tagLabel = PhotoGalleryTagLabel()
 
@@ -43,11 +41,9 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
                 overlayView.isHidden = false
                 tagLabel.text = text
                 accessibilityIdentifier = text
-                videoPropertyView.setSelected(true)
             } else {
                 overlayView.isHidden = true
                 accessibilityIdentifier = nil
-                videoPropertyView.setSelected(false)
             }
         }
     }
@@ -62,7 +58,6 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
         imageRequestID = nil
         taggedText = nil
         imageView.image = nil
-        videoPropertyView.isHidden = true
     }
 
     // MARK: -
@@ -88,9 +83,6 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
             }
         }
 
-        videoPropertyView.isHidden = asset.mediaType != .video
-        videoPropertyView.configure(duration: asset.duration)
-
         if let color = configuration?.selectedImageOverlayColor {
             overlayView.backgroundColor = color
         }
@@ -100,7 +92,7 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
         self.taggedText = taggedText
     }
 
-    private func setUpSubviews() {
+    func setUpSubviews() {
         // Set the cell as the accessibility element for UI tests to work.
         isAccessibilityElement = true
 
@@ -121,13 +113,5 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
         tagLabel.widthAnchor.constraint(equalTo: tagLabel.heightAnchor).isActive = true
         tagLabel.topAnchor.constraint(equalTo: overlayView.topAnchor, constant: 10).isActive = true
         tagLabel.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -10).isActive = true
-
-        contentView.addSubview(videoPropertyView)
-        videoPropertyView.translatesAutoresizingMaskIntoConstraints = false
-        videoPropertyView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        videoPropertyView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        videoPropertyView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        videoPropertyView.heightAnchor.constraint(equalToConstant: 24).isActive = true
     }
-
 }
