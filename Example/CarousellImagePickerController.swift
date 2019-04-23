@@ -110,5 +110,5 @@ private struct CarousellTheme: ImagePickerConfigurable {
 
     // MARK: Media Types
 
-    var mediaType: ImagePickerMediaType? = .unknown
+    var mediaType: ImagePickerMediaType? = .all
 }

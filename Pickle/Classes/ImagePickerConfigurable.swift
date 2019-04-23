@@ -87,17 +87,23 @@ public protocol ImagePickerConfigurable {
     var mediaType: ImagePickerMediaType? { get }
 }
 
-/// An enum that represents media type selections in ImagePickerController
-public enum ImagePickerMediaType {
+// Options that represents media type selections in ImagePickerController
+public struct ImagePickerMediaType: OptionSet {
 
-    /// Show images and videos in ImagePickerController
-    case unknown
+    public let rawValue: Int
+
+    public init(rawValue: Int) {
+        self.rawValue = rawValue
+    }
 
     /// Only show images in ImagePickerController
-    case image
+    public static let image = ImagePickerMediaType(rawValue: 1 << 0)
 
     /// Only show videos in ImagePickerController
-    case video
+    public static let video = ImagePickerMediaType(rawValue: 1 << 1)
+
+    /// Show images and videos in ImagePickerController
+    public static let all: ImagePickerMediaType = [.image, .video]
 }
 
 /// An enum that represents photo selections allowed in ImagePickerController.

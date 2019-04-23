@@ -82,20 +82,15 @@ internal final class PhotoGalleryViewController: UIViewController,
         let options = PHFetchOptions()
         options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
 
-        guard let configuration = configuration,
-            let mediaType = configuration.mediaType
-        else {
+        switch configuration?.mediaType {
+        case .all?:
+            options.predicate = nil
+        case .image?:
             options.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
-            return PHAsset.fetchAssets(in: self.album, options: options)
-        }
-
-        switch mediaType {
-        case .image:
-            options.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
-        case .video:
+        case .video?:
             options.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.video.rawValue)
         default:
-            break
+            options.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
         }
 
         return PHAsset.fetchAssets(in: self.album, options: options)
