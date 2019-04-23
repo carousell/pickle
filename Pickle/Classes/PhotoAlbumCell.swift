@@ -38,7 +38,7 @@ internal final class PhotoAlbumCell: UITableViewCell {
 
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor.Palette.gray
+        label.textColor = UIColor.Palette.grey
         return label
     }()
 

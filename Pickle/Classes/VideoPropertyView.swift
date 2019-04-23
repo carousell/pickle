@@ -10,10 +10,11 @@
 
 internal final class VideoPropertyView: UIView {
 
-    private let videoIcon: UIImageView = {
+    private lazy var videoIcon: UIImageView = {
         let icon = UIImageView()
         icon.tintColor = .white
-        icon.image = UIImage(named: "video-icon")?.withRenderingMode(.alwaysTemplate)
+        let image = UIImage(named: "video-icon", in: Bundle(for: type(of: self)), compatibleWith: nil)
+        icon.image = image?.withRenderingMode(.alwaysTemplate)
         return icon
     }()
 
@@ -42,7 +43,7 @@ internal final class VideoPropertyView: UIView {
         if value {
             backgroundColor = UIColor.Palette.blue
         } else {
-            backgroundColor = UIColor.Palette.darkGray.withAlphaComponent(0.2)
+            backgroundColor = UIColor.Palette.grey.withAlphaComponent(0.2)
         }
     }
 
@@ -56,7 +57,7 @@ internal final class VideoPropertyView: UIView {
     }
 
     private func setupViews() {
-        backgroundColor = UIColor.Palette.darkGray.withAlphaComponent(0.2)
+        backgroundColor = UIColor.Palette.grey.withAlphaComponent(0.2)
 
         addSubview(videoIcon)
         videoIcon.translatesAutoresizingMaskIntoConstraints = false

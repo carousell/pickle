@@ -14,9 +14,8 @@ internal extension UIColor {
 
     internal enum Palette {
         static let blue = UIColor(hex: 0x2984C0)
-        static let lightGray = UIColor(hex: 0x8F939C)
-        static let gray = UIColor(hex: 0x8F939C)
-        static let darkGray = UIColor(hex: 0x8F939C)
+        static let lightGrey = UIColor(hex: 0x8F939C)
+        static let grey = UIColor(hex: 0x8F939C)
         static let magnesium = UIColor(hex: 0xB2B2B2)
         static let darkGrey = UIColor(hex: 0x4B4D52)
     }
