@@ -39,8 +39,8 @@ internal final class VideoPropertyView: UIView {
         durationLabel.text = formatter.string(from: duration)
     }
 
-    func setSelected(_ value: Bool) {
-        if value {
+    func setSelected(_ isSelected: Bool) {
+        if isSelected {
             backgroundColor = UIColor.Palette.blue
         } else {
             backgroundColor = UIColor.Palette.grey.withAlphaComponent(0.2)

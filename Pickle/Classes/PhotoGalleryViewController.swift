@@ -184,11 +184,9 @@ internal final class PhotoGalleryViewController: UIViewController,
         if asset.mediaType == .video {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: GalleryVideoCell.self), for: indexPath)
             (cell as? GalleryVideoCell)?.configure(with: asset, taggedText: text, configuration: configuration)
-            collectionView.deselectItem(at: indexPath, animated: false)
         } else {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: GalleryPhotoCell.self), for: indexPath)
             (cell as? GalleryPhotoCell)?.configure(with: asset, taggedText: text, configuration: configuration)
-            collectionView.deselectItem(at: indexPath, animated: false)
         }
 
         if text != nil {

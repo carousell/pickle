@@ -15,10 +15,6 @@ internal final class GalleryVideoCell: GalleryPhotoCell {
 
     private let videoPropertyView = VideoPropertyView()
 
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
-
     override func setUpSubviews() {
         super.setUpSubviews()
 
@@ -41,11 +37,6 @@ internal final class GalleryVideoCell: GalleryPhotoCell {
             configuration: configuration)
 
         videoPropertyView.configure(duration: asset.duration)
-
-        if taggedText != nil {
-            videoPropertyView.setSelected(true)
-        } else {
-            videoPropertyView.setSelected(false)
-        }
+        videoPropertyView.setSelected(taggedText != nil)
     }
 }
