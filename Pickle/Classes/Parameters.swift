@@ -84,4 +84,8 @@ public struct Parameters: ImagePickerConfigurable {
     /// Specifies whether the camera button shows a live preview.
     public var isLiveCameraViewEnabled: Bool?
 
+    // MARK: - Media Types
+
+    /// Specifies the supported media types
+    public var mediaType: ImagePickerMediaType?
 }

@@ -1,5 +1,9 @@
 # Change Log
 
+## Next release
+
+* Add support for video selection [#44](https://github.com/carousell/pickle/pull/44)
+
 ## v1.4.0
 
 * Swift 4.2 [#32](https://github.com/carousell/pickle/pull/32)

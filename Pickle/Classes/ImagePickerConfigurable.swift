@@ -80,8 +80,31 @@ public protocol ImagePickerConfigurable {
 
     /// Specifies whether the camera button shows a live preview.
     var isLiveCameraViewEnabled: Bool? { get }
+
+    // MARK: - Media Types
+
+    /// Specifies the supported media types
+    var mediaType: ImagePickerMediaType? { get }
 }
 
+// Options that represents media type selections in ImagePickerController
+public struct ImagePickerMediaType: OptionSet {
+
+    public let rawValue: Int
+
+    public init(rawValue: Int) {
+        self.rawValue = rawValue
+    }
+
+    /// Only show images in ImagePickerController
+    public static let image = ImagePickerMediaType(rawValue: 1 << 0)
+
+    /// Only show videos in ImagePickerController
+    public static let video = ImagePickerMediaType(rawValue: 1 << 1)
+
+    /// Show images and videos in ImagePickerController
+    public static let all: ImagePickerMediaType = [.image, .video]
+}
 
 /// An enum that represents photo selections allowed in ImagePickerController.
 public enum ImagePickerSelection {

@@ -64,7 +64,7 @@ internal final class PhotoGalleryHintLabel: UILabel {
     private lazy var borderLayer: CALayer = {
         let layer = CALayer()
         layer.borderWidth = 1 / UIScreen.main.scale
-        layer.borderColor = UIColor.Palette.lightGray.cgColor
+        layer.borderColor = UIColor.Palette.lightGrey.cgColor
         layer.rasterizationScale = UIScreen.main.scale
         layer.shouldRasterize = true
         return layer
@@ -77,7 +77,7 @@ internal final class PhotoGalleryHintLabel: UILabel {
         numberOfLines = 0
         textAlignment = .center
         font = UIFont.forHintLabel
-        textColor = UIColor.Palette.darkGray
+        textColor = UIColor.Palette.grey
     }
 
 }

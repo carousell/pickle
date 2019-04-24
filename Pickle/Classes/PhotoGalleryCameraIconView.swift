@@ -31,7 +31,7 @@ internal final class PhotoGalleryCameraIconView: UIView {
         let label = UILabel()
         label.text = Bundle(for: type(of: self)).localizedString(forKey: "imagePicker.button.camera", value: "", table: nil).uppercased()
         label.font = UIFont.forCameraButton
-        label.textColor = UIColor.Palette.gray
+        label.textColor = UIColor.Palette.grey
         return label
     }()
 

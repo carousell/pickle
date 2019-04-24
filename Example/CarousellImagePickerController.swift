@@ -52,7 +52,7 @@ internal class CarousellImagePickerController: ImagePickerController {
                 string: "You can choose up to \(selectionsLimit) photos for your listing.\n",
                 attributes: [
                     .font: UIFont.systemFont(ofSize: 12),
-                    .foregroundColor: UIColor.darkGray,
+                    .foregroundColor: UIColor.gray,
                     .backgroundColor: UIColor.white,
                     .paragraphStyle: subtitleStyle
                 ]
@@ -108,4 +108,7 @@ private struct CarousellTheme: ImagePickerConfigurable {
 
     let hintTextMargin: UIEdgeInsets? = .zero
 
+    // MARK: Media Types
+
+    var mediaType: ImagePickerMediaType? = .all
 }

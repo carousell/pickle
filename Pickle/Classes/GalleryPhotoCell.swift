@@ -11,7 +11,7 @@
 import UIKit
 import Photos
 
-internal final class PhotoGalleryCell: UICollectionViewCell {
+internal class GalleryPhotoCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -92,7 +92,7 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
         self.taggedText = taggedText
     }
 
-    private func setUpSubviews() {
+    func setUpSubviews() {
         // Set the cell as the accessibility element for UI tests to work.
         isAccessibilityElement = true
 
@@ -114,5 +114,4 @@ internal final class PhotoGalleryCell: UICollectionViewCell {
         tagLabel.topAnchor.constraint(equalTo: overlayView.topAnchor, constant: 10).isActive = true
         tagLabel.trailingAnchor.constraint(equalTo: overlayView.trailingAnchor, constant: -10).isActive = true
     }
-
 }
