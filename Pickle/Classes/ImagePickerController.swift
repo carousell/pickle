@@ -143,7 +143,7 @@ open class ImagePickerController: UINavigationController {
             galleryViewController.navigationItem.setLeftBarButton(cancelBarButton, animated: true)
             galleryViewController.navigationItem.titleView = albumButton
             galleryViewController.navigationItem.setRightBarButton(doneBarButton, animated: true)
-            doneBarButton.isEnabled = !selectedAssets.isEmpty
+            doneBarButton.isEnabled = shouldEnableDoneBarButtonItem(with: selectedAssets)
         }
     }
 
@@ -219,7 +219,7 @@ open class ImagePickerController: UINavigationController {
     public func updateSelectedAssets(with assets: [PHAsset]) {
         selectedAssets = assets
         galleryViewController?.collectionView.reloadData()
-        doneBarButton.isEnabled = !selectedAssets.isEmpty
+        doneBarButton.isEnabled = shouldEnableDoneBarButtonItem(with: selectedAssets)
     }
 }
 
@@ -320,7 +320,7 @@ extension ImagePickerController: PhotoGalleryViewControllerDelegate {
                 break
             }
         }
-        doneBarButton.isEnabled = !selectedAssets.isEmpty
+        doneBarButton.isEnabled = shouldEnableDoneBarButtonItem(with: selectedAssets)
     }
 
     internal func photoGalleryViewController(_ controller: PhotoGalleryViewController, taggedTextForPhoto asset: PHAsset) -> String? {
@@ -347,6 +347,10 @@ extension ImagePickerController: PhotoGalleryViewControllerDelegate {
 
 
 fileprivate extension ImagePickerController {
+
+    fileprivate func shouldEnableDoneBarButtonItem(with selectedAssets: [PHAsset]) -> Bool {
+        return imagePickerDelegate?.imagePickerController?(self, shouldEnableDoneBarButtonItemWithSelected: selectedAssets) ?? !selectedAssets.isEmpty
+    }
 
     fileprivate func handle(photoLibraryPermission status: PHAuthorizationStatus) {
         switch status {

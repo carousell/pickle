@@ -3,6 +3,7 @@
 ## Next release
 
 * Add support for video selection [#44](https://github.com/carousell/pickle/pull/44)
+* Add an optional delegate method to toggle the done bar button item based on the selected assets [#48](https://github.com/carousell/pickle/pull/48)
 
 ## v1.4.0
 

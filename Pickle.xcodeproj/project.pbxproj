@@ -135,6 +135,7 @@
 		B57BEA5F216AAFD700A2C776 /* PhotoGalleryViewController+UIViewControllerPreviewing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoGalleryViewController+UIViewControllerPreviewing.swift"; sourceTree = "<group>"; };
 		B57BEA60216AAFD700A2C776 /* PhotoAlbumsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAlbumsViewController.swift; sourceTree = "<group>"; };
 		B57BEA61216AAFD700A2C776 /* UIColor+Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Palette.swift"; sourceTree = "<group>"; };
+		B59D8931227A4EB900901857 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		BBFD2219E890E25B7FFAFA16 /* Pods-PickleExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickleExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickleExample/Pods-PickleExample.release.xcconfig"; sourceTree = "<group>"; };
 		CC4665913EF891E178FF0D2C /* Pods-PickleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickleUITests/Pods-PickleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D6BD0849C2E195B24369D16E /* Pods-PickleExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickleExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickleExample/Pods-PickleExample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +190,7 @@
 				0F7D9D8905DA5210B12C33B8 /* Pods */,
 				607FACD11AFB9204008FA782 /* Products */,
 				B563515C1F06278E00B5A46D /* UITests */,
+				B59D8931227A4EB900901857 /* CHANGELOG.md */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -267,9 +269,13 @@
 			isa = PBXGroup;
 			children = (
 				B57BEA5C216AAFD700A2C776 /* CameraCompatible.swift */,
+				20FC48022256FAC3004CCD1D /* CameraSessionHandler.swift */,
+				B57BEA57216AAFD700A2C776 /* GalleryPhotoCell.swift */,
+				9402FADA226F057500C77100 /* GalleryVideoCell.swift */,
 				B57BEA58216AAFD700A2C776 /* ImagePickerConfigurable.swift */,
 				B57BEA4C216AAFD700A2C776 /* ImagePickerController.swift */,
 				B57BEA56216AAFD700A2C776 /* ImagePickerControllerDelegate.swift */,
+				20DB284D22560DB000037FEF /* LiveView.swift */,
 				B57BEA4D216AAFD700A2C776 /* Parameters.swift */,
 				B57BEA5D216AAFD700A2C776 /* PhotoAlbumCell.swift */,
 				B57BEA52216AAFD700A2C776 /* PhotoAlbumsTableView.swift */,
@@ -278,13 +284,8 @@
 				B57BEA53216AAFD700A2C776 /* PhotoDetailViewController.swift */,
 				B57BEA54216AAFD700A2C776 /* PhotoGalleryCameraCell.swift */,
 				B57BEA5E216AAFD700A2C776 /* PhotoGalleryCameraIconView.swift */,
-				B57BEA57216AAFD700A2C776 /* GalleryPhotoCell.swift */,
-				9402FADA226F057500C77100 /* GalleryVideoCell.swift */,
-				94F4BF182264609C00E7A672 /* VideoPropertyView.swift */,
-				20DB284D22560DB000037FEF /* LiveView.swift */,
-				20FC48022256FAC3004CCD1D /* CameraSessionHandler.swift */,
-				20DB284E22560DB000037FEF /* PhotoGalleryLiveViewCell.swift */,
 				B57BEA4F216AAFD700A2C776 /* PhotoGalleryHintLabel.swift */,
+				20DB284E22560DB000037FEF /* PhotoGalleryLiveViewCell.swift */,
 				B57BEA5B216AAFD700A2C776 /* PhotoGalleryTagLabel.swift */,
 				B57BEA5F216AAFD700A2C776 /* PhotoGalleryViewController+UIViewControllerPreviewing.swift */,
 				B57BEA59216AAFD700A2C776 /* PhotoGalleryViewController.swift */,
@@ -295,6 +296,7 @@
 				B57BEA61216AAFD700A2C776 /* UIColor+Palette.swift */,
 				B57BEA4B216AAFD700A2C776 /* UIFont+Style.swift */,
 				B57BEA4A216AAFD700A2C776 /* UINavigationController+ImagePickerConfigurable.swift */,
+				94F4BF182264609C00E7A672 /* VideoPropertyView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -532,25 +534,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				B57BEA78216AAFD700A2C776 /* CameraCompatible.swift in Sources */,
-				20DB284F22560DB000037FEF /* LiveView.swift in Sources */,
+				20FC48032256FAC3004CCD1D /* CameraSessionHandler.swift in Sources */,
+				B57BEA73216AAFD700A2C776 /* GalleryPhotoCell.swift in Sources */,
+				9402FADB226F057500C77100 /* GalleryVideoCell.swift in Sources */,
 				B57BEA74216AAFD700A2C776 /* ImagePickerConfigurable.swift in Sources */,
 				B57BEA68216AAFD700A2C776 /* ImagePickerController.swift in Sources */,
 				B57BEA72216AAFD700A2C776 /* ImagePickerControllerDelegate.swift in Sources */,
+				20DB284F22560DB000037FEF /* LiveView.swift in Sources */,
 				B57BEA69216AAFD700A2C776 /* Parameters.swift in Sources */,
 				B57BEA79216AAFD700A2C776 /* PhotoAlbumCell.swift in Sources */,
 				B57BEA6E216AAFD700A2C776 /* PhotoAlbumsTableView.swift in Sources */,
 				B57BEA7C216AAFD700A2C776 /* PhotoAlbumsViewController.swift in Sources */,
 				B57BEA76216AAFD700A2C776 /* PhotoAlbumTitleButton.swift in Sources */,
-				9402FADB226F057500C77100 /* GalleryVideoCell.swift in Sources */,
 				B57BEA6F216AAFD700A2C776 /* PhotoDetailViewController.swift in Sources */,
 				B57BEA70216AAFD700A2C776 /* PhotoGalleryCameraCell.swift in Sources */,
 				B57BEA7A216AAFD700A2C776 /* PhotoGalleryCameraIconView.swift in Sources */,
-				94F4BF192264609C00E7A672 /* VideoPropertyView.swift in Sources */,
-				B57BEA73216AAFD700A2C776 /* GalleryPhotoCell.swift in Sources */,
 				B57BEA6B216AAFD700A2C776 /* PhotoGalleryHintLabel.swift in Sources */,
-				20FC48032256FAC3004CCD1D /* CameraSessionHandler.swift in Sources */,
-				B57BEA77216AAFD700A2C776 /* PhotoGalleryTagLabel.swift in Sources */,
 				20DB285022560DB000037FEF /* PhotoGalleryLiveViewCell.swift in Sources */,
+				B57BEA77216AAFD700A2C776 /* PhotoGalleryTagLabel.swift in Sources */,
 				B57BEA7B216AAFD700A2C776 /* PhotoGalleryViewController+UIViewControllerPreviewing.swift in Sources */,
 				B57BEA75216AAFD700A2C776 /* PhotoGalleryViewController.swift in Sources */,
 				B57BEA6D216AAFD700A2C776 /* SlideDownDismissingAnimator.swift in Sources */,
@@ -560,6 +561,7 @@
 				B57BEA7D216AAFD700A2C776 /* UIColor+Palette.swift in Sources */,
 				B57BEA67216AAFD700A2C776 /* UIFont+Style.swift in Sources */,
 				B57BEA66216AAFD700A2C776 /* UINavigationController+ImagePickerConfigurable.swift in Sources */,
+				94F4BF192264609C00E7A672 /* VideoPropertyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

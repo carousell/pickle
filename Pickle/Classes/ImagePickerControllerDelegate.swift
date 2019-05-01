@@ -34,6 +34,9 @@ public protocol ImagePickerControllerDelegate: UINavigationControllerDelegate {
     /// Optional. Asks the delegate for the transitioning delegate for presenting the album list. The default transition is used if not implemented.
     @objc optional func imagePickerController(_ picker: ImagePickerController, transitioningDelegateForPresentingAlbumsViewController controller: UIViewController) -> UIViewControllerTransitioningDelegate
 
+    /// Optional. Asks the delegate for the flag to enable the done bar button item based on the selected assets. The default behaviour `isEnabled = !assets.isEmpty`.
+    @objc optional func imagePickerController(_ picker: ImagePickerController, shouldEnableDoneBarButtonItemWithSelected assets: [PHAsset]) -> Bool
+
     /// Optional. Tells the delegate that the user selected an image asset.
     @objc optional func imagePickerController(_ picker: ImagePickerController, didSelectImageAsset asset: PHAsset)
 
