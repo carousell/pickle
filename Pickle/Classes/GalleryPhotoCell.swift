@@ -48,12 +48,14 @@ internal class GalleryPhotoCell: UICollectionViewCell {
         }
     }
 
+    private var assetLocalID: String?
     private var imageRequestID: PHImageRequestID?
 
     // MARK: - UITableViewCell
 
     override func prepareForReuse() {
         super.prepareForReuse()
+        assetLocalID = nil
         imageRequestID.map(PHCachingImageManager.default().cancelImageRequest)
         imageRequestID = nil
         taggedText = nil
@@ -72,13 +74,16 @@ internal class GalleryPhotoCell: UICollectionViewCell {
         options.resizeMode = .exact
         options.isNetworkAccessAllowed = true
 
+        let assetLocalID = asset.localIdentifier
+        self.assetLocalID = assetLocalID
+
         imageRequestID = PHCachingImageManager.default().requestImage(
             for: asset,
             targetSize: size,
             contentMode: .aspectFill,
             options: options
         ) { [weak self] image, _ in
-            if let image = image {
+            if let image = image, assetLocalID == self?.assetLocalID {
                 self?.imageView.image = image
             }
         }
