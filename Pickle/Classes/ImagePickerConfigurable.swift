@@ -85,6 +85,14 @@ public protocol ImagePickerConfigurable {
 
     /// Specifies the supported media types
     var mediaType: ImagePickerMediaType? { get }
+
+    // MARK: - Video Selections
+
+    /// Selected background color for video type cell
+    var videoSelectionBackgroundColor: UIColor? { get }
+
+    /// Normal background color for video type cell
+    var videoNormalBackgroundColor: UIColor? { get }
 }
 
 // Options that represents media type selections in ImagePickerController

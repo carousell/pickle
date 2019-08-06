@@ -111,4 +111,10 @@ private struct CarousellTheme: ImagePickerConfigurable {
     // MARK: Media Types
 
     var mediaType: ImagePickerMediaType? = .all
+
+    // MARK: - Video Selections
+
+    let videoSelectionBackgroundColor: UIColor? = nil
+    let videoNormalBackgroundColor: UIColor? = nil
+
 }
