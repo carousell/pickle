@@ -35,7 +35,7 @@ internal final class GalleryVideoCell: GalleryPhotoCell {
             with: asset,
             taggedText: taggedText,
             configuration: configuration)
-
+        videoPropertyView.configure(style: configuration)
         videoPropertyView.configure(duration: asset.duration)
         videoPropertyView.setSelected(taggedText != nil)
     }

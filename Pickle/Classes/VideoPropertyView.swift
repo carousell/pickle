@@ -30,11 +30,11 @@ internal final class VideoPropertyView: UIView {
     private var selectionBackgroundColor: UIColor = UIColor.Palette.blue
     private var normalBackgroundColor: UIColor = UIColor.Palette.grey.withAlphaComponent(0.2)
 
-    func configure(style: ImagePickerConfigurable) {
-        if let selectColor = style.videoSelectionBackgroundColor {
+    func configure(style: ImagePickerConfigurable?) {
+        if let selectColor = style?.videoSelectionBackgroundColor {
             selectionBackgroundColor = selectColor
         }
-        if let normalColor = style.videoNormalBackgroundColor {
+        if let normalColor = style?.videoNormalBackgroundColor {
             normalBackgroundColor = normalColor
         }
         updateColor()
