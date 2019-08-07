@@ -138,6 +138,9 @@ internal final class PhotoGalleryViewController: UIViewController,
         if configuration?.isLiveCameraViewEnabled == .some(true) {
             sessionHandler = try? CameraSessionHandler()
         }
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .never
+        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {
