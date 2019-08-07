@@ -55,6 +55,7 @@ internal final class VideoPropertyView: UIView {
 
     func setSelected(_ isSelected: Bool) {
         selected = isSelected
+        updateColor()
     }
 
     override init(frame: CGRect) {
