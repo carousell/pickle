@@ -88,4 +88,12 @@ public struct Parameters: ImagePickerConfigurable {
 
     /// Specifies the supported media types
     public var mediaType: ImagePickerMediaType?
+
+    // MARK: - Video Selections
+
+    /// Selected background color for video type cell
+    public var videoSelectionBackgroundColor: UIColor?
+
+    /// Normal background color for video type cell
+    public var videoNormalBackgroundColor: UIColor?
 }

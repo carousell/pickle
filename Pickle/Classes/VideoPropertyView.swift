@@ -26,6 +26,20 @@ internal final class VideoPropertyView: UIView {
         return label
     }()
 
+    private var selected: Bool = false
+    private var selectionBackgroundColor: UIColor = UIColor.Palette.blue
+    private var normalBackgroundColor: UIColor = UIColor.Palette.grey.withAlphaComponent(0.2)
+
+    func configure(style: ImagePickerConfigurable?) {
+        if let selectColor = style?.videoSelectionBackgroundColor {
+            selectionBackgroundColor = selectColor
+        }
+        if let normalColor = style?.videoNormalBackgroundColor {
+            normalBackgroundColor = normalColor
+        }
+        updateColor()
+    }
+
     func configure(duration: TimeInterval) {
         let formatter = DateComponentsFormatter()
         formatter.zeroFormattingBehavior = .pad
@@ -40,11 +54,8 @@ internal final class VideoPropertyView: UIView {
     }
 
     func setSelected(_ isSelected: Bool) {
-        if isSelected {
-            backgroundColor = UIColor.Palette.blue
-        } else {
-            backgroundColor = UIColor.Palette.grey.withAlphaComponent(0.2)
-        }
+        selected = isSelected
+        updateColor()
     }
 
     override init(frame: CGRect) {
@@ -54,6 +65,14 @@ internal final class VideoPropertyView: UIView {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    private func updateColor() {
+        if selected {
+            backgroundColor = selectionBackgroundColor
+        } else {
+            backgroundColor = normalBackgroundColor
+        }
     }
 
     private func setupViews() {
