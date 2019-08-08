@@ -138,7 +138,10 @@ internal final class PhotoGalleryViewController: UIViewController,
         if configuration?.isLiveCameraViewEnabled == .some(true) {
             sessionHandler = try? CameraSessionHandler()
         }
-        if #available(iOS 11.0, *) {
+
+        if #available(iOS 11, *),
+            navigationItem.responds(
+                to: #selector(getter: navigationItem.largeTitleDisplayMode)) {
             navigationItem.largeTitleDisplayMode = .never
         }
     }
