@@ -85,6 +85,9 @@ open class ImagePickerController: UINavigationController {
             camera.delegate = self
             return camera
         }
+
+        // The UI design doesn't work well with iOS 13 default sheet modal presentation.
+        modalPresentationStyle = .fullScreen
     }
 
     /// Returns an object initialized from data in a given unarchiver.
