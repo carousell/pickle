@@ -153,7 +153,7 @@ internal final class PhotoGalleryViewController: UIViewController,
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        try? sessionHandler?.startSession()
+        ((try? sessionHandler?.startSession()) as ()??)
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

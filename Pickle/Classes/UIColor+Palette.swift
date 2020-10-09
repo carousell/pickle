@@ -12,7 +12,7 @@ import UIKit
 
 internal extension UIColor {
 
-    internal enum Palette {
+    enum Palette {
         static let blue = UIColor(hex: 0x2984C0)
         static let lightGrey = UIColor(hex: 0x8F939C)
         static let grey = UIColor(hex: 0x8F939C)
@@ -20,7 +20,7 @@ internal extension UIColor {
         static let darkGrey = UIColor(hex: 0x4B4D52)
     }
 
-    internal convenience init(hex: Int) {
+    convenience init(hex: Int) {
         self.init(
             red: CGFloat((hex & 0xFF0000) >> 16) / 255,
             green: CGFloat((hex & 0x00FF00) >> 8) / 255,
