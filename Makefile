@@ -22,10 +22,10 @@ else
 endif
 
 carthage:
-	carthage version
+	./carthage.sh version
 	test -d Example/Pods && rm -rv Example/Pods || :
 	test -d Example/Pickle.xcworkspace && rm -rv Example/Pickle.xcworkspace || :
-	set -o pipefail && carthage build --no-skip-current --verbose | bundle exec xcpretty -c
+	set -o pipefail && ./carthage.sh build --no-skip-current --verbose | bundle exec xcpretty -c
 
 docs:
 	test -d docs || git clone -b gh-pages --single-branch https://github.com/carousell/pickle.git docs
