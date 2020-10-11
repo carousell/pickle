@@ -12,11 +12,11 @@ import UIKit
 
 internal extension UIFont {
 
-    internal static var forCameraButton: UIFont {
+    static var forCameraButton: UIFont {
         return UIFont.systemSemiBoldFont(ofSize: 10)
     }
 
-    internal static var forHintLabel: UIFont {
+    static var forHintLabel: UIFont {
         if let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .caption2).withSymbolicTraits(.traitBold) {
             return UIFont(descriptor: descriptor, size: 0)
         } else {
@@ -24,7 +24,7 @@ internal extension UIFont {
         }
     }
 
-    internal static var forTagLabel: UIFont {
+    static var forTagLabel: UIFont {
         return UIFont.systemSemiBoldFont(ofSize: 16)
     }
 

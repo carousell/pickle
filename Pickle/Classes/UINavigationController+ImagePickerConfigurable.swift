@@ -12,7 +12,7 @@ import Foundation
 
 internal extension UINavigationController {
 
-    internal func configure(with settings: ImagePickerConfigurable?) {
+    func configure(with settings: ImagePickerConfigurable?) {
         if let barStyle = settings?.navigationBarStyle {
             navigationBar.barStyle = barStyle
         }

@@ -289,7 +289,7 @@ extension ImagePickerController: PhotoGalleryViewControllerDelegate {
     }
 
     internal func photoGalleryViewController(_ controller: PhotoGalleryViewController, shouldTogglePhoto asset: PHAsset) -> Bool {
-        if selectedAssets.index(of: asset) != nil {
+        if selectedAssets.firstIndex(of: asset) != nil {
             return true
         }
 
@@ -302,7 +302,7 @@ extension ImagePickerController: PhotoGalleryViewControllerDelegate {
     }
 
     internal func photoGalleryViewController(_ controller: PhotoGalleryViewController, didTogglePhoto asset: PHAsset) {
-        if let selectedIndex = selectedAssets.index(of: asset) {
+        if let selectedIndex = selectedAssets.firstIndex(of: asset) {
             selectedAssets.remove(at: selectedIndex)
             imagePickerDelegate?.imagePickerController?(self, didDeselectImageAsset: asset)
         } else {
@@ -324,7 +324,7 @@ extension ImagePickerController: PhotoGalleryViewControllerDelegate {
     }
 
     internal func photoGalleryViewController(_ controller: PhotoGalleryViewController, taggedTextForPhoto asset: PHAsset) -> String? {
-        guard let index = selectedAssets.index(of: asset) else {
+        guard let index = selectedAssets.firstIndex(of: asset) else {
             return nil
         }
 
@@ -348,11 +348,11 @@ extension ImagePickerController: PhotoGalleryViewControllerDelegate {
 
 fileprivate extension ImagePickerController {
 
-    fileprivate func shouldEnableDoneBarButtonItem(with selectedAssets: [PHAsset]) -> Bool {
+    func shouldEnableDoneBarButtonItem(with selectedAssets: [PHAsset]) -> Bool {
         return imagePickerDelegate?.imagePickerController?(self, shouldEnableDoneBarButtonItemWithSelected: selectedAssets) ?? !selectedAssets.isEmpty
     }
 
-    fileprivate func handle(photoLibraryPermission status: PHAuthorizationStatus) {
+    func handle(photoLibraryPermission status: PHAuthorizationStatus) {
         switch status {
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization { status in
@@ -366,7 +366,7 @@ fileprivate extension ImagePickerController {
             title = cameraRoll.firstObject?.localizedTitle
             galleryViewController = PhotoGalleryViewController(album: cameraRoll.firstObject, configuration: configuration)
 
-        case .denied, .restricted:
+        case .denied, .restricted, .limited:
             // Workaround the issue in iOS 11 where UIImagePickerController doesn't show the permission denied message.
             // It requires additional PHAuthorizationStatus check before presenting Pickle.ImagePickerController.
             if #available(iOS 11.0, *) {
@@ -384,7 +384,7 @@ fileprivate extension ImagePickerController {
         }
     }
 
-    fileprivate func launchCamera() {
+    func launchCamera() {
         let status = AVCaptureDevice.authorizationStatus(for: .video)
         guard imagePickerDelegate?.imagePickerController(self, shouldLaunchCameraWithAuthorization: status) ?? true else {
             return
@@ -416,7 +416,7 @@ fileprivate extension ImagePickerController {
     // MARK: IBActions
 
     @objc
-    fileprivate func togglePhotoAlbums(_ sender: UIControl) {
+    func togglePhotoAlbums(_ sender: UIControl) {
         let showsPhotoAlbums = !sender.isSelected
 
         if showsPhotoAlbums {
@@ -444,12 +444,12 @@ fileprivate extension ImagePickerController {
     }
 
     @objc
-    fileprivate func cancel(_ sender: UIBarButtonItem?) {
+    func cancel(_ sender: UIBarButtonItem?) {
         imagePickerDelegate?.imagePickerControllerDidCancel(self)
     }
 
     @objc
-    fileprivate func done(_ sender: UIBarButtonItem) {
+    func done(_ sender: UIBarButtonItem) {
         imagePickerDelegate?.imagePickerController(self, didFinishPickingImageAssets: selectedAssets)
     }
 
