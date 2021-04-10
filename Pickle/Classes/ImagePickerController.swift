@@ -362,7 +362,7 @@ fileprivate extension ImagePickerController {
                 }
             }
 
-        case .authorized:
+        case .authorized, .limited:
             title = cameraRoll.firstObject?.localizedTitle
             galleryViewController = PhotoGalleryViewController(album: cameraRoll.firstObject, configuration: configuration)
 
